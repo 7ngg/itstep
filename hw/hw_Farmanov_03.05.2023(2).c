@@ -25,8 +25,8 @@ bool leapCheck(int year) {
 }
 
 /*
-Переменные с окончанием _overall - количество дней за последний год
-tmp - разница между полными годами
+_overall variables meant to show days count for the current year
+tmp - variable to show difference between completed years
 */
 void task1(int start_dd, int start_mm, int start_yy, int end_dd, int end_mm, int end_yy) {
 	int result = 0;
