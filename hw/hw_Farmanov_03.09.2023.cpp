@@ -149,12 +149,20 @@ int main(){
 		cout << "Array: " << endl;
 		print2d(A, 4, 4);
 
-		//moveRight(A, 4, 4, quantity);
-		//moveLeft(A, 4, 4, quantity);
-		moveUp(A, 4, 4, quantity);
-		//moveDown(A, 4, 4, quantity);
+		cout << "Moving right...\n"; 
+		moveRight(A, 4, 4, quantity);
+		print2d(A, 4, 4);
 
-		cout << "Result: " << endl;
+		cout << "Moving left...\n";
+		moveLeft(A, 4, 4, quantity);
+		print2d(A, 4, 4);
+
+		cout << "Moving up...\n";
+		moveUp(A, 4, 4, quantity);
+		print2d(A, 4, 4);
+
+		cout << "Moving down...\n";
+		moveDown(A, 4, 4, quantity);
 		print2d(A, 4, 4);
 
 		break;
