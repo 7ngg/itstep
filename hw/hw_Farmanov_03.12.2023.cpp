@@ -27,8 +27,14 @@ int main(){
 	setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
 
+	int task{};
+	cout << "Choose the task: ";
+	cin >> task;
+	if (task > 2 or task <= 0)
+		return 0;
+
 	int arr1_length{}, arr2_length{};
-	int A_not_B_count{}, A_and_B_count{};
+	int count{};
 	int *arr1, *arr2;
 
 	cout << "Enter first array's length: ";
@@ -47,47 +53,91 @@ int main(){
 	cout << "Array 2 - ";
 	printArray(arr2, arr2_length);
 
-	int* tmp = createTmpArr(arr2, arr2_length);					// Копия второго массива. Нужна, т.к isElement "портит" получаемый массив, чтобы избежать повторений
-	for (int i = 0; i < arr1_length; ++i)
-	{
-		if (not isElement(arr1[i], tmp, arr2_length))			// Вычисляем минимальный размер массива для обоих заданий
+	switch (task){
+	case 1:
 		{
-			A_not_B_count += 1;
+			int* tmp = createTmpArr(arr2, arr2_length);					// Копия массива нужна, т.к isElement "портит" получаемый массив, чтобы избежать повторений
+			for (int i = 0; i < arr1_length; ++i)
+			{
+				if (not isElement(arr1[i], tmp, arr2_length))			// Вычисляем минимальный размер массива для обоих заданий
+				{
+					count += 1;
+				}
+			}
+
+			int* A_not_B = createArr(count);
+			int A_not_B_index = 0;
+
+			tmp = createTmpArr(arr2, arr2_length);
+			for (int i = 0; i < arr1_length; ++i)
+			{
+				if (not isElement(arr1[i], tmp, arr2_length))			// Если элемент из А, но не из Б, то добавляем его в ответ для первого задания
+				{
+					*(A_not_B + A_not_B_index) = *(arr1 + i);
+					A_not_B_index += 1;
+				}
+			}
+			
+			cout << "Elements, those are in Array 1, but not in Array 2 - ";			// Задание 1 ответ
+			printArray(A_not_B, count);
+		
+			break;
 		}
-		else
+
+	case 2:
 		{
-			A_and_B_count += 1;
+			count = 0;
+
+			int* tmp = createTmpArr(arr2, arr2_length);				// Строки 93-122 - вычисляем минимальный размер массива для задания 2 
+			for (int i = 0; i < arr1_length; ++i)
+			{
+				if (not isElement(*(arr1 + i), tmp, arr2_length))
+				{
+					count += 1;
+				}
+			}
+
+			tmp = createTmpArr(arr1, arr1_length);
+			for (int i = 0; i < arr2_length; ++i)
+			{
+				if (not isElement(*(arr2 + i), tmp, arr1_length))
+				{
+					count += 1;
+				}
+			}
+
+			int* symmetricDiff = createArr(count);
+			int symmetricDiff_index = 0;
+
+			tmp = createTmpArr(arr2, arr2_length);					// Вычисляем симметрическую разность
+			for (int i = 0; i < arr1_length; ++i)
+			{
+				if (not isElement(*(arr1 + i), tmp, arr2_length))
+				{
+					*(symmetricDiff + symmetricDiff_index) = *(arr1 + i);
+					symmetricDiff_index += 1;
+				}
+			}
+
+			tmp = createTmpArr(arr1, arr1_length);
+			for (int i = 0; i < arr2_length; ++i)
+			{
+				if (not isElement(*(arr2 + i), tmp, arr1_length))
+				{
+					*(symmetricDiff + symmetricDiff_index) = *(arr2 + i);
+					symmetricDiff_index += 1;
+				}
+			}
+
+			cout << "Symmetric difference between A and B - ";
+			printArray(symmetricDiff, count);
+
+			break;
 		}
 	}
 
-
-	tmp = createTmpArr(arr2, arr2_length);
-
-	int* A_not_B = createArr(A_not_B_count);
-	int A_not_B_index = 0;
-
-	int* A_and_B = createArr(A_and_B_count);
-	int A_and_B_index = 0;
-
-	for (int i = 0; i < arr1_length; ++i)
-	{
-		if (not isElement(arr1[i], tmp, arr2_length))			// Если элемент из А, но не из Б, то добавляем его в ответ для первого задания
-		{
-			*(A_not_B + A_not_B_index) = *(arr1 + i);
-			A_not_B_index += 1;
-		}
-		else													// Если элемент лежит и в А, и а Б, то добавляем его в ответ для второго задания 
-		{
-			*(A_and_B + A_and_B_index) = *(arr1 + i);
-			A_and_B_index += 1;
-		}
-	}
 	
-	cout << "Elements, those are in Array 1, but not in Array 2 - ";			// Задание 1 ответ
-	printArray(A_not_B, A_not_B_count);
 
-	cout << "Elements, those are in both Array 1 and Array 2 - ";				// Задание 2 ответ
-	printArray(A_and_B, A_and_B_count);
 
 	return 0;
 }
