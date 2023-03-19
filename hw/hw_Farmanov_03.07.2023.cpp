@@ -128,7 +128,7 @@ int main(){
 	case 3:
 		{
 			int x = 1000 + rand() % 9000;
-			cout << x << endl;
+			// cout << x << endl;
 
 			int num = 0, attempts = 0;
 			int a = 0;				// variable to avoid dublication in loop (line 171 - 181)
