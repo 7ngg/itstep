@@ -9,7 +9,7 @@ int main(){
 	double prices[length] = {298, 3.99, 90, 35, 1337};
 
 
-	for (int i = 0; i < length; ++i)			// Ñîðòèðîâêà òîâàðîâ ïî àëôàâèòó
+	for (int i = 0; i < length; ++i)			// Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Ñ‚Ð¾Ð²Ð°Ñ€Ð¾Ð² Ð¿Ð¾ Ð°Ð»Ñ„Ð°Ð²Ð¸Ñ‚Ñƒ
 	{
 		int index = i;
 
@@ -36,21 +36,21 @@ int main(){
 
 	for (int i = 0; i < length; ++i)
 	{
-		cout << items[i] << " - " << *(prices + i) << "ò." << endl;
+		cout << items[i] << " - " << *(prices + i) << "Ñ‚." << endl;
 	}
 
 	int min = 0;
 	int max = 0;
 
-	for (size_t i = 0; i < length; i++)				// Ïîèñê ñàìîãî äîðîãîãî è äåøåâîãî òîâàðîâ
+	for (size_t i = 0; i < length; i++)				// ÐŸÐ¾Ð¸ÑÐº ÑÐ°Ð¼Ð¾Ð³Ð¾ Ð´Ð¾Ñ€Ð¾Ð³Ð¾Ð³Ð¾ Ð¸ Ð´ÐµÑˆÐµÐ²Ð¾Ð³Ð¾ Ñ‚Ð¾Ð²Ð°Ñ€Ð¾Ð²
 	{
 		min = (prices[i] < prices[min]) ? i : min;
 		max = (prices[i] > prices[max]) ? i : max;
 	}
 
 	cout
-		<< "Ñàìûé äîðîãîé òîâàð - " << items[max] << ". Öåíà - " << prices[max] << "ò." << endl
-		<< "Ñàìûé äåøåâûé òîâàð - " << items[min] << ". Öåíà - " << prices[min] << "ò." << endl;
+		<< "Ð¡Ð°Ð¼Ñ‹Ð¹ Ð´Ð¾Ñ€Ð¾Ð³Ð¾Ð¹ Ñ‚Ð¾Ð²Ð°Ñ€ - " << items[max] << ". Ð¦ÐµÐ½Ð° - " << prices[max] << "Ñ‚." << endl
+		<< "Ð¡Ð°Ð¼Ñ‹Ð¹ Ð´ÐµÑˆÐµÐ²Ñ‹Ð¹ Ñ‚Ð¾Ð²Ð°Ñ€ - " << items[min] << ". Ð¦ÐµÐ½Ð° - " << prices[min] << "Ñ‚." << endl;
 
 
 
