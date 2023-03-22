@@ -195,7 +195,7 @@ int* task7(int* arr, const int len, int& newLength) {
 	int* result = createArr(startIndex);
 	newLength = startIndex;
 
-	int i = 0;			// Шагаем по элементам исходного массива
+	int i = 0;
 	while (i < startIndex)
 	{
 		*(result + i) = *(arr + i);
