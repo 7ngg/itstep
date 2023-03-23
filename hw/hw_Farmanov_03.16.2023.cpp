@@ -38,10 +38,10 @@ void task2(int* arr, const int len, int &pos, int &neg, int &o){
 }
 
 
-int* task3(int* arr1, int* arr2, const int arr1_len, const int arr2_len){			// Не совсем ясно как возвращать 0, но таково условие задания
+int* task3(int* arr1, int* arr2, const int arr1_len, const int arr2_len){			
 	if (arr2_len > arr1_len)
 	{
-		return 0;
+		return nullptr;
 	}
 
 	for (int i = 0; i <= arr1_len; ++i)
@@ -64,7 +64,7 @@ int* task3(int* arr1, int* arr2, const int arr1_len, const int arr2_len){			// �
 
 	}
 
-	return 0;
+	return nullptr;
 }
 
 
