@@ -113,6 +113,7 @@ int main(){
 		<< endl;
 
 	system("pause");
+	delete[] A;
 	return 0;
 }
 
