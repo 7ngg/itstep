@@ -67,7 +67,6 @@ int main() {
 
 		delete[] num2str;
 		num2str = NumberToString(num);
-		//num2str = NumberToString(num);
 
 		cout
 			<< "Number - " << num << endl
