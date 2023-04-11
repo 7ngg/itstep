@@ -1,24 +1,26 @@
 #include <iostream>
 
-int addition(int x, int y) {
+double addition(int x, int y) {
 	return x + y;
 }
 
-int subtraction(int x, int y) {
+double subtraction(int x, int y) {
 	return x - y;
 }
 
-int multiplication(int x, int y) {
+double multiplication(int x, int y) {
 	return x * y;
 }
 
-int division(int x, int y) {
-	return x / y;
+double division(int x, int y) {
+	return (float)x / y;
 }
 
 
 int main() {
 	using namespace std;
+	
+	double (*functions[])(int, int) = {addition, subtraction, multiplication, division};
 
 	int x{}, y{};
 	int choice{};
@@ -37,7 +39,7 @@ int main() {
 	cout << "Enter y - ";
 	cin >> y;
 
-	cout << result(x, y, choice);
+	cout << "Result - " << functions[choice - 1](x, y);
 
 	return 0;
 }
