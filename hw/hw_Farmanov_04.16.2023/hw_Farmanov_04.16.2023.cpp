@@ -32,21 +32,6 @@ void authorSort(Book*& lib, uint16_t booksCount) {
 }
 
 
-void authorSort(Book*& lib, uint16_t booksCount) {
-	for (size_t i = 0; i < booksCount; i++)
-	{
-		uint16_t index = i;
-		while (index > 0 and int(lib[index].author[0]) < int(lib[index - 1].author[0]))
-		{
-			Book tmp = lib[i - 1];
-			lib[index - 1] = lib[index];
-			lib[index] = tmp;
-			index -= 1;
-		}
-	}
-}
-
-
 void publishingOfficeSort(Book*& lib, uint16_t booksCount) {
 	for (size_t i = 0; i < booksCount; i++)
 	{
