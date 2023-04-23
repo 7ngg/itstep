@@ -6,13 +6,26 @@ struct Book {
 	char* publishingOffice{};
 	char* genre{};
 
-	Book()
+	Book() 
 	{
-		name = new char[32]{};
-		author = new char[32]{};
-		publishingOffice = new char[32]{};
-		genre = new char[32]{};
+		name = new char[32] {};
+		author = new char[32] {};
+		publishingOffice = new char[32] {};
+		genre = new char[32] {};
+	}
+
+	Book(char* _name, char* _author, char* _publishingOffice, char* _genre)
+	{
+		name = _name;
+		author = _author;
+		publishingOffice = _publishingOffice;
+		genre = _genre;
 	}
 
 	void printBook();
+	bool authorSearch(char* searchingAuthor);
+	bool nameSearch(char* searchingName);
 };
+
+
+//void nameSort(Book*& lib, uint16_t booksCount);
