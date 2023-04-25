@@ -23,6 +23,7 @@ struct Book {
 	}
 
 	void printBook();
+	void editBook();
 	bool authorSearch(char* searchingAuthor);
 	bool nameSearch(char* searchingName);
 };

@@ -81,6 +81,7 @@ int main() {
 	while (flag)
 	{
 		uint16_t choice = 0;
+		uint16_t case8Choice = 0;
 		char* searchingAuthor = new char[32] {};
 		char* searchingBook = new char[32] {};
 
@@ -90,9 +91,10 @@ int main() {
 			<< "2. Show all books" << endl
 			<< "3. Search by author" << endl
 			<< "4. Search by book name" << endl
-			<< "5. Sort by name" << endl
-			<< "6. Sort by author" << endl
-			<< "7. Sort by publishing office" << endl
+			<< "5. Sort by name (ASCII)" << endl
+			<< "6. Sort by author (ASCII)" << endl
+			<< "7. Sort by publishing office (ASCII)" << endl
+			<< "8. Edit book" << endl
 			<< "0. Exit" << endl
 			<< "> ";
 		cin >> choice;
@@ -170,6 +172,30 @@ int main() {
 
 		case 5:
 			nameSort(library, booksCount);
+
+			break;
+
+		case 6:
+			authorSort(library, booksCount);
+
+			break;
+
+		case 7:
+			publishingOfficeSort(library, booksCount);
+
+			break;
+
+		case 8:
+			cout << "Books: " << endl;
+			for (size_t i = 0; i < booksCount; i++)
+			{	
+				cout << i + 1 << ". ";
+				library[i].printBook();
+			}
+			cout << "Choose a book to edit: ";
+			cin >> case8Choice;
+
+			library[case8Choice - 1].editBook();
 
 			break;
 

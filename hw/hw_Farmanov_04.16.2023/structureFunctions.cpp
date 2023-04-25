@@ -67,4 +67,60 @@ bool Book::nameSearch(char* searchingName) {
 }
 
 
+void Book::editBook() {
+	uint16_t editChoice = 0;
+	std::cout 
+		<< "Enter element to edit: \n"
+		<< "1. Name\n"
+		<< "2. Author\n"
+		<< "3. Publishing office\n"
+		<< "4. Genre\n"
+		<< "> ";
+	std::cin >> editChoice;
+
+	switch (editChoice)
+	{
+	case 1:
+		delete[] name;
+		name = new char[32];
+
+		std::cout << "Enter new name: ";
+		std::cin >> name;
+
+		break;
+
+	case 2:
+		delete[] author;
+		author = new char[32];
+
+		std::cout << "Enter author: ";
+		std::cin >> author;
+
+		break;
+
+	case 3:
+		delete[] publishingOffice;
+		publishingOffice = new char[32];
+
+		std::cout << "Enter publishing office: ";
+		std::cin >> publishingOffice;
+
+		break;
+
+	case 4:
+		delete[] genre;
+		genre = new char[32];
+
+		std::cout << "Enter genre: ";
+		std::cin >> genre;
+
+		break;
+
+	default:
+		std::cout << "No such case\n";
+		break;
+	}
+}
+
+
 
