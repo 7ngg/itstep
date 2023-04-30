@@ -43,16 +43,16 @@ myStruct findText(char* text, char* searchingText) {
 	uint32_t textLength = len(text);
 	uint32_t searchingTextLength = len(searchingText);
 
-	for (size_t i = 0; i < textLength; ++i) 
+	for (size_t i = 0; loweredText[i] != '\0'; ++i) 
 	{
 		uint32_t lengthCheck = 0;
 	
-		size_t j = i, k = 0;
-		while (loweredSearchingText[k] == loweredText[i + searchingTextLength - j - 1] and loweredText[j] != '\0')
+		for (size_t j = 0; loweredSearchingText[j] != '\0'; ++j)
 		{
-			lengthCheck += 1;
-			j += 1;
-			k += 1;
+			if (loweredText[i + j] == loweredSearchingText[j] or loweredText[i + searchingTextLength - j - 1] == loweredSearchingText[j])
+			{
+				lengthCheck += 1;
+			}
 		}
 
 		if (lengthCheck == searchingTextLength)
@@ -82,8 +82,8 @@ int main() {
 	cin.getline(searchingText, 300);
 
 	cout
-		<< "Searching text starting index - " << findText(text, searchingText).index << endl
-		<< "Searching text count - " << findText(text, searchingText).count << endl;
+		<< "Searching text count - " << findText(text, searchingText).count << endl
+		<< "Searching text starting index - " << findText(text, searchingText).index << endl;
 
 	return 0;
 }
