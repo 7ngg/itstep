@@ -127,10 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arithmetic.cpp" />
+    <ClCompile Include="global_functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sea_battle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="arithmetic.h" />
+    <ClInclude Include="global_functions.h" />
     <ClInclude Include="sea_battle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

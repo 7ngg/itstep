@@ -1,5 +1,9 @@
 #include <iostream>
 
+#include "global_functions.h"
+#include "sea_battle.h"
+#include "arithmetic.h"
+
 int main() {
 	using namespace std;
 	setlocale(LC_ALL, "Russian");
@@ -19,8 +23,20 @@ int main() {
 	switch (choice)
 	{
 	case 1:
+		break;
 
+	case 5:
+	{
+		char* line = new char[128] {};
+		cout
+			<< "¬ведите арифметическое выражение (не более 127 символов)" << endl
+			<< "> ";
+		cin.ignore();
+		cin.getline(line, 127);
+		cout << line << endl;
+		cout << arithmeticMainFunc(line);
 
+	}
 		break;
 
 	default:
