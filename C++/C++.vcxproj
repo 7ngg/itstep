@@ -131,11 +131,13 @@
     <ClCompile Include="global_functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sea_battle.cpp" />
+    <ClCompile Include="ToDo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arithmetic.h" />
     <ClInclude Include="global_functions.h" />
     <ClInclude Include="sea_battle.h" />
+    <ClInclude Include="ToDo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

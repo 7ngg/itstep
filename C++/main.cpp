@@ -1,11 +1,15 @@
 #include <iostream>
 
+#include "json.hpp"
+
 #include "global_functions.h"
 #include "sea_battle.h"
 #include "arithmetic.h"
 
 int main() {
 	using namespace std;
+	using json = nlohmann::json;
+
 	setlocale(LC_ALL, "Russian");
 
 	uint16_t choice = 0;
@@ -25,6 +29,11 @@ int main() {
 	case 1:
 		break;
 
+	case 3:
+
+
+		break;
+
 	case 5:
 	{
 		char* line = new char[128] {};
@@ -38,6 +47,14 @@ int main() {
 
 	}
 		break;
+
+	case 10:
+	{
+		json j;
+		cin >> j["age"];
+		cout << j;
+		break;
+	}
 
 	default:
 		cout << "No such option" << endl;
