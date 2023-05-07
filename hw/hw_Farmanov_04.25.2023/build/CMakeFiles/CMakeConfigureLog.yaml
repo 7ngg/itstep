@@ -18,13 +18,13 @@ events:
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler:  
-      Build flags: 
+      Build flags: /DWIN32;/D_WINDOWS;/W3
       Id flags:  
       
       The output was:
       0
       MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-      Сборка начата 06.05.2023 20:10:01.
+      Сборка начата 08.05.2023 2:57:03.
       Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
       
       Проект "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" в узле 1 (целевые объекты по умолчанию).
@@ -52,7 +52,7 @@ events:
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:01.85
+      Прошло времени 00:00:01.78
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -72,13 +72,13 @@ events:
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler:  
-      Build flags: 
+      Build flags: /DWIN32;/D_WINDOWS;/W3;/GR;/EHsc
       Id flags:  
       
       The output was:
       0
       MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-      Сборка начата 06.05.2023 20:10:03.
+      Сборка начата 08.05.2023 2:57:05.
       Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
       
       Проект "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" в узле 1 (целевые объекты по умолчанию).
@@ -106,7 +106,7 @@ events:
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:01.58
+      Прошло времени 00:00:01.53
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -125,8 +125,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-2ljftf"
-      binary: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-2ljftf"
+      source: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-sm7wyt"
+      binary: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-sm7wyt"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -135,38 +135,38 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-2ljftf
+        Change Dir: C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-sm7wyt
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_33f45.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-        Сборка начата 06.05.2023 20:10:06.
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_bfca1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+        Сборка начата 08.05.2023 2:57:08.
         Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
         
-        Проект "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ljftf\\cmTC_33f45.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm7wyt\\cmTC_bfca1.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_33f45.dir\\Debug\\".
-          Создание каталога "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ljftf\\Debug\\".
-          Создание каталога "cmTC_33f45.dir\\Debug\\cmTC_33f45.tlog\\".
+          Создание каталога "cmTC_bfca1.dir\\Debug\\".
+          Создание каталога "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm7wyt\\Debug\\".
+          Создание каталога "cmTC_bfca1.dir\\Debug\\cmTC_bfca1.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_33f45.dir\\Debug\\cmTC_33f45.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_bfca1.dir\\Debug\\cmTC_bfca1.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33f45.dir\\Debug\\\\" /Fd"cmTC_33f45.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bfca1.dir\\Debug\\\\" /Fd"cmTC_bfca1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.35.32217.1 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33f45.dir\\Debug\\\\" /Fd"cmTC_33f45.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bfca1.dir\\Debug\\\\" /Fd"cmTC_bfca1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ljftf\\Debug\\cmTC_33f45.exe" /INCREMENTAL /ILK:"cmTC_33f45.dir\\Debug\\cmTC_33f45.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-2ljftf/Debug/cmTC_33f45.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-2ljftf/Debug/cmTC_33f45.lib" /MACHINE:X64  /machine:x64 cmTC_33f45.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_33f45.vcxproj -> C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ljftf\\Debug\\cmTC_33f45.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm7wyt\\Debug\\cmTC_bfca1.exe" /INCREMENTAL /ILK:"cmTC_bfca1.dir\\Debug\\cmTC_bfca1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-sm7wyt/Debug/cmTC_bfca1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-sm7wyt/Debug/cmTC_bfca1.lib" /MACHINE:X64  /machine:x64 cmTC_bfca1.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_bfca1.vcxproj -> C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm7wyt\\Debug\\cmTC_bfca1.exe
         FinalizeBuildStatus:
-          Файл "cmTC_33f45.dir\\Debug\\cmTC_33f45.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_33f45.dir\\Debug\\cmTC_33f45.tlog\\cmTC_33f45.lastbuildstate".
-        Сборка проекта "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ljftf\\cmTC_33f45.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_bfca1.dir\\Debug\\cmTC_bfca1.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_bfca1.dir\\Debug\\cmTC_bfca1.tlog\\cmTC_bfca1.lastbuildstate".
+        Сборка проекта "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm7wyt\\cmTC_bfca1.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:01.55
+        Прошло времени 00:00:01.46
         
       exitCode: 0
   -
@@ -178,8 +178,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-6s1tgj"
-      binary: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-6s1tgj"
+      source: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-0yf5y3"
+      binary: "C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-0yf5y3"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -188,38 +188,38 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-6s1tgj
+        Change Dir: C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-0yf5y3
         
-        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_3c329.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
-        Сборка начата 06.05.2023 20:10:08.
+        Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_6c76a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+        Сборка начата 08.05.2023 2:57:10.
         Included response file: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.rsp
         
-        Проект "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s1tgj\\cmTC_3c329.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0yf5y3\\cmTC_6c76a.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_3c329.dir\\Debug\\".
-          Создание каталога "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s1tgj\\Debug\\".
-          Создание каталога "cmTC_3c329.dir\\Debug\\cmTC_3c329.tlog\\".
+          Создание каталога "cmTC_6c76a.dir\\Debug\\".
+          Создание каталога "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0yf5y3\\Debug\\".
+          Создание каталога "cmTC_6c76a.dir\\Debug\\cmTC_6c76a.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_3c329.dir\\Debug\\cmTC_3c329.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Создание "cmTC_6c76a.dir\\Debug\\cmTC_6c76a.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_3c329.dir\\Debug\\\\" /Fd"cmTC_3c329.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6c76a.dir\\Debug\\\\" /Fd"cmTC_6c76a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.35.32217.1 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_3c329.dir\\Debug\\\\" /Fd"cmTC_3c329.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6c76a.dir\\Debug\\\\" /Fd"cmTC_6c76a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s1tgj\\Debug\\cmTC_3c329.exe" /INCREMENTAL /ILK:"cmTC_3c329.dir\\Debug\\cmTC_3c329.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-6s1tgj/Debug/cmTC_3c329.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-6s1tgj/Debug/cmTC_3c329.lib" /MACHINE:X64  /machine:x64 cmTC_3c329.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_3c329.vcxproj -> C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s1tgj\\Debug\\cmTC_3c329.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0yf5y3\\Debug\\cmTC_6c76a.exe" /INCREMENTAL /ILK:"cmTC_6c76a.dir\\Debug\\cmTC_6c76a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-0yf5y3/Debug/cmTC_6c76a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/tng/itstep/hw/hw_Farmanov_04.25.2023/build/CMakeFiles/CMakeScratch/TryCompile-0yf5y3/Debug/cmTC_6c76a.lib" /MACHINE:X64  /machine:x64 cmTC_6c76a.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_6c76a.vcxproj -> C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0yf5y3\\Debug\\cmTC_6c76a.exe
         FinalizeBuildStatus:
-          Файл "cmTC_3c329.dir\\Debug\\cmTC_3c329.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_3c329.dir\\Debug\\cmTC_3c329.tlog\\cmTC_3c329.lastbuildstate".
-        Сборка проекта "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6s1tgj\\cmTC_3c329.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_6c76a.dir\\Debug\\cmTC_6c76a.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_6c76a.dir\\Debug\\cmTC_6c76a.tlog\\cmTC_6c76a.lastbuildstate".
+        Сборка проекта "C:\\Users\\tng\\itstep\\hw\\hw_Farmanov_04.25.2023\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0yf5y3\\cmTC_6c76a.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:01.65
+        Прошло времени 00:00:01.48
         
       exitCode: 0
 ...
