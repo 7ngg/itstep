@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "global_functions.h"
-#include "arithmetic.h"
+#include "../include/arithmetic.h"
+#include "../include/global_functions.h"
 
 /*
 	ASCII:
@@ -42,8 +42,8 @@ int32_t arithmeticMainFunc(char* str) {
 		}
 	}
 
-	//uint32_t* nums = new uint32_t[numsCount];
-	//char* symbols = new char[symbolsCount];
+	uint32_t* nums = new uint32_t[numsCount];
+	char* symbols = new char[symbolsCount];
 
 	std::cout << strLength << std::endl;
 	std::cout << numsCount << '\t' << symbolsCount << std::endl;

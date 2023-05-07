@@ -127,17 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="arithmetic.cpp" />
-    <ClCompile Include="global_functions.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="sea_battle.cpp" />
-    <ClCompile Include="ToDo.cpp" />
+    <ClCompile Include="src\arithmetic.cpp" />
+    <ClCompile Include="src\global_functions.cpp" />
+    <ClCompile Include="src\sea_battle.cpp" />
+    <ClCompile Include="src\ToDo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="arithmetic.h" />
-    <ClInclude Include="global_functions.h" />
-    <ClInclude Include="sea_battle.h" />
-    <ClInclude Include="ToDo.h" />
+    <ClInclude Include="include\arithmetic.h" />
+    <ClInclude Include="include\json.hpp" />
+    <ClInclude Include="include\sea_battle.h" />
+    <ClInclude Include="include\ToDo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

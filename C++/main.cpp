@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "json.hpp"
+#include "./include/json.hpp"
 
-#include "global_functions.h"
-#include "sea_battle.h"
-#include "arithmetic.h"
+#include "./include/ToDo.h"
+#include "./include/sea_battle.h"
+#include "./include/arithmetic.h"
 
 int main() {
 	using namespace std;
@@ -13,6 +13,9 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 
 	uint16_t choice = 0;
+	
+	char* line = new char[128] {};
+	
 	cout
 		<< "Выберите задание:" << endl
 		<< "1. Морской бой" << endl
@@ -23,6 +26,7 @@ int main() {
 		<< "6. Приложение \'Каталог текстов песен\'" << endl
 		<< "> ";
 	cin >> choice;
+	cin.ignore();
 
 	switch (choice)
 	{
@@ -35,24 +39,19 @@ int main() {
 		break;
 
 	case 5:
-	{
-		char* line = new char[128] {};
 		cout
 			<< "Введите арифметическое выражение (не более 127 символов)" << endl
 			<< "> ";
-		cin.ignore();
 		cin.getline(line, 127);
 		cout << line << endl;
 		cout << arithmeticMainFunc(line);
 
-	}
 		break;
 
 	case 10:
 	{
-		json j;
-		cin >> j["age"];
-		cout << j;
+		FILE* test{};
+
 		break;
 	}
 

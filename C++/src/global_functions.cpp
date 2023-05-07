@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "global_functions.h"
+#include "../include/global_functions.h"
 
 uint32_t len(char* str) {
 	uint32_t result = 0;
