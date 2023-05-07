@@ -1,3 +1,5 @@
-./Debug
+/Debug
 /x64
 /x86
+/CMakeFiles
+/output.dir
