@@ -130,12 +130,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\arithmetic.cpp" />
     <ClCompile Include="src\global_functions.cpp" />
+    <ClCompile Include="src\lyrics.cpp" />
     <ClCompile Include="src\sea_battle.cpp" />
     <ClCompile Include="src\ToDo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\arithmetic.h" />
     <ClInclude Include="include\json.hpp" />
+    <ClInclude Include="include\lyrics.h" />
     <ClInclude Include="include\sea_battle.h" />
     <ClInclude Include="include\ToDo.h" />
   </ItemGroup>
