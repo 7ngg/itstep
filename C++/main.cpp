@@ -1,10 +1,13 @@
 #include <iostream>
+#include <fstream>
 
 #include "./include/json.hpp"
+#include "./include/global_functions.h"
 
 #include "./include/ToDo.h"
 #include "./include/sea_battle.h"
 #include "./include/arithmetic.h"
+#include "./include/lyrics.h"
 
 int main() {
 	using namespace std;
@@ -48,12 +51,9 @@ int main() {
 
 		break;
 
-	case 10:
-	{
-		FILE* test{};
-
+	case 6:
+		lyricsMainFunction();
 		break;
-	}
 
 	default:
 		cout << "No such option" << endl;
