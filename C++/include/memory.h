@@ -2,18 +2,23 @@
 
 struct gameField
 {
-	uint16_t width{};
-	uint16_t height{};
+	int width{};
+	int height{};
+	int** mainField{};
 
-	gameField(uint16_t x, uint16_t y) {
-		uint16_t** field = new uint16_t*[height]{};
+	gameField(int width, int height) {
+		this->width = width;
+		this->height = height;
+		mainField = new int * [height] {};
 		for (size_t i = 0; i < height; i++)
 		{
-			field[i] = new uint16_t[width]{};
+			*(mainField + i) = new int[width]{};
 		}
 	}
 
-	void randomise(gameField field, uint16_t width, uint16_t height);
+	void show();
+	void randomise();
+	bool checkForZeros();
 };
 
 void memoryMainFunction();

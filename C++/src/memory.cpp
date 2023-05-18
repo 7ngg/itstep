@@ -5,35 +5,81 @@
 #include "../include/global_functions.h"
 
 
-void gameField::randomise(gameField field, uint16_t width, uint16_t height) {
+void gameField::randomise() {
+	int* usedNums = new int[256]{};
+	int usedNumsIterator = 0;
+
 	for (size_t i = 0; i < height; i++)
 	{
 		for (size_t j = 0; j < width; j++)
 		{
-			uint16_t value = rand() % (width * height) + 1;
-
-			uint16_t x1 = rand() % width, x2{};
-			while (x2 == x1)
+			if (mainField[i][j] == 0)
 			{
-				x2 = rand() % width;
-			}
+				while (true)
+				{
+					int value = rand() % (width * height) + 1;
+	
+					if (!isMember(usedNums, 256, value))
+					{
+						mainField[i][j] = value;
+						usedNums[usedNumsIterator] = value;
+						break;
+					}
+				}
 
-			uint16_t y1 = rand() % height, y2{};
-			while (y2 == y1)
-			{
-				x2 = rand() % height;
-			}
+				while (true)
+				{
+					int randX = rand() % width;
+					int randY = rand() % height;
 
-			field.
+					if (mainField[randY][randX] == 0)
+					{
+						mainField[randY][randX] = usedNums[usedNumsIterator];
+						break;
+					}
+				}
+
+				usedNumsIterator += 1;
+			}
 		}
 	}
+}
+
+
+void gameField::show() {
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			std::cout.width(3);
+			std::cout << mainField[i][j];
+		}
+		std::cout << std::endl;
+	}
+}
+
+
+bool gameField::checkForZeros() {
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			if (mainField[i][j] == 0)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 
 void memoryMainFunction() {
 	srand(time(NULL));
 
-	uint16_t width{}, height{};
+	int width{}, height{};
+	bool flag = true;
+	int stepsCount = 0;
 
 	while (true)
 	{
@@ -51,5 +97,76 @@ void memoryMainFunction() {
 	}
 
 	gameField newField(width, height);
+	gameField zeroField(width, height);
+	newField.randomise();
+	
+	while (flag)
+	{
+		int x{}, y{};
+		int* coordCompare = new int[4] {};
 
+		/*
+			coordCompare 0 = x1
+			coordCompare 1 = y1
+			coordCompare 2 = x2
+			coordCompare 3 = y2
+		*/
+
+		for (size_t i = 0, j = 0; i < 2; i += 1, j+= 2)
+		{
+			system("cls");
+			zeroField.show();
+			std::cout << "Make a step or click outside the field to exit" << std::endl;
+		
+	
+			getClick(x, y);
+			bool spotCheck = true ? (x % 3 == 0) : false;
+			x /= 3;
+			coordCompare[j] = x;
+			coordCompare[j + 1] = y;
+
+			if (x > width or y > height or spotCheck)
+			{
+				char choice{};
+				
+				system("cls");
+				
+				std::cout 
+					<< "Wrong spot clicked, are you sure, you want to exit? y/n" << std::endl
+					<< "> ";
+				std::cin >> choice;
+				
+				if (choice == 'y')
+				{
+					flag = false;
+					break;
+				}
+			}
+			else
+			{
+				zeroField.mainField[y][x] = newField.mainField[y][x];
+				system("cls");
+				zeroField.show();
+			}
+		}
+		
+		bool sameSpotCheck = false ? (coordCompare[0] == coordCompare[2] and coordCompare[1] == coordCompare[3]) : true;			// if user clicked the same spot twice
+		bool valueCompare = false ? (zeroField.mainField[coordCompare[1]][coordCompare[0]] != zeroField.mainField[coordCompare[3]][coordCompare[2]]) : true;			// comparing values
+		
+		if (not valueCompare or sameSpotCheck)
+		{
+			zeroField.mainField[coordCompare[1]][coordCompare[0]] = 0;
+			zeroField.mainField[coordCompare[3]][coordCompare[2]] = 0;
+		}
+
+		stepsCount += 1;
+
+		if (!zeroField.checkForZeros())
+		{
+			std::cout << "Game is completed. Steps made - " << stepsCount << std::endl;
+			flag = false;
+		}
+
+		system("pause");
+	}
 }

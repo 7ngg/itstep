@@ -8,6 +8,7 @@
 #include "./include/sea_battle.h"
 #include "./include/arithmetic.h"
 #include "./include/lyrics.h"
+#include "./include/memory.h"
 
 int main() {
 	using namespace std;
@@ -20,13 +21,13 @@ int main() {
 	char* line = new char[128] {};
 	
 	cout
-		<< "Выберите задание:" << endl
-		<< "1. Морской бой" << endl
-		<< "2. Пятнашки" << endl
-		<< "3. Cписок дел" << endl
-		<< "4. Игра \'Память\'" << endl
-		<< "5. Подсчет арифметического выражения" << endl
-		<< "6. Приложение \'Каталог текстов песен\'" << endl
+		<< "Choose a task:" << endl
+		<< "1. Sea battle" << endl
+		<< "2. Pyatnashki" << endl
+		<< "3. To do list" << endl
+		<< "4. Memory game" << endl
+		<< "5. Arithmetics" << endl
+		<< "6. Lyrics app" << endl
 		<< "> ";
 	cin >> choice;
 	cin.ignore();
@@ -39,6 +40,10 @@ int main() {
 	case 3:
 
 
+		break;
+
+	case 4:
+		memoryMainFunction();
 		break;
 
 	case 5:
@@ -54,6 +59,12 @@ int main() {
 	case 6:
 		lyricsMainFunction();
 		break;
+
+	case 10:
+	{
+		int* arr = new int[5]{ 1, 2, 3, 4 ,5 };
+		cout << isMember(arr, 5, 1) << endl;
+	}
 
 	default:
 		cout << "No such option" << endl;

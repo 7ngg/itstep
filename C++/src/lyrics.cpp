@@ -260,7 +260,7 @@ void lyricsMainFunction() {
 
 			for (size_t i = 0; i < songsCount; i++)
 			{
-				if (compare(playlist[i].author, playlist[case6Choice].author))
+				if (compare(playlist[i].author, playlist[case6Choice - 1].author))
 				{
 					std::cout << playlist[i].name << ": " << '\n' << '\t';
 					playlist[i].showLyrics();
