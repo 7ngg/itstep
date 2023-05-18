@@ -80,6 +80,7 @@ void memoryMainFunction() {
 	int width{}, height{};
 	bool flag = true;
 	int stepsCount = 0;
+	uint32_t gameTime = 0;
 
 	while (true)
 	{
@@ -100,6 +101,8 @@ void memoryMainFunction() {
 	gameField zeroField(width, height);
 	newField.randomise();
 	
+	uint32_t timeStart = clock();
+
 	while (flag)
 	{
 		int x{}, y{};
@@ -150,10 +153,10 @@ void memoryMainFunction() {
 			}
 		}
 		
-		bool sameSpotCheck = false ? (coordCompare[0] == coordCompare[2] and coordCompare[1] == coordCompare[3]) : true;			// if user clicked the same spot twice
-		bool valueCompare = false ? (zeroField.mainField[coordCompare[1]][coordCompare[0]] != zeroField.mainField[coordCompare[3]][coordCompare[2]]) : true;			// comparing values
+		bool sameSpotCheck = true ? (coordCompare[0] == coordCompare[2] and coordCompare[1] == coordCompare[3]) : false;			// if user clicked the same spot twice
+		bool valueCompare = true ? (zeroField.mainField[coordCompare[1]][coordCompare[0]] == zeroField.mainField[coordCompare[3]][coordCompare[2]]) : false;			// comparing values
 		
-		if (not valueCompare or sameSpotCheck)
+		if (!valueCompare or sameSpotCheck)
 		{
 			zeroField.mainField[coordCompare[1]][coordCompare[0]] = 0;
 			zeroField.mainField[coordCompare[3]][coordCompare[2]] = 0;
@@ -163,7 +166,13 @@ void memoryMainFunction() {
 
 		if (!zeroField.checkForZeros())
 		{
-			std::cout << "Game is completed. Steps made - " << stepsCount << std::endl;
+			uint32_t timeEnd = clock();
+			gameTime = timeEnd - timeStart;
+
+			std::cout
+				<< "Game is completed." << '\n'
+				<< "Steps made - " << stepsCount << '\n'
+				<< "Time spent - " << gameTime / 1000 << " seconds" << std::endl;
 			flag = false;
 		}
 
