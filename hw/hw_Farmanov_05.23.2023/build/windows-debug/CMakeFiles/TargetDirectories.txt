@@ -1,0 +1,3 @@
+C:/Users/tng/itstep/hw/hw_Farmanov_05.23.2023/build/windows-debug/CMakeFiles/output.dir
+C:/Users/tng/itstep/hw/hw_Farmanov_05.23.2023/build/windows-debug/CMakeFiles/ALL_BUILD.dir
+C:/Users/tng/itstep/hw/hw_Farmanov_05.23.2023/build/windows-debug/CMakeFiles/ZERO_CHECK.dir

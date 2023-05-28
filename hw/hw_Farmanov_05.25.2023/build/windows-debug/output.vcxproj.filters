@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\tng\itstep\hw\hw_Farmanov_05.25.2023\hw_Farmanov_05.25.2023.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\tng\itstep\hw\hw_Farmanov_05.25.2023\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D9A178F5-BFE5-3E9E-B725-BDD7EA8282E7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
