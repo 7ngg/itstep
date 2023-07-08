@@ -29,6 +29,8 @@ public:
 
         std::cout << "Enter price: ";
         stream >> newCoat.price;
+
+        return stream;
     }
 
     Overcoat operator = (Overcoat otherCoat) {
@@ -36,7 +38,7 @@ public:
         this->type = otherCoat.type;
     }
 
-    friend std::ostream& operator << (std::ostream& stream, const Overcoat newCoat) {
+    friend std::ostream& operator << (std::ostream& stream, const Overcoat& newCoat) {
         if (newCoat.type == COVERT)
             stream << "Type: Covert";
 
@@ -49,6 +51,8 @@ public:
         stream << '\t';
 
         stream << "Price: " << newCoat.price;
+
+        return stream;
     }
 
     friend bool operator == (Overcoat& coat_1, Overcoat& coat_2) {

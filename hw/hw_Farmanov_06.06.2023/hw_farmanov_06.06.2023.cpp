@@ -20,6 +20,7 @@ void boolPrint(bool expression) {
 int main(int, char**){
     int16_t choice{};
     Overcoat coat_1{}, coat_2{}, coat_3{};
+    Flat flat_1{}, flat_2{}, flat_3{};
 
     std::cout 
         << "Choose task: " << '\n'
@@ -49,6 +50,23 @@ int main(int, char**){
         
         std::cout << "Coat 1 price > Coat 3 price: ";
         boolPrint(coat_1 == coat_2);
+
+        break;
+
+    case 2:
+        std::cout << "Flat 1 data: " << std::endl;
+        std::cin >> flat_1;
+        system("cls");
+        std::cout << "Flat 2 data: " << std::endl;
+        std::cin >> flat_2;
+
+        flat_3 = flat_2;
+
+        std::cout << "Flat 3 area == Flat 2 area: ";
+        boolPrint(flat_3 == flat_2);
+
+        std::cout << "Flat 1 price > Flat 2 price: ";
+        boolPrint(flat_1 > flat_2);
 
         break;
 
