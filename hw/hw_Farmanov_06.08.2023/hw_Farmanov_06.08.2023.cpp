@@ -8,9 +8,9 @@ template<typename T>
 class MyList {
 public:
     struct Node {
-        T data{}; // значение
-        Node* next{}; // указатель на следующий элемент
-        Node* previous{}; // указатель на предыдущий элемент
+        T data{};
+        Node* next{};
+        Node* previous{};
 
         Node(T data) {
             this->data = data;
@@ -39,6 +39,7 @@ public:
             current = current->next;
         }
         current->next = new Node(data);
+        current->next->previous = current;
     }
 
 
@@ -58,6 +59,7 @@ public:
             if (counter == index) {
                 return current->data;
             }
+            current->previous = current;
             current = current->next;
             counter++;
         }
@@ -69,7 +71,6 @@ private:
 };
 
 int main() {
-
     MyList<int> newList{};
     
     newList.pushBack(10);
@@ -77,6 +78,8 @@ int main() {
     newList.pushBack(30);
 
     cout << newList << endl;
+    cout << '\n';
+    cout << newList[1] << endl;
 
     return 0;
 }
