@@ -15,6 +15,12 @@ public:
         this->memoryFrequency = _memoryFrequency;
     }
 
+    GPU(const GPU& other) {
+        this->name = other.name;
+        this->coreFrequency = other.coreFrequency;
+        this->memoryFrequency = other.memoryFrequency;
+    }
+
     friend std::ostream& operator << (std::ostream&  stream, const GPU myGPU) {
         stream 
             << "GPU: " << '\n'
@@ -36,6 +42,11 @@ public:
     Storage(std::string _name, uint16_t _capacity) {
         this->name = _name;
         this->capacity = _capacity;
+    }
+
+    Storage(const Storage& other) {
+        this->name = other.name;
+        this->capacity = other.capacity;
     }
 
     friend std::ostream& operator << (std::ostream& stream, const Storage myStorage) {
@@ -64,6 +75,11 @@ public:
     PC_case(std::string _name, uint16_t caseType) {
         this->name = _name;
         this->type = pc_case_type(caseType);
+    }
+
+    PC_case (const PC_case& other) {
+        this->name = other.name;
+        this->type = other.type;
     }
 
     void printTypes() {
@@ -113,6 +129,12 @@ private:
             this->coresCount = _coresCount;
         }
 
+        CPU(const CPU& other) {
+            this->name = other.name;
+            this->coresCount = other.coresCount;
+            this->frequency = other.frequency;
+        }
+
         friend std::ostream& operator << (std::ostream& stream, const CPU myCPU) {
             stream
                 << "CPU:" << '\n'
@@ -134,6 +156,11 @@ private:
         Motherboard(std::string _name, std::string _socket) {
             this->name = _name;
             this->socket = _socket;
+        }
+
+        Motherboard(const Motherboard& other) {
+            this->name = other.name;
+            this->socket = other.socket;
         }
 
         friend std::ostream& operator << (std::ostream& stream, const Motherboard myMB) {
@@ -158,6 +185,11 @@ private:
             this->frequency = _frequency;
         }
 
+        RAM(const RAM& other) {
+            this->name = other.name;
+            this->frequency = other.frequency;
+        }
+
         friend std::ostream& operator << (std::ostream& stream, const RAM myRAM) {
             stream
                 << "Memory: " << '\n'
@@ -178,6 +210,11 @@ private:
         PSU(std::string _name, uint16_t _capacity) {
             this->name = _name;
             this->capacity = _capacity;
+        }
+
+        PSU(const PSU& other) {
+            this->name = other.name;
+            this->capacity = other.capacity;
         }
 
         friend std::ostream& operator << (std::ostream& stream, const PSU myPSU) {
@@ -265,6 +302,33 @@ public:
         this->pc_case = new PC_case { globalName, numeric_1 };
     }
 
+    PC(const PC& other) {
+        this->cpu = new CPU(*other.cpu);
+        //*this->cpu = *other.cpu;
+
+        this->motherboard = new Motherboard(*other.motherboard);
+        //this->motherboard = other.motherboard;
+
+        this->ram = new RAM(*other.ram);
+        //this->ram = other.ram;
+
+        this->gpu = new GPU(*other.gpu);
+        //this->gpu = other.gpu;
+
+        this->storage = new Storage(*other.storage);
+        //this->storage = other.storage;
+
+        this->psu = new PSU(*other.psu);
+        //this->psu = other.psu;
+
+        this->pc_case = new PC_case(*other.pc_case);
+        //this->pc_case = other.pc_case;
+    }
+
+    void f() {
+        std::cout << *this->cpu << std::endl;
+    }
+
     ~PC() {
         delete[] motherboard;
         delete[] cpu;
@@ -287,11 +351,17 @@ public:
 
         return stream;
     }
+
+    friend std::istream& operator >> (std::istream& stream, PC pc) {
+
+    }
 };
 
 
 
 int main(int, char**){
-    PC* newPC = new PC;
-    std::cout << *newPC << std::endl;
+    PC* newPC = new PC{};
+    PC* otherPC = new PC(*newPC);
+
+    std::cout << *otherPC << std::endl;
 }
