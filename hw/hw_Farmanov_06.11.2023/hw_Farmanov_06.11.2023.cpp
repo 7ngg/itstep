@@ -5,5 +5,8 @@
 #include "characterType.h"
 
 int main(int, char**){
-    std::cout << "Hello, from hw_Farmanov_06.11.2023!\n";
+    Character newC;
+    newC.selectCharacterRace();
+    newC.selectCharacterType();
+    std::cout << newC << std::endl;
 }

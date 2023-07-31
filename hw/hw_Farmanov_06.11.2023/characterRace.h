@@ -1,3 +1,5 @@
+#pragma once
+#include <iostream>
 #include <iostream>
 
 enum Gender {
@@ -14,6 +16,19 @@ public:
 
     virtual void rename() = 0;
     virtual void print() = 0;
+
+    characterRace() {
+        uint16_t gender{};
+
+        std::cout
+            << "Select gender: " << '\n'
+            << "1. Male" << '\n'
+            << "2. Female" << '\n'
+            << "> ";
+        std::cin >> gender;
+        this->gender = Gender(gender);
+    }
+
 
     std::string get_gender(Gender gender) {
         if (gender == MALE)
