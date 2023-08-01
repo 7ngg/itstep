@@ -33,9 +33,12 @@
     <ClCompile Include="src\lyrics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="src\memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\arithmetic.h">
@@ -53,11 +56,14 @@
     <ClInclude Include="include\lyrics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="include\global_functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\memory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f
   </ItemGroup>
 </Project>

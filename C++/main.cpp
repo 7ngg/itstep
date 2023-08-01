@@ -8,7 +8,10 @@
 #include "./include/sea_battle.h"
 #include "./include/arithmetic.h"
 #include "./include/lyrics.h"
+<<<<<<< HEAD
 #include "./include/memory.h"
+=======
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f
 
 int main() {
 	using namespace std;
@@ -58,6 +61,7 @@ int main() {
 
 	case 6:
 		lyricsMainFunction();
+<<<<<<< HEAD
 		break;
 
 	case 10:
@@ -65,6 +69,10 @@ int main() {
 		int* arr = new int[5]{ 1, 2, 3, 4 ,5 };
 		cout << isMember(arr, 5, 1) << endl;
 	}
+=======
+
+		break;
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f
 
 	default:
 		cout << "No such option" << endl;

@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <ctime>
 
 #include "../include/memory.h"
@@ -178,4 +179,14 @@ void memoryMainFunction() {
 
 		system("pause");
 	}
+=======
+
+#include "../include/memory.h"
+
+
+void memoryMainFunction() {
+	uint16_t dimensions = 0;
+	std::cout << "Enter field dimensions: " << '\n';
+	std::cout
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f
 }

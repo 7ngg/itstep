@@ -1,5 +1,6 @@
 #pragma once
 
+<<<<<<< HEAD
 struct gameField
 {
 	int width{};
@@ -22,3 +23,6 @@ struct gameField
 };
 
 void memoryMainFunction();
+=======
+uint16_t dimension = 0;
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f

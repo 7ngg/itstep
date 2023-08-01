@@ -131,7 +131,10 @@
     <ClCompile Include="src\arithmetic.cpp" />
     <ClCompile Include="src\global_functions.cpp" />
     <ClCompile Include="src\lyrics.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="src\memory.cpp" />
+=======
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f
     <ClCompile Include="src\sea_battle.cpp" />
     <ClCompile Include="src\ToDo.cpp" />
   </ItemGroup>
@@ -140,7 +143,10 @@
     <ClInclude Include="include\global_functions.h" />
     <ClInclude Include="include\json.hpp" />
     <ClInclude Include="include\lyrics.h" />
+<<<<<<< HEAD
     <ClInclude Include="include\memory.h" />
+=======
+>>>>>>> f3913e17fd32d1211c71ec2b132bacccfe050e7f
     <ClInclude Include="include\sea_battle.h" />
     <ClInclude Include="include\ToDo.h" />
   </ItemGroup>
