@@ -2,19 +2,21 @@
 
 #include <iostream>
 #include <vector>
-#include <cstdint>
+
 
 struct TestResult
 {
+    std::string subjectName;
     uint16_t correctAnswers = 0;
     double mark = 0.;
     double persentage = 0.;
 
     friend std::ostream& operator << (std::ostream& stream, const TestResult result) {
         stream
-            << "Correct answers: " << result.correctAnswers << '\n'
-            << "Mark: " << result.mark << '\n'
-            << "Persentage: " << result.persentage << '\n';
+            << result.subjectName << '\n'
+            << '\t' << "Correct answers: " << result.correctAnswers << '\n'
+            << '\t' << "Mark: " << result.mark << '\n'
+            << '\t' << "Persentage: " << result.persentage << '\n';
 
         return stream;
     }
@@ -35,9 +37,20 @@ class Subject {
     };
 
     std::string subjectName;
-    std::vector<Task*> tasksList;
 
 public:
+    std::vector<Task*> tasksList;
+    
+    Subject(std::string subjectName) {
+        this->subjectName = subjectName;
+    }
+
+
+    std::string getSubjectName() {
+        return this->subjectName;
+    }
+
+
     void addTask() {
         std::string taskStatement, taskAnswer;
         
@@ -51,7 +64,6 @@ public:
 
     TestResult beginTest() {
         TestResult result;
-        std::cout << tasksList.size();
         for (size_t i = 0; i < tasksList.size(); i++)
         {
             std::string tmpAnswer;
@@ -68,6 +80,7 @@ public:
         
         result.persentage = (double(result.correctAnswers) / tasksList.size()) * 100;
         result.mark = (double(result.correctAnswers) / tasksList.size()) * 12;
+        result.subjectName = this->subjectName;
     
         return result;
     }
