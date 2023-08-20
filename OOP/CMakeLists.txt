@@ -3,4 +3,15 @@ project(OOP)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(OOP main.cpp regex.h)
+set(INC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+include_directories(${INC_DIR})
+
+set(SRC_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+)
+
+add_executable(main ${SRC_FILES})
+
+target_include_directories(main PRIVATE ${INC_DIR})
+

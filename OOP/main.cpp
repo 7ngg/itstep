@@ -1,62 +1,59 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
-#include <vector>
-#include <regex>
-#include <fstream>
 
-#include "regex.h"
-#include "json.hpp"
+#include "authorization.hpp"
+#include "admin.hpp"
 
-using json = nlohmann::json;
-
-static bool first_boot = false;
 
 int main() {
-    std::string admin_username, admin_password;
-    static uint16_t choice = 0;
+    Admin admin{};
+    uint16_t choice = 0;
 
-    if (first_boot)
-    {
-        first_boot = false;
-
-        while (not std::regex_match(admin_username, USERNAME))
-        {
-            std::cout << "Enter admin username: ";
-            std::getline(std::cin, admin_username);
-        }
-        while (not std::regex_match(admin_password, PASSWORD))
-        {
-            std::cout << "Enter admin password: ";
-            std::getline(std::cin, admin_password);
-        }
-
-        json data = {
-                {"Password", admin_password},
-                {"Username", admin_username},
-        };
-
-        std::ofstream stream("admin.json");
-        stream << std::setw(4) << data << std::endl;
-    }
-
-    std::cout 
-        << "1. Administrator" << '\n'
-        << "2. User" << '\n'
+    std::cout
+        << "1. Sign up" << '\n'
+        << "2. Sign in" << '\n'
+        << "2. Sign out" << '\n'
+        << "0. Exit"
         << "> ";
-    std::cin >> choice;
 
-    switch (choice)
+    while(std::cin >> choice)
     {
-    case 1:
-        
+        std::cin.ignore();
+        switch (choice) {
+            case 0: {
+                admin.printUsers();
+                break;
+            }
+            case 1:
 
-        break;
-    
-    default:
-        break;
-    }   
+                break;
 
+            case 2: {
+                std::cout
+                        << "1. Admin" << '\n'
+                        << "2. User" << '\n'
+                        << "> ";
+                std::cin >> choice;
+
+                switch (choice) {
+                    case 1:
+                        sign_in('a');
+                        break;
+
+                    case 2:
+                        sign_in('u');
+                        break;
+
+                    default:
+                        std::cout << "Authorization failed" << std::endl;
+                        break;
+                }
+            }
+
+            default:
+                std::cout << "No such option" << std::endl;
+                break;
+        }
+    }
 
     return 0;
 }
