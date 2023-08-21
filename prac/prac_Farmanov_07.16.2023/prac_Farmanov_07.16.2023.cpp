@@ -1,118 +1,63 @@
-#include <iostream>
-#include <regex>
-#include <string>
-#include <fstream>
+#include "authorization.hpp"
 
-#include "./include/json.hpp"
-using json = nlohmann::json;
-
-std::regex regular (R"([a-zA-Z0-9]{4,16})");
-
-class userData {
-    std::string username;
-    std::string password;
-
-public:
-    userData() = default;
-
-    userData(std::string _username, std::string _password) {
-        if (not std::regex_match(_username, regular))
-        {
-            throw std::invalid_argument("Invalid username");
-        }
-        if (not std::regex_match(password, regular))
-        {
-            throw std::invalid_argument("Invalid password");
-        }
-        
-        this->username = _username;
-        this->password = _password;
-    }
-
-
-    // friend std::istream& operator >> (std::istream& stream, userData user) {
-    //     std::string tmp_username, tmp_password;
-
-    //     while (std::regex_match(tmp_username, regular))
-    //     {
-    //         std::cout << "Username: ";
-    //         std::getline(std::cin, tmp_username);
-
-    //         if(not std::regex_match(tmp_username, regular))
-    //         {
-    //             std::cout << "Invalid username. Try again..." << std::endl;
-    //         }
-    //     }
-
-    //     while (std::regex_match(tmp_password, regular))
-    //     {
-    //         std::cout << "Username: ";
-    //         std::getline(std::cin, tmp_password);
-
-    //         if(not std::regex_match(tmp_password, regular))
-    //         {
-    //             std::cout << "Invalid password. Try again..." << std::endl;
-    //         }
-    //     }
-        
-    //     user.username = tmp_username;
-    //     user.password = 
-        
-    // }
-};
-
-
-int main(int, char**){
-    static uint16_t choice = 0;
+int main(){
     std::string username, password;
+    static uint16_t choice = 0;
+    static bool flag = true;
 
-    std::cout
-        << "1. Sign in" << '\n'
-        << "2. Sign up" << '\n'
-        << "> ";
-    std::cin >> choice;
-    std::cin.ignore();
-
-    switch (choice)
+    while (flag)
     {
-    case 1:
-    {
-        json j = {
-            {"First", 1},
-            {2, 2},
-        };
+        std::cout
+            << "0. Shut down" << '\n'
+            << "1. Sign up" << '\n'    
+            << "2. Sign in" << '\n'
+            << "3. Sign out" << '\n'
+            << "> ";
+        std::cin >> choice;
+        std::cin.ignore();
 
-        std::cout << j[0].dump();
-    }
-    
-    case 2:
-    {
-        std::cout << "Username: ";
-        std::getline(std::cin, username);
-        std::cout << "Password: ";
-        std::getline(std::cin, password);
-
-        try
+        switch (choice)
         {
-            userData(username, password);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
+        case 0:
+            flag = false;
+            break;
+
+        case 1:
+            try
+            {
+                sign_up();
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+            break;
+        
+        case 2:
+            try
+            {
+                sign_in();
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+            break;
+
+        case 3:
+            try
+            {
+                sign_out();
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+            break;
+
+        default:
+            std::cout << "No such option" << std::endl;
             break;
         }
-        
-        std::ofstream load;
-        load.open("data.json", std::ios::app);
-        json data = {
-            {username, password},
-        };
-        load << std::setw(4) << data << std::endl;
-
-        break;
-    }
-
-    default:
-        break;
     }
 }

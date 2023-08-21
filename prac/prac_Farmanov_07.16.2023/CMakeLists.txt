@@ -1,11 +1,16 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(prac_Farmanov_07.16.2023 VERSION 0.1.0 LANGUAGES C CXX)
+cmake_minimum_required(VERSION 3.25)
+project(OOP)
 
-include(CTest)
-enable_testing()
+set(CMAKE_CXX_STANDARD 23)
 
-add_executable(output prac_Farmanov_07.16.2023.cpp)
+set(INC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+include_directories(${INC_DIR})
+
+set(SRC_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/prac_Farmanov_07.16.2023.cpp
+)
+
+add_executable(main ${SRC_FILES})
+
+target_include_directories(main PRIVATE ${INC_DIR})
