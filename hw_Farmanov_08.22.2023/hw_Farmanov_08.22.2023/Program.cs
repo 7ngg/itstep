@@ -6,6 +6,8 @@ taskChoice = int.Parse(Console.ReadLine());
 switch (taskChoice)
 {
     case 1:
+    {
+
         int num;
         System.Console.Write("Enter num: ");
         num = int.Parse(Console.ReadLine());
@@ -29,9 +31,11 @@ switch (taskChoice)
         }
 
         break;
+    }
 
     case 2:
-        int percent;
+    {
+        int num, percent;
         float result;
 
         System.Console.Write("Enter num: ");
@@ -43,9 +47,12 @@ switch (taskChoice)
         System.Console.WriteLine($"Result: {result}");
 
         break;
+    }
 
     case 3:
+    {
         int num1, num2, num3, num4;
+        int result;
 
         Console.Write("Num1: ");
         num1 = int.Parse(Console.ReadLine());
@@ -60,11 +67,40 @@ switch (taskChoice)
         System.Console.WriteLine($"Result - {result}");
 
         break;
+    }
 
     case 4:
-        bool b;
+    {
+        string str;
+        int index_1, index_2;
 
-        b = int.TryParse(Console.ReadLine(), out num);
+        System.Console.Write("Enter num: ");
+        str = Console.ReadLine();
+
+        if (str.Length != 6)
+        {
+            throw new Exception("Invalid length");
+        }
+
+        System.Console.Write("Index to replace 1: ");
+        index_1 = int.Parse(Console.ReadLine());
+        System.Console.Write("Index to replace 2: ");
+        index_2 = int.Parse(Console.ReadLine());
+
+        char tmp = str[index_1];
+        char[] tmpStr = str.ToCharArray();
+        tmpStr[index_1] = str[index_2];
+        tmpStr[index_2] = str[index_1];
+        str = new string(tmpStr);
+        System.Console.WriteLine($"Result - {str}");
 
         break;
+    }
+
+    case 5:
+    {
+        
+
+        break;
+    }
 }
