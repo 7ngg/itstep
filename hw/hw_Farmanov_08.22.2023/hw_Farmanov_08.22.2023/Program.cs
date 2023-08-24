@@ -99,7 +99,97 @@ switch (taskChoice)
 
     case 5:
     {
-        
+        int dd, mm, yy;
+        string season;
+
+        Console.Write("Day: ");
+        dd = int.Parse(Console.ReadLine());
+        Console.Write("Month: ");
+        mm = int.Parse(Console.ReadLine());
+        Console.Write("Year: ");
+        yy = int.Parse(Console.ReadLine());
+
+        DateOnly date = new DateOnly(yy, mm, dd);
+
+        if (mm == 12 || mm <= 2)
+        {
+            season = "Winter";
+        }
+        else if (mm >= 3 && mm <= 5)
+        {
+            season = "Spring";
+        }
+        else if (mm >= 6 && mm <= 8)
+        {
+            season = "Summer";
+        }
+        else if (mm >= 9 && mm <= 11)
+        {
+            season = "Autumn";
+        }
+        else
+        {
+            season = " ";
+        }
+
+        Console.WriteLine($"{season} {date.DayOfWeek}");
+
+        break;
+    }
+
+    case 6:
+    {
+        System.Console.WriteLine("Temperature: ");
+        int temperature = int.Parse(Console.ReadLine());
+
+        System.Console.WriteLine(
+            "1. F to C\n",
+            "2. C to F",
+            "> "
+        );
+        int choice = int.Parse(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                System.Console.WriteLine($"Result - {(temperature - 32) * 5 / 9}");
+                break;
+
+            case 2:
+                System.Console.WriteLine($"Result - {temperature * 9 / 5 + 32}");
+                break;
+
+            default:
+                break;
+        }
+
+        break;
+    }
+
+    case 7:
+    {
+        int start, end;
+
+        System.Console.Write("Start: ");
+        start = int.Parse(Console.ReadLine());
+        System.Console.Write("End: ");
+        end = int.Parse(Console.ReadLine());
+
+        if (start > end)
+        {
+            (end, start) = (start, end);
+        }
+
+        int[] arr = new int[end - start + 1];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = start + i;  
+        }
+
+        foreach (var item in arr)
+        {   
+            System.Console.Write($"{item} ");
+        }
 
         break;
     }
