@@ -1,4 +1,4 @@
-﻿int taskChoice;
+int taskChoice;
 
 System.Console.Write("Choose task: ");
 taskChoice = int.Parse(Console.ReadLine());
