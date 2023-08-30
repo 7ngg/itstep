@@ -1,4 +1,7 @@
-﻿using System.Net;
+﻿using System.Data;
+using System.Globalization;
+using System.Text;
+using System.Text.RegularExpressions;
 
 int taskChoice;
 
@@ -101,7 +104,7 @@ switch (taskChoice)
         string str;
         int key;
 
-        System.Console.Write("String: ");
+        Console.Write("String: ");
         str = Console.ReadLine();
         System.Console.Write("Key: ");
         key = int.Parse(Console.ReadLine());
@@ -117,7 +120,53 @@ switch (taskChoice)
 
     case 4:
     {
-        
+        break;
+    }
+
+    case 5:
+    {
+        string expression;
+
+        System.Console.Write("Expression: ");
+        expression = Console.ReadLine();
+
+        var result = new DataTable().Compute(expression, null);
+        System.Console.WriteLine($"Result: {result}");
+
+        break;
+    }
+
+    case 6:
+    {
+        System.Console.WriteLine("Text: ");
+        string text = Console.ReadLine();
+        StringBuilder result = new();
+        result.Append(char.ToUpper(text[0]));
+
+        string[] sentences = text.Split('.', '!', '?');
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            
+        }
+
+        break;
+    }
+
+    case 7:
+    {
+        System.Console.WriteLine("Text: ");
+        string text = Console.ReadLine();
+        System.Console.Write("Banword: ");
+        string banWord = Console.ReadLine();
+
+        string result = Regex.Replace(text, banWord, "****", RegexOptions.IgnoreCase);
+        int count = Regex.Count(text, banWord);
+
+        System.Console.WriteLine(result);
+        System.Console.WriteLine($"Replaced times: {count}");
+
+        break;
     }
 }
 
