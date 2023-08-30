@@ -120,6 +120,74 @@ switch (taskChoice)
 
     case 4:
     {
+        Console.Write("Rows count: ");
+        int rows = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Columns count: ");
+        int columns = Convert.ToInt32(Console.ReadLine());
+
+        int[,] matrix_1 = new int[rows, columns];
+        int[,] matrix_2 = new int[columns, rows];
+        
+        Random random = new();
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                matrix_1[i, j] = random.Next(5);
+            }
+        }
+        for (int i = 0; i < columns; i++)
+        {
+            for (int j = 0; j < rows; j++)
+            {
+                matrix_2[i, j] = random.Next(5);
+            }
+        }
+
+        System.Console.WriteLine("Matrix 1: ");
+        printMatrix(matrix_1);
+        System.Console.WriteLine("Matrix 2: ");
+        printMatrix(matrix_2);
+
+        Console.Write(
+            "1. Add matrices\n" +
+            "2. Multiply by number\n" +
+            "3. Multiply matrices\n" + 
+            "> "
+        );
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+            {
+                Console.WriteLine("Result");
+                printMatrix(addMatrices(matrix_1, matrix_2));
+                break;
+            }
+
+            case 2:
+            {
+                Console.Write("Enter multiplier: ");
+                int multiplier = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Matrix 1: ");
+                printMatrix(multiplyMatrixByNum(matrix_1, multiplier));
+                Console.WriteLine("Matrix 2: ");
+                printMatrix(multiplyMatrixByNum(matrix_2, multiplier));
+                break;
+            }
+
+            case 3:
+            {
+                System.Console.WriteLine("Result: ");
+                printMatrix(multiplyMatrix(matrix_1, matrix_2));
+                break;
+            }
+
+            default:
+                break;
+        }
+
         break;
     }
 
@@ -127,7 +195,7 @@ switch (taskChoice)
     {
         string expression;
 
-        System.Console.Write("Expression: ");
+        Console.Write("Expression: ");
         expression = Console.ReadLine();
 
         var result = new DataTable().Compute(expression, null);
@@ -138,17 +206,29 @@ switch (taskChoice)
 
     case 6:
     {
-        System.Console.WriteLine("Text: ");
+        Console.WriteLine("Text: ");
         string text = Console.ReadLine();
         StringBuilder result = new();
-        result.Append(char.ToUpper(text[0]));
 
         string[] sentences = text.Split('.', '!', '?');
 
-        for (int i = 0; i < text.Length; i++)
+        for (int i = 0; i < sentences.Length; i++)
         {
-            
+            string sentence = sentences[i].Trim();
+            if (!string.IsNullOrEmpty(sentence))
+            {
+                char[] charStr = sentence.ToCharArray();
+                if (char.IsLower(charStr[0]))
+                {
+                    charStr[0] = char.ToUpper(charStr[0]);
+                }
+                sentences[i] = new string(charStr);
+                result.Append(sentences[i]);
+                result.Append(". ");
+            }
         }
+
+        System.Console.WriteLine($"Result:\n {result.ToString()}");
 
         break;
     }
@@ -197,4 +277,89 @@ static string CaesarEncrypt(string str, int key) {
 
 static string CaesarDecrypt (string str, int key) {
     return CaesarEncrypt(str, 26 - key);
+}
+
+
+static void printMatrix(int[,] matrix) {
+    int rows = matrix.GetLength(0);
+    int columns = matrix.GetLength(1);
+
+    for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                Console.Write($"{matrix[i, j]} ");
+            }
+            System.Console.WriteLine();
+        }
+}
+
+
+static int[,] addMatrices(int[,] matrix_1, int[,] matrix_2) {
+    int matrix_1Rows = matrix_1.GetLength(0);
+    int matrix_1Columns = matrix_1.GetLength(1);
+    int matrix_2Rows = matrix_2.GetLength(0);
+    int matrix_2Columns = matrix_2.GetLength(1);
+
+    if (matrix_1Rows != matrix_2Rows || matrix_1Columns != matrix_2Columns) {
+        throw new ArgumentException("Matrices are not compatible");
+    }
+
+    int[,] result = new int[matrix_1Rows, matrix_1Columns];
+
+    for (int i = 0; i < matrix_1Rows; i++)
+    {
+        for (int j = 0; j < matrix_1Columns; j++)
+        {
+            result[i, j] = matrix_1[i, j] + matrix_2[i, j];
+        }
+    }
+
+    return result;
+}
+
+
+static int[,] multiplyMatrixByNum(int[,] matrix, int multiplier) {
+    int rows = matrix.GetLength(0);
+    int columns = matrix.GetLength(1);
+    int[,] result = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            result[i, j] = matrix[i, j] * multiplier;
+        }
+    }
+
+    return result;
+}
+
+
+static int[,] multiplyMatrix(int[,] matrix_1, int[,] matrix_2) {
+    int matrix_1Rows = matrix_1.GetLength(0);
+    int matrix_1Columns = matrix_1.GetLength(1);
+    int matrix_2Rows = matrix_2.GetLength(0);
+    int matrix_2Columns = matrix_2.GetLength(1);
+
+    if (matrix_1Rows != matrix_2Columns)
+    {
+        throw new ArgumentException("Matrices are not compatible");
+    }
+    
+    int[,] result = new int[matrix_1Rows, matrix_2Columns];
+    for (int i = 0; i < matrix_1Rows; i++)
+    {
+        for (int j = 0; j < matrix_2Columns; j++)
+        {
+            int tmpValue = 0;
+            for (int k = 0; k < matrix_1Columns; k++)
+            {
+                tmpValue += matrix_1[i, k] * matrix_2[k, j];
+            }
+            result[i, j] = tmpValue;
+        }
+    }
+
+    return result;
 }
