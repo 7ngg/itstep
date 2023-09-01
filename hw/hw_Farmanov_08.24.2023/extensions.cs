@@ -29,7 +29,16 @@ namespace ExtensionMethods
 
     static class ListExtensionss {
         public static void RemoveBanElements(this List<int> myList, List<int> banElements) {
-            myList.Remove;
+            myList.RemoveAll(f => banElements.Contains(f));
+        }
+
+
+        public static void print(this List<int> myList) {
+            foreach (int i in myList)
+            {
+                Console.Write($"{i} ");
+            }
+            System.Console.WriteLine();
         }
     }
 }
