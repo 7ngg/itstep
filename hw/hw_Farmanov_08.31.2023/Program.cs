@@ -1,5 +1,4 @@
 ﻿using System.Data;
-using System.Security.Cryptography;
 using Integers;
 using Passport;
 
@@ -51,7 +50,53 @@ switch (taskChoice)
         System.Console.Write("Expression: ");
         string expression = Console.ReadLine();
         string[] operatorsArray = new string[] { "<=", ">=", ">" , "<", "!=", "==" };
-        string[] numbers = expression.Split(operatorsArray, StringSplitOptions.None);
+        string sign = string.Empty;
+
+        foreach (var item in operatorsArray)
+        {
+            if (expression.Contains(item))
+            {
+                sign = item;
+            }
+        }
+
+        string operand_1 = string.Empty, operand_2 = string.Empty;
+
+        if (!string.IsNullOrEmpty(sign))
+        {
+            string[] operands = expression.Split(sign);
+            operand_1 = operands[0].Trim();
+            operand_2 = operands[1].Trim();
+        }
+        else
+        {
+            throw new Exception("No operator found in expression");
+        }
+
+        if (sign == "<=")
+        {
+            System.Console.WriteLine($"Result: {Convert.ToInt32(operand_1) <= Convert.ToInt32(operand_2)}");
+        }
+        else if (sign == ">=")
+        {
+            System.Console.WriteLine($"Result: {Convert.ToInt32(operand_1) >= Convert.ToInt32(operand_2)}");
+        }
+        else if (sign == "<")
+        {
+            System.Console.WriteLine($"Result: {Convert.ToInt32(operand_1) < Convert.ToInt32(operand_2)}");
+        }
+        else if (sign == ">")
+        {
+            System.Console.WriteLine($"Result: {Convert.ToInt32(operand_1) > Convert.ToInt32(operand_2)}");
+        }
+        else if (sign == "!=")
+        {
+            System.Console.WriteLine($"Result: {Convert.ToInt32(operand_1) != Convert.ToInt32(operand_2)}");
+        }
+        else if (sign == "==")
+        {
+            System.Console.WriteLine($"Result: {Convert.ToInt32(operand_1) == Convert.ToInt32(operand_2)}");
+        }
 
         break;
     }
