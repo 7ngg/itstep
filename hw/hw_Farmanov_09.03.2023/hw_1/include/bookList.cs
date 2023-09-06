@@ -19,23 +19,42 @@ namespace BookList
     public class BooksToRead {
         internal List<Book> Schedule;
 
-
-        internal void AddBook(string title, string author) 
+        public BooksToRead()
         {
+            Schedule = new List<Book>();
+        }
+
+
+        public void AddBook() 
+        {
+            System.Console.Write("Book title: ");
+            string title = Console.ReadLine();
+            System.Console.Write("Author: ");
+            string author = Console.ReadLine();
             Schedule.Add(new Book(title, author));
         }
 
-        internal void RemoveBook(Book book)
+        public void RemoveBook()
         {
-            Schedule.Remove(book);
+            ShowSchedule();
+            Console.Write("Enter book title to remove: ");
+            string remove = Console.ReadLine();
+            Schedule.RemoveAll(f => f.Title == remove);
         }
 
-        internal bool IsScheduled(Book book)
+        public bool IsScheduled()
         {
-            return Schedule.Contains(book);
+            Console.Write("Title: ");
+            string title = Console.ReadLine();
+            Console.Write("Author: ");
+            string author = Console.ReadLine();
+            if (Schedule.Contains(new Book(title, author)))
+                return true;
+            else
+                return false;
         }
 
-        internal void showSchedule()
+        public void ShowSchedule()
         {
             foreach (Book book in Schedule)
             {

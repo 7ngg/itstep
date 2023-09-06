@@ -8,14 +8,8 @@ namespace Magazine
         public string? ContactEmail { get; set; }
 
         public MagazineProperies() {
-            Console.WriteLine("Foundation date: ");
-            Console.Write("Year: ");
-            int yy = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Month: ");
-            int mm = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Day: ");
-            int dd = Convert.ToInt32(Console.ReadLine());
-            FoundationDate = new DateOnly(yy, mm, dd);
+            FoundationDate = new DateOnly();
+            FoundationDate = DateOnly.FromDateTime(DateTime.Now);
         }
 
 #region Methods
@@ -25,7 +19,8 @@ namespace Magazine
                 $"Name: {Name ?? throw new NullReferenceException()}\n" +
                 $"Foundation date: {FoundationDate.ToString()}\n" +
                 $"Phone: {ContactPhone??= "None"}\n" +
-                $"Email: {ContactEmail??= "None"}\n"
+                $"Email: {ContactEmail??= "None"}\n" +
+                $"Employees count: {EmployeesCount}\n"
             );
         }
 
