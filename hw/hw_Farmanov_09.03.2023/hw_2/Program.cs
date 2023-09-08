@@ -1,5 +1,4 @@
 ﻿using Trading;
+using Instruments;
 
-var product = new Product { Name = "name", Paper = 10, Metal = 22};
-product.LowerPrice(7.5);
-System.Console.WriteLine(product.ToString());
+var instrument = new Violin();

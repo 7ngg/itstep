@@ -1,8 +1,14 @@
 namespace Devices
 {
     public abstract class Device {
-        public string Name { get; set;}
-        public string Description { get; set;}
+        protected string Name;
+        protected string Description;
+
+        public Device(string name, string description)
+        {
+            Name = name ?? throw new NullReferenceException();
+            Description = description;
+        }
 
 
         public abstract void Sound();
@@ -11,11 +17,7 @@ namespace Devices
     }
 
     public class Kettle : Device {
-        public Kettle()
-        {
-            Name = "Kettle";
-            Description = "Kettle description";
-        }
+        public Kettle() : base("Kettle", "Kettle description") { }
 
         public override void Desc()
         {
@@ -29,22 +31,18 @@ namespace Devices
 
         public override void Sound()
         {
-            System.Console.WriteLine("Kettle sounds");
+            System.Console.WriteLine($"{Name} sounds");
         }
     }
 
-    class Microwave : Device
+    public class Microwave : Device
     {
-        public Microwave()
-        {
-            Name = "Microwave";
-            Description = "Microwave description";
-        }
+        public Microwave() : base("Microwave", "Microwave description") { }
 
 
         public override void Sound()
         {
-            System.Console.WriteLine("Microwave sounds");
+            System.Console.WriteLine($"{Name} sounds");
         }
 
         public override void Show()
@@ -58,12 +56,44 @@ namespace Devices
         }
     }
 
-    class Car : Device
+    public class Car : Device
     {
-        public Car()
+        public Car() : base("Car", "Car description") { }
+
+
+        public override void Sound()
         {
-            Name = "Car";
-            Description = "Car description";
+            System.Console.WriteLine($"{Name} sounds");
+        }
+        public override void Show()
+        {
+            System.Console.WriteLine($"Name: {Name}");
+        }
+
+        public override void Desc()
+        {
+            System.Console.WriteLine($"Description: {Description}");
+        }
+    }
+
+    public class Steamboat : Device
+    {
+        public Steamboat() : base("Steamboat", "Steamboat description") { }
+
+
+        public override void Sound()
+        {
+            System.Console.WriteLine($"{Name} sounds");
+        }
+
+        public override void Show()
+        {
+            System.Console.WriteLine($"Name: {Name}");
+        }
+
+        public override void Desc()
+        {
+            System.Console.WriteLine($"Description: {Description}");
         }
     }
 }

@@ -39,7 +39,6 @@ namespace Trading
     public class Product : Money {
         public string Name;
 
-
         public void LowerPrice(double amount) {
             if (amount < 0)
             {
