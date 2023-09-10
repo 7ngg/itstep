@@ -1,9 +1,8 @@
 #pragma once
 #include <iostream>
-#include <iostream>
 
 enum Gender {
-    MALE,
+    MALE = 1,
     FEMALE,
 };
 
@@ -14,9 +13,6 @@ public:
     std::string race;
     Gender gender;
 
-    virtual void rename() = 0;
-    virtual void print() = 0;
-
     characterRace() {
         uint16_t gender{};
 
@@ -26,11 +22,26 @@ public:
             << "2. Female" << '\n'
             << "> ";
         std::cin >> gender;
+        std::cin.ignore();
         this->gender = Gender(gender);
     }
 
+    virtual void rename() {
+        std::string newName{};
 
-    std::string get_gender(Gender gender) {
+        std::cout << "Enter new name: ";
+        getline(std::cin, newName);
+        this->name = newName;
+    }
+
+    virtual void print() {
+        std::cout
+            << "Name: " << this->name << '\n'
+            << "Race" << this->race << '\n'
+            << "Gender: " << this->getGender(this->gender) << std::endl;
+    }
+
+    std::string getGender(Gender gender) {
         if (gender == MALE)
         {
             return "male";
@@ -45,11 +56,6 @@ public:
 
 class Elf : public characterRace {
 private:
-    enum elfNames {
-        FEANOR = 1,
-        FINGOLFIN,
-        FINARFIN,
-    };
 
 public:
     Elf() {
@@ -61,40 +67,11 @@ public:
         this->race = "Elf";
         this->gender = Gender(_gender);
     }
-
-
-    void rename() override {
-        int16_t choice = 0;
-        
-        std::cout << "Choose new name: " << '\n';
-        printNames();
-        std::cout << "> ";
-        std::cin >> choice;
-
-        this->name = elfNames(choice);
-    }
-
-    void print() override {
-        std::cout << "Name: " << name << '\t' << "Race: " << race << '\t' << "Gender: " << get_gender(gender) << std::endl;
-    }
-
-    void printNames() {
-        std::cout
-            << "1. Feanor" << '\n'
-            << "2. Fingolfin" << '\n'
-            << "3. Finarfin" << '\n';
-    }
-
 };
 
 
 class Human : public characterRace {
 private:
-    enum humanNames {
-        TUOR = 1,
-        HUOR,
-        HURIN,
-    };
 
 public:
     Human() {
@@ -106,39 +83,10 @@ public:
         this->race = "Human";
         this->gender = Gender(_gender);
     }
-
-
-    void rename() override {
-        int16_t choice = 0;
-
-        std::cout << "Choose new name: " << '\n';
-        printNames();
-        std::cout << "> ";
-        std::cin >> choice;
-
-        this->name = humanNames(choice);
-    }
-
-    void print() override {
-        std::cout << "Name: " << name << '\t' << "Race: " << race << '\t' << "Gender: " << get_gender(gender) << std::endl;
-    }
-
-    void printNames() {
-        std::cout
-            << "1. Tuor" << '\n'
-            << "2. Huor" << '\n'
-            << "3. Hurin" << '\n';
-    }
-
 };
 
 class Orc : public characterRace {
 private:
-    enum orcNames {
-        AZOG,
-        BOLG,
-        BALCMEG,
-    };
 
 public:
     Orc() {
@@ -149,28 +97,5 @@ public:
         rename();
         this->race = "Orc";
         this->gender = Gender(_gender);
-    }
-
-
-    void rename() override {
-        int16_t choice = 0;
-
-        std::cout << "Choose new name: " << '\n';
-        printNames();
-        std::cout << "> ";
-        std::cin >> choice;
-
-        this->name = orcNames(choice);
-    }
-
-    void print() override {
-        std::cout << "Name: " << name << '\t' << "Race: " << race << '\t' << "Gender: " << get_gender(gender) << std::endl;
-    }
-
-    void printNames() {
-        std::cout
-            << "1. Azog" << '\n'
-            << "2. Bolg" << '\n'
-            << "3. Bolcmeg" << '\n';
     }
 };

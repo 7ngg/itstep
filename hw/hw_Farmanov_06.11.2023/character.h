@@ -10,9 +10,6 @@ private:
     characterType* type{};
     characterRace* race{};
 
-public:
-    Character() = default;
-
     void selectCharacterType() {
         uint16_t choice{};
 
@@ -23,6 +20,7 @@ public:
             << "3. Wizard" << '\n'
             << "> ";
         std::cin >> choice;
+        std::cin.ignore();
 
         switch (choice)
         {
@@ -75,15 +73,25 @@ public:
         }
     }
 
+public:
+    Character() {
+        selectCharacterRace();
+        selectCharacterType();
+        race->rename();
+    }
 
     friend std::ostream& operator << (std::ostream& stream, const Character character) {
         stream
             << "Name: " << character.race->name << '\n'
             << "Race: " << character.race->race << '\n'
-            << "Gender: " << character.race->get_gender(character.race->gender) << '\n'
-            << character.type << '\n';
+            << "Gender: " << character.race->getGender(character.race->gender) << '\n'
+            << "Type: " << character.type->getType() << '\n';
 
         return stream;
+    }
+
+    void assault(characterType& enemy) {
+        enemy.healthPoints -= (this->type->attack / 10);
     }
 };
 

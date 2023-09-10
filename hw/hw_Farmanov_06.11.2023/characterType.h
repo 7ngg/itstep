@@ -2,7 +2,10 @@
 #include <iostream>
 
 class characterType {
+private:
 public:
+    std::string type{};
+
     uint16_t healthPoints = 100;
 
     int32_t manaPoints{};
@@ -10,8 +13,10 @@ public:
     int32_t defense{};
     int32_t dexterity{};
 
-    void assault(characterType& enemy) {
-        enemy.healthPoints -= (this->attack / 10);
+    
+
+    std::string getType() {
+        return type;
     }
 
     friend std::ostream& operator << (std::ostream& stream, const characterType type) {
@@ -28,6 +33,7 @@ public:
 class Archer : public characterType {
 public:
     Archer() {
+        type = "Archer";
         this->manaPoints = 60;
         this->attack = 75;
         this->defense = 50;
@@ -38,6 +44,7 @@ public:
 class Wizard : public characterType {
 public:
     Wizard() {
+        type = "Wizard";
         this->manaPoints = 100;
         this->attack = 60;
         this->defense = 75;
@@ -48,6 +55,7 @@ public:
 class Tank : public characterType {
 public:
     Tank() {
+        type = "Tank";
         this->manaPoints = 70;
         this->attack = 70;
         this->defense = 100;
