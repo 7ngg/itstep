@@ -7,8 +7,11 @@
 #include "regex.hpp"
 #include "user.hpp"
 #include "subject.hpp"
+#include "json.hpp"
 
-static std::string userDataFileName = "data.txt";
+using json = nlohmann::json;
+
+static std::string userDataFileName = "data.json";
 
 class Admin {
 private:
@@ -65,7 +68,7 @@ public:
     }
 
     ~Admin() {
-        remove("admin.txt");
+        remove("admin.json");
 
         for (size_t i = 0; i < this->users.size(); i++)
         {
@@ -83,7 +86,7 @@ public:
     void adminMainFunction();
 
 
-    void loadUsers() {
+    /*void loadUsers() {
         std::ifstream in;
         std::string line;
 
@@ -103,10 +106,27 @@ public:
             User* tmpUser = new User{ tmpUsername, tmpPassword };
             this->users.push_back(tmpUser);
         }
+    }*/
+
+
+    void loadUsers() {
+        std::ifstream in;
+
+        for (size_t i = 0; i < this->users.size(); i++)
+        {
+            delete this->users[i];
+        }
+        this->users.clear();
+
+        in.open(userDataFileName);
+        json userDataArray = json::parse(in);
+        for (const auto& item : userDataArray)
+            this->users.push_back(new User{ item["username"], item["password"] });
+        in.close();
     }
 
 
-    void uploadUsers() {
+    /*void uploadUsers() {
         std::ofstream out;
 
         remove(userDataFileName.c_str());
@@ -116,16 +136,47 @@ public:
         {
             out << this->users[i]->username << ' ' << this->users[i]->password << std::endl;
         }
+    }*/
+
+
+    void uploadUsers() {
+        std::ofstream out;
+        json userDataArray = json::array();
+
+        out.open(userDataFileName);
+        for (const auto& item : this->users)
+        {
+            json userData;
+            userData["username"] = item->username;
+            userData["password"] = item->password;
+            userDataArray.push_back(userData);
+        }
+
+        out << userDataArray;
+        out.close();
     }
 
 #pragma region Admin self functions
 
-    void updateAdminFile() const {
+    /*void updateAdminFile() const {
         std::ofstream write;
         write.open("admin.txt");
         write << this->username << ' ' << this->password;
         write.close();
+    }*/
+
+
+    void updateAdminFile() {
+        std::ofstream stream("admin.json");
+        json dataToWrite = json::array();
+        json adminData;
+        adminData["username"] = this->username;
+        adminData["password"] = this->password;
+        dataToWrite.push_back(adminData);
+        stream << std::setw(4) << dataToWrite;
+        stream.close();
     }
+
 
     void changeUsername() {
         std::cout << "Enter admin username: ";

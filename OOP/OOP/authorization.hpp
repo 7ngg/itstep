@@ -15,7 +15,7 @@ enum permissions
 };
 
 static permissions isSignedIn = NONE;
-static std::string fileName = "data.txt";
+static std::string fileName = "data.json";
 
 
 std::string printPermissionLevel(permissions level) {
@@ -30,44 +30,59 @@ std::string printPermissionLevel(permissions level) {
 }
 
 
+//uint16_t UNPW_search(const std::string& name, const std::string& searchUsername, const std::string& searchPassword) {
+//    /*
+//        0 - не найдены ни логин, ни пароль
+//        1 - найдены и логин, и пароль
+//        2 - найден только логин
+//    */
+//
+//    std::ifstream stream(name);
+//
+//    std::string line;
+//    while (getline(stream, line))
+//    {
+//        std::istringstream string_stream(line);
+//        std::string username, password;
+//
+//        if (string_stream >> username >> password)
+//        {
+//            if (username == searchUsername and password == searchPassword)
+//            {
+//                return 1;
+//            }
+//            else if (username == searchUsername)
+//            {
+//                return 2;
+//            }
+//        }
+//    }
+//    
+//    //if (stream.eof() and !stream.fail())
+//    //{
+//    //    return 0;
+//    //}
+//    ///*else if (stream.fail())
+//    //{
+//    //    std::cout << "File cannot be read" << std::endl;
+//    //    throw std::invalid_argument("File cannot be read");
+//    //}*/
+//    //return 0;
+//}
+
+
 uint16_t UNPW_search(const std::string& name, const std::string& searchUsername, const std::string& searchPassword) {
-    /*
-        0 - не найдены ни логин, ни пароль
-        1 - найдены и логин, и пароль
-        2 - найден только логин
-    */
-
     std::ifstream stream(name);
+    json userDataArray = json::parse(stream);
 
-    std::string line;
-    while (getline(stream, line))
+    for (const auto& item : userDataArray)
     {
-        std::istringstream string_stream(line);
-        std::string username, password;
-
-        if (string_stream >> username >> password)
-        {
-            if (username == searchUsername and password == searchPassword)
-            {
-                return 1;
-            }
-            else if (username == searchUsername)
-            {
-                return 2;
-            }
-        }
+        if ((item["username"] == searchUsername) and (item["password"] == searchPassword))
+            return 1;
+        else if (item["username"] == searchUsername)
+            return 2;
     }
-    
-    //if (stream.eof() and !stream.fail())
-    //{
-    //    return 0;
-    //}
-    ///*else if (stream.fail())
-    //{
-    //    std::cout << "File cannot be read" << std::endl;
-    //    throw std::invalid_argument("File cannot be read");
-    //}*/
-    //return 0;
+    return 0;
 }
 
 
@@ -120,7 +135,7 @@ std::string sign_in(permissions level) {
 
         if (level == ADMIN)
         {
-            fileName = "admin.txt";
+            fileName = "admin.json";
             if (UNPW_search(fileName, input_un, input_pw) == 1)
             {
                 std::cout << "Authorization successful" << std::endl;
@@ -134,7 +149,7 @@ std::string sign_in(permissions level) {
         }
         else if (level == USER)
         {
-            fileName = "data.txt";
+            fileName = "data.json";
             if (UNPW_search(fileName, input_un, input_pw) == 1)
             {
                 std::cout << "Authorization successful" << std::endl;

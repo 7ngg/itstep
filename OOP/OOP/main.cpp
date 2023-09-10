@@ -4,12 +4,12 @@
 
 
 int main() {
-    Admin admin();
+    Admin* admin = new Admin();
     bool flag = true;
 
     while(flag)
     {
-        char choice{};
+        uint16_t choice{};
         
         std::cout
             << "1. User sign up" << '\n'
@@ -19,9 +19,8 @@ int main() {
             << "> ";
         std::cin >> choice;
         std::cin.ignore();
-        uint16_t choiceCheck = atoi(&choice);
 
-        switch (choiceCheck)
+        switch (choice)
         {
         case 0:
             flag = false;
@@ -32,7 +31,7 @@ int main() {
             try
             {
                 User* newUser = sign_up();
-                admin.addUser(newUser);
+                admin->addUser(newUser);
             }
             catch (const std::exception& e)
             {
@@ -44,8 +43,6 @@ int main() {
 
         case 2:
         {
-            std::string switchUsername;
-
             std::cout
                 << "1. Admin" << '\n'
                 << "2. User" << '\n'
@@ -53,9 +50,7 @@ int main() {
             std::cin >> choice;
             std::cin.ignore();
             
-            choiceCheck = atoi(&choice);
-
-            switch (choiceCheck)
+            switch (choice)
             {
             case 1:
                 try
@@ -63,7 +58,7 @@ int main() {
                     std::string ID = sign_in(ADMIN);
                     if (isSignedIn == ADMIN)
                     {
-                        admin.adminMainFunction();
+                        admin->adminMainFunction();
                     }
                     else
                     {
@@ -83,10 +78,10 @@ int main() {
                     std::string ID = sign_in(USER);
                     if (isSignedIn == USER)
                     {
-                        User* activeUser = admin.getUserData(ID);
-                        activeUser->availableTasks = admin.subjects;
+                        User* activeUser = admin->getUserData(ID);
+                        activeUser->availableTasks = admin->subjects;
                         activeUser->userMainFunction();
-                        admin.updateUserGrades(ID, activeUser);
+                        admin->updateUserGrades(ID, activeUser);
                     }
                     else
                     {

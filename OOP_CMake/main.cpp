@@ -4,7 +4,7 @@
 
 
 int main() {
-    Admin admin("1337tng", "Mfkecic1337");
+    Admin admin{};
     bool flag = true;
 
     while(flag)
