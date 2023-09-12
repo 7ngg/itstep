@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using DynamicStructures;
+
+internal class Program
 {
     public static void Swap<T>(ref T var1, ref T var2)
     {
@@ -23,6 +25,21 @@
             }
 
             case 2:
+            {
+                var q = new PriorityQueue<int>();
+                q.Enqueue(5);
+                q.Enqueue(2);
+                q.Enqueue(8);
+
+                while(q.Size > 0)
+                {
+                    System.Console.WriteLine($"{q.Dequeue() }");
+                }
+
+                break;
+            }
+
+            case 3:
             {
                 
 
