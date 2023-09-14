@@ -1,5 +1,17 @@
+using System.Collections.Concurrent;
+
 namespace DynamicStructures
 {
+    public class Node<T> {
+        public T value;
+        public Node<T> next;
+
+        internal Node(T value)
+        {
+            this.value = value;
+        }
+    }
+
     public class PriorityQueue<T> where T: IComparable {
         private List<T> heap;
         public int Size { get { return heap.Count; } }
@@ -85,6 +97,53 @@ namespace DynamicStructures
         private void Swap(int vertex_1, int vertex_2)
         {
             (heap[vertex_1], heap[vertex_2]) = (heap[vertex_2], heap[vertex_1]);
+        }
+    }
+
+    public class SigleLinkedList<T> {
+        public Node<T> node;
+
+        public SigleLinkedList(params T[] values)
+        {
+            foreach (var item in values)
+            {
+                PushBack(item);
+            }
+        }
+
+
+        public bool IsEmpty()
+        {
+            return node == null;
+        }
+
+
+        public void PushBack(T value)
+        {
+            if(IsEmpty())
+            {
+                node = new(value);
+            }
+            else
+            {
+                Node<T> current = node;
+                while (current.next != null)
+                {
+                    current = current.next;
+                }
+                current.next = new(value);
+            }
+        }
+
+
+        public void Print()
+        {
+            Node<T> current = node;
+            while (current.next != null)
+            {
+                System.Console.Write($"{current.value} ");
+                current = current.next;
+            }
         }
     }
 }

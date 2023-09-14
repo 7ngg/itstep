@@ -41,7 +41,8 @@ internal class Program
 
             case 3:
             {
-                
+                SigleLinkedList<int> list = new(1, 2, 3, 4, 5);
+                list.Print();
 
                 break;
             }
