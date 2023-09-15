@@ -1,14 +1,13 @@
-using System.Collections.Concurrent;
-
 namespace DynamicStructures
 {
     public class Node<T> {
-        public T value;
-        public Node<T> next;
+        public T Data { get; set; }
+        public Node<T> Next { get; set; }
 
         internal Node(T value)
         {
-            this.value = value;
+            Data = value;
+            Next = null;
         }
     }
 
@@ -100,6 +99,84 @@ namespace DynamicStructures
         }
     }
 
+    class CircularQueue<T> {
+        private int Capacity { get; init; }
+        private Node<T> front;
+        private Node<T> rear;
+        public int Size { get; private set; }
+
+        public CircularQueue(int capacity)
+        {
+            Capacity = capacity;
+            Size = 0;
+            front = null;
+            rear = null;
+        }
+
+
+        public bool IsEmpty()
+        {
+            return Size == 0;
+        }
+
+
+        public bool IsFull()
+        {
+            return Size == Capacity;
+        }
+
+
+        public void Enqueue(T value)
+        {
+            if(IsFull())
+            {
+                System.Console.WriteLine("Queue is full");
+                return;
+            }
+
+            Node<T> newNode = new(value);
+            if(IsEmpty())
+            {
+                front = newNode;
+                rear = newNode;
+            }
+            else
+            {
+
+                // rear.Next = newNode;
+                // rear = newNode;
+            }
+            rear.Next = front;
+            Size += 1;
+        }
+
+
+        public T Dequeue()
+        {
+            if(IsEmpty())
+            {
+                throw new InvalidOperationException("Queue is Empty");
+            }
+
+            T data = front.Data;
+            front = front.Next;
+            rear.Next = front;
+            Size -= 1;
+            return data;
+        }
+
+
+        public T Peek()
+        {
+            if(IsEmpty())
+            {
+                throw new InvalidOperationException("Queue is Empty");
+            }
+
+            return front.Data;
+        }
+    }
+
     public class SigleLinkedList<T> {
         public Node<T> node;
 
@@ -127,11 +204,11 @@ namespace DynamicStructures
             else
             {
                 Node<T> current = node;
-                while (current.next != null)
+                while (current.Next != null)
                 {
-                    current = current.next;
+                    current = current.Next;
                 }
-                current.next = new(value);
+                current.Next = new(value);
             }
         }
 
@@ -139,10 +216,10 @@ namespace DynamicStructures
         public void Print()
         {
             Node<T> current = node;
-            while (current.next != null)
+            while (current.Next != null)
             {
-                System.Console.Write($"{current.value} ");
-                current = current.next;
+                System.Console.Write($"{current.Data} ");
+                current = current.Next;
             }
         }
     }

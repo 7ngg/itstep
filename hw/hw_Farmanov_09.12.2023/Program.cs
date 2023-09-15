@@ -27,9 +27,9 @@ internal class Program
             case 2:
             {
                 var q = new PriorityQueue<int>();
-                q.Enqueue(5);
+                q.Enqueue(1);
                 q.Enqueue(2);
-                q.Enqueue(8);
+                q.Enqueue(3);
 
                 while(q.Size > 0)
                 {
@@ -41,9 +41,25 @@ internal class Program
 
             case 3:
             {
+                var cq = new CircularQueue<int>(5);
+                cq.Enqueue(1);
+                cq.Enqueue(2);
+                cq.Enqueue(3);
+                cq.Enqueue(4);
+                cq.Enqueue(5);
+                cq.Enqueue(6);
+                System.Console.WriteLine(cq.Peek());
+                System.Console.WriteLine(cq.Dequeue());
+                System.Console.WriteLine(cq.Size);
+                System.Console.WriteLine(cq.Peek());;
+
+                break;
+            }
+
+            case 4:
+            {
                 SigleLinkedList<int> list = new(1, 2, 3, 4, 5);
                 list.Print();
-
                 break;
             }
         }
