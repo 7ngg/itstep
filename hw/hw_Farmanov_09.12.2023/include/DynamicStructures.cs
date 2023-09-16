@@ -1,15 +1,25 @@
+using System.Collections;
+
 namespace DynamicStructures
 {
     public class Node<T> {
         public T Data { get; set; }
         public Node<T> Next { get; set; }
+        public Node<T> Previous { get; set; }
 
-        internal Node(T value)
+        public Node(T value)
         {
             Data = value;
             Next = null;
+            Previous = null;
+        }
+
+        public override string ToString()
+        {
+            return $"{Data}";
         }
     }
+
 
     public class PriorityQueue<T> where T: IComparable {
         private List<T> heap;
@@ -99,6 +109,7 @@ namespace DynamicStructures
         }
     }
 
+
     class CircularQueue<T> {
         private int Capacity { get; init; }
         private Node<T> front;
@@ -142,9 +153,8 @@ namespace DynamicStructures
             }
             else
             {
-
-                // rear.Next = newNode;
-                // rear = newNode;
+                rear.Next = newNode;
+                rear = newNode;
             }
             rear.Next = front;
             Size += 1;
@@ -177,11 +187,13 @@ namespace DynamicStructures
         }
     }
 
+
     public class SigleLinkedList<T> {
         public Node<T> node;
 
+        public SigleLinkedList() {}
         public SigleLinkedList(params T[] values)
-        {
+        {   
             foreach (var item in values)
             {
                 PushBack(item);
@@ -195,7 +207,7 @@ namespace DynamicStructures
         }
 
 
-        public void PushBack(T value)
+        public virtual void PushBack(T value)
         {
             if(IsEmpty())
             {
@@ -213,14 +225,139 @@ namespace DynamicStructures
         }
 
 
-        public void Print()
+        public virtual void PushFront(T value)
+        {
+            if(IsEmpty())
+            {
+                node = new(value);
+            }
+            else
+            {
+                Node<T> tmp = node;
+                node = new(value)
+                {
+                    Next = tmp
+                };
+            }
+        }
+
+
+        public virtual void Insert(int index, T value)
         {
             Node<T> current = node;
-            while (current.Next != null)
+            for (int i = 0; i < index - 1; i++)
+            {
+                current = current.Next;
+            }
+
+            Node<T> tmp = current.Next;
+            current.Next = new(value);
+            current = current.Next;
+            current.Next = tmp;
+        }
+
+
+        public void Replace(int index, T value)
+        {
+            Node<T> current = node;
+            for (int i = 0; i < index; i++)
+            {
+                current = current.Next;
+            }
+            current.Data = value;
+        }
+
+
+        public void Pop()
+        {
+            node = node.Next;
+        }
+
+
+        public void Pop(int index)
+        {
+            Node<T> current = node;
+            for (int i = 0; i < index - 1; i++)
+            {
+                current = current.Next;
+            }
+            current.Next = current.Next.Next;
+        }
+
+
+        public bool Contains(T value)
+        {
+            Node<T> current = node;
+            
+            while(current != null)
+            {
+                if (value.Equals(current.Data))
+                {
+                    return true;
+                }
+                current = current.Next;
+            }
+            return false;
+        }
+
+        public virtual void Print()
+        {
+            Node<T> current = node;
+            while (current != null)
             {
                 System.Console.Write($"{current.Data} ");
                 current = current.Next;
             }
+            System.Console.WriteLine();
+        }
+
+
+        public Node<T> this[int index]
+        {
+            get
+            {
+                Node<T> current = node;
+                for (int i = 0; i < index + 1; i++)
+                {
+                    current = current.Next;
+                }
+                return current;
+            }
+            set
+            {
+                Replace(index, value.Data);
+            }
+        }
+    }
+
+
+    public class DoubleLinkedList<T> : SigleLinkedList<T> {
+        public DoubleLinkedList() : base() {}    
+        public DoubleLinkedList(params T[] values) : base(values) {}
+        
+
+        public override void PushBack(T value)
+        {
+            if (IsEmpty())
+            {
+                node = new(value);
+            }
+            else
+            {
+                Node<T> current = node;
+                while(current.Next != null)
+                {
+                    current = current.Next;
+                }
+                current.Next = new(value);
+                current.Next.Previous = current;
+            }
+        }
+
+
+        public void PushFront(T value)
+        {
+
         }
     }
 }

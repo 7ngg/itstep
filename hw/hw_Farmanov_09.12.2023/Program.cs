@@ -59,7 +59,17 @@ internal class Program
             case 4:
             {
                 SigleLinkedList<int> list = new(1, 2, 3, 4, 5);
+                list.PushFront(0);
+                list[3] = new Node<int>(7);
+                list.Pop(3);
                 list.Print();
+                System.Console.WriteLine(list.Contains(6));
+                break;
+            }
+
+            case 5:
+            {
+                DoubleLinkedList<int> list = new(1, 2, 3, 4, 5);
                 break;
             }
         }
