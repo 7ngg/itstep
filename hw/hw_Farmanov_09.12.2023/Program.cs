@@ -69,7 +69,7 @@ internal class Program
 
             case 5:
             {
-                DoubleLinkedList<int> list = new(1, 2, 3, 4, 5);
+                // DoubleLinkedList<int> list = new(1, 2, 3, 4, 5);
                 break;
             }
         }

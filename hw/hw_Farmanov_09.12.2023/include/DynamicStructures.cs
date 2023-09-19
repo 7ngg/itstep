@@ -331,33 +331,75 @@ namespace DynamicStructures
     }
 
 
-    public class DoubleLinkedList<T> : SigleLinkedList<T> {
-        public DoubleLinkedList() : base() {}    
-        public DoubleLinkedList(params T[] values) : base(values) {}
-        
+    public class DoubleLinkedList<T> {
+        private Node<T> head;
+        private Node<T> tail;
+        public int size { get; private set; }
 
-        public override void PushBack(T value)
+        public DoubleLinkedList() {}
+        public DoubleLinkedList(T value)
+        {
+            PushBack(value);
+        }
+
+
+        public bool IsEmpty()
+        {
+            return head == null && tail == null;
+        }
+
+
+        public void PushBack(T value)
         {
             if (IsEmpty())
             {
-                node = new(value);
+                head= new(value);
+                tail = head;
             }
             else
             {
-                Node<T> current = node;
-                while(current.Next != null)
-                {
-                    current = current.Next;
-                }
-                current.Next = new(value);
-                current.Next.Previous = current;
+                tail.Next = new(value);
+                tail.Next.Previous = tail;            
+                tail = tail.Next;
             }
+            size += 1;
         }
 
 
         public void PushFront(T value)
         {
+            if (IsEmpty())
+            {
+                head= new(value);
+                tail = head;
+            }
+            else
+            {
+                Node<T> tmp = head;
+                head = new(value);
+                head.Next = tmp;
+            }
+            size += 1;
+        }
 
+
+        public void Insert(int index, T value)
+        {
+            int i = (index > size / 2) ? size / 2 : 0;
+        }
+
+
+        public void PopFront()
+        {
+            head = head.Next;
+            size -= 1;
+        }
+
+
+        public void PopBack()
+        {
+            tail = tail.Previous;
+            size -= 1;
         }
     }
 }
