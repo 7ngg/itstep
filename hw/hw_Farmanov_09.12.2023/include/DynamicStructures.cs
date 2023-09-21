@@ -336,10 +336,17 @@ namespace DynamicStructures
         private Node<T> tail;
         public int size { get; private set; }
 
-        public DoubleLinkedList() {}
-        public DoubleLinkedList(T value)
+        public DoubleLinkedList() {
+            head = null;
+            tail = null;
+            size = 0;
+        }
+        public DoubleLinkedList(params T[] values)
         {
-            PushBack(value);
+            foreach (var item in values)
+            {
+                PushBack(item);
+            }
         }
 
 
@@ -385,7 +392,13 @@ namespace DynamicStructures
 
         public void Insert(int index, T value)
         {
-            int i = (index > size / 2) ? size / 2 : 0;
+            Node<T> tmp = this[index];
+            this[index] = new(value)
+            {
+                Next = tmp,
+                Previous = tmp.Previous,
+            };
+            size += 1;
         }
 
 
@@ -400,6 +413,44 @@ namespace DynamicStructures
         {
             tail = tail.Previous;
             size -= 1;
+        }
+
+
+        private void Replace(int index, T data)
+        {
+            this[index].Data = data;
+        }
+
+
+        public Node<T> this[int index]
+        {
+            get
+            {
+                int i = (index > size / 2) ? size - 1 : 0;
+                bool fromBeginning = i == 0; 
+                Node<T> current = fromBeginning ? head : tail;
+
+                while (i != index)
+                {
+                    current = fromBeginning ? current.Next : current.Previous;
+                    i = fromBeginning ? i += 1 : i -= 1;
+                }
+                return current;
+            }
+            set
+            {
+                Replace(index, value.Data);
+            }
+        }
+
+
+        public void Print()
+        {
+            for (int i = 0; i < size; i++)
+            {
+                Console.Write($"{this[i].Data} ");
+            }
+            System.Console.WriteLine();
         }
     }
 }

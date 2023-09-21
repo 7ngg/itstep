@@ -59,17 +59,26 @@ internal class Program
             case 4:
             {
                 SigleLinkedList<int> list = new(1, 2, 3, 4, 5);
-                list.PushFront(0);
-                list[3] = new Node<int>(7);
-                list.Pop(3);
+                // list.PushFront(0);
+                // list[3] = new Node<int>(7);
+                // list.Pop(3);
+                list.Insert(0, 0);
                 list.Print();
-                System.Console.WriteLine(list.Contains(6));
+                // System.Console.WriteLine(list.Contains(6));
                 break;
             }
 
             case 5:
             {
-                // DoubleLinkedList<int> list = new(1, 2, 3, 4, 5);
+                DoubleLinkedList<int> list = new(1, 2, 3, 4, 5);
+                System.Console.WriteLine(list.size);
+                list.Insert(0, 0);
+                list.Print();
+                // System.Console.Write(list[0]);
+                // System.Console.Write(list[1]);
+                // System.Console.Write(list[2]);
+                // System.Console.Write(list[3]);
+                // System.Console.Write(list[4]);
                 break;
             }
         }
