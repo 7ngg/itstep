@@ -1,5 +1,6 @@
 ﻿using Include.IntArrayExtensions;
 using Include.TimeInfo;
+using Transactions;
 
 Console.Write("Select task: ");
 int choice = Convert.ToInt32(Console.ReadLine());
@@ -23,6 +24,14 @@ switch (choice)
         TimeInfo.ShowCurrentTime();
         TimeInfo.ShowCurrentDayOfWeek();
         System.Console.WriteLine(TimeInfo.CalculateTriangleArea(3, 4, 5));
+        System.Console.WriteLine(TimeInfo.CalculateRectangleArea(4, 5));
+        break;
+    }
+
+    case 3:
+    {
+        var cc = new CreditCard("Mahammad", "Farmanov", "Albertovich");
+        System.Console.WriteLine(cc.ClientName);
         break;
     }
 }
