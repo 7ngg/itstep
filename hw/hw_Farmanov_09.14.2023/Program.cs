@@ -32,6 +32,15 @@ switch (choice)
     {
         var cc = new CreditCard("Mahammad", "Farmanov", "Albertovich");
         System.Console.WriteLine(cc.ClientName);
+        System.Console.WriteLine(cc.Balance);
+        cc.TopUp(2999);
+        System.Console.WriteLine(cc.Balance);
+        cc.TopUp(1);
+        System.Console.WriteLine(cc.Balance);
+        cc.Withdraw(3002);
+        System.Console.WriteLine(cc.Balance);
         break;
     }
 }
+
+Console.ReadLine();

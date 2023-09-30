@@ -30,10 +30,34 @@ namespace Transactions
         public DateOnly ExpiresOn { get; }
         public int PIN { get; private set; }
         public int CreditLimit { get; private set; }
-        public int Balance { get; private set; }
+        private int _balance;
+        public int Balance { 
+            get
+            {
+                return _balance;
+            } 
+
+            private set
+            {
+                _balance = value;
+                
+                if (_balance >= 3000)
+                {
+                    SumReachedEvent.Invoke();
+                }
+
+                if (_balance < 0)
+                {
+                    UsingLoanEvent.Invoke();
+                }
+            }
+        }
 
         public CreditCard(string name, string surname, string patronymic, int balance = 0)
         {
+            SumReachedEvent += SumReached;
+            UsingLoanEvent += UsingLoan;
+
             ClientName = new FLP(name, surname, patronymic);
             Number = GenerateCardNo();
             ExpiresOn = GenerateDate();
@@ -41,6 +65,22 @@ namespace Transactions
             CreditLimit = 0;
             Balance = (balance >= 0) ? balance : throw new ArgumentException("Invalid balance value");
         }
+
+
+        public delegate void SumReachedDelegate();
+        public event SumReachedDelegate SumReachedEvent;
+        private static void SumReached()
+        {
+            System.Console.WriteLine("Upper limit reached");
+        }
+
+
+        public delegate void UsingLoanDelegate();
+        public event UsingLoanDelegate UsingLoanEvent;
+        private static void UsingLoan()
+        {
+            System.Console.WriteLine("You are using loan money");
+        } 
 
 
         public void TopUp(int value)
