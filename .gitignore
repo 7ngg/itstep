@@ -5,4 +5,5 @@ x86/
 Debug/
 Build/
 .idea/
+obj/
 cmake-build-debug/
