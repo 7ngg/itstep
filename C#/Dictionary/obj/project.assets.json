@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tng\\itstep\\C#\\Dictionary\\Dictionary.csproj",
+      "projectUniqueName": "c:\\Users\\tng\\itstep\\C#\\Dictionary\\Dictionary.csproj",
       "projectName": "Dictionary",
-      "projectPath": "C:\\Users\\tng\\itstep\\C#\\Dictionary\\Dictionary.csproj",
+      "projectPath": "c:\\Users\\tng\\itstep\\C#\\Dictionary\\Dictionary.csproj",
       "packagesPath": "C:\\Users\\tng\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tng\\itstep\\C#\\Dictionary\\obj\\",
+      "outputPath": "c:\\Users\\tng\\itstep\\C#\\Dictionary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tng\\AppData\\Roaming\\NuGet\\NuGet.Config"
