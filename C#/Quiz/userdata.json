@@ -1,0 +1,17 @@
+[
+    {
+        "Username": "user1",
+        "Password": "password1",
+        "Birthday": "0001-01-01"
+    },
+    {
+        "Username": "user2",
+        "Password": "password2",
+        "Birthday": "0001-01-01"
+    },
+    {
+        "Username": "user3",
+        "Password": "password3",
+        "Birthday": "0001-01-01"
+    }
+]

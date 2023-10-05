@@ -4,20 +4,18 @@ using include.Authorization;
 using include.User;
 
 // Получаем список сущесвтующих пользователей при запуске
-var users = new List<UserData>
+var users = new List<UserData>(UserSerialization.Import());
+foreach (var item in users)
 {
-    MyAuthorization.SignUp()
-};
+    System.Console.WriteLine(item);
+}
 
-// var user_1 = new UserData("user1", "password1", new DateOnly());
-// var user_2 = new UserData("user2", "password2", new DateOnly());
-// var user_3 = new UserData("user3", "password3", new DateOnly());
-
-// var users = new List<UserData>
+// var users = new List<UserData>()
 // {
-//     user_1,
-//     user_2,
-//     user_3
+//     new("user1", "password1", new DateOnly()),
+//     new("user2", "password2", new DateOnly()),
+//     new("user3", "password3", new DateOnly())
 // };
+// UserSerialization.Export(users);
 
-UserSerialization.Export(users);
+Console.ReadLine();

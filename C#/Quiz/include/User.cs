@@ -13,5 +13,11 @@ namespace include.User
             Password = password;
             Birthday = date;
         }
+
+
+        public override string ToString()
+        {
+            return $"{Username}, {Birthday}";
+        }
     }
 }
