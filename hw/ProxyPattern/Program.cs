@@ -2,18 +2,17 @@
 using ProxyPattern.Entities.Interfaces;
 
 Client client = new();
-Product real = new();
-ProductProxy proxy = new(real);
-proxy.Data = "changed via Proxy";
+Point real = new() { X = 4, Y = 3 };
+PointProxy proxy = new(real);
 
-System.Console.WriteLine($"From original:\n {client.Method(real)}");
-System.Console.WriteLine($"From proxy:\n {client.Method(proxy)}");
+client.Method(real);
+client.Method(proxy);
 Console.ReadLine();
 
 public class Client
 {
-    public string Method(IEntity entity)
-    {
-        return $"Type: {entity.GetType().Name}\t Data: {entity.Data}";
+    public void Method(IPoint entity)
+    {   
+        System.Console.WriteLine(entity.GetModule());
     }
 }
