@@ -1,0 +1,113 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="assets\alarms.jfif" />
+    <None Remove="assets\background.jpg" />
+    <None Remove="assets\desktop.jpg" />
+    <None Remove="assets\icons\cmd.ico" />
+    <None Remove="assets\icons\CodingApp.ico" />
+    <None Remove="assets\icons\Computer.ico" />
+    <None Remove="assets\icons\Configure.ico" />
+    <None Remove="assets\icons\Explorer.ico" />
+    <None Remove="assets\icons\Gmail.ico" />
+    <None Remove="assets\icons\InternetExplorer.ico" />
+    <None Remove="assets\icons\RemoteDesktop.ico" />
+    <None Remove="assets\icons\RSS.ico" />
+    <None Remove="assets\icons\Services.ico" />
+    <None Remove="assets\icons\TaskManager.ico" />
+    <None Remove="assets\icons\vs.ico" />
+    <None Remove="assets\icons\WindowsStore.ico" />
+    <None Remove="assets\InternetExplorer.ico" />
+    <None Remove="assets\labirinth.png" />
+    <None Remove="assets\paintplay.png" />
+    <None Remove="assets\RSS.ico" />
+    <None Remove="assets\RSS.png" />
+    <None Remove="assets\stocks.jpg" />
+    <None Remove="assets\TreehouseStampedeWideLogo.png" />
+    <None Remove="assets\tweetarama.png" />
+    <None Remove="assets\weather.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\alarms.jfif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\CodingApp.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\Computer.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\Gmail.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\Services.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\TaskManager.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\labirinth.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\paintplay.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\background.jpg" />
+    <Resource Include="assets\desktop.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\cmd.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\Configure.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\Explorer.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\InternetExplorer.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\RemoteDesktop.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\vs.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\icons\WindowsStore.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\RSS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\stocks.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\TreehouseStampedeWideLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\tweetarama.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\weather.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
