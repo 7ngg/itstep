@@ -4,18 +4,20 @@ using Microsoft.Extensions.Configuration;
 var builder = new ConfigurationBuilder();
 builder.AddJsonFile("app-settings.json");
 var config = builder.Build();
-var connectionString =  config.GetConnectionString("step");
+var connectionString =  config.GetConnectionString("default");
 
-string scalarQuery = "select * from People";
-string noQueryQuery = "insert into People(Name, Surname, Age) values('Name1', 'Surname1', 37)";
+string scalarQuery = "select COUNT(*) from Cars";
+string nonQueryQuery = "delete from ProductList where price < 30000";
 
 using SqlConnection connection = new(connectionString);
-using SqlCommand cmd = new(scalarQuery, connection);
+using SqlCommand scalarCommand = new(scalarQuery, connection);
+using SqlCommand nonQueryCommand = new(nonQueryQuery, connection);
 
 try
 {
     connection.Open();
-    System.Console.WriteLine(cmd.ExecuteScalar());;
+    System.Console.WriteLine($"Execute scalar: {scalarCommand.ExecuteScalar()}");           // Вернет первую строку первого столбца
+    System.Console.WriteLine($"Execute non query: {nonQueryCommand.ExecuteNonQuery()}");    // Вернет количество затронутых строк
 }
 catch (System.Exception e)
 {    
