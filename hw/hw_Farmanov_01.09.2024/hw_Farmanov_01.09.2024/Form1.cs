@@ -42,7 +42,44 @@ namespace hw_Farmanov_01._09._2024
 
         private void CreateBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{dataGrid.}");
+            bool flag = int.TryParse(dataGrid.Rows[^2].Cells[0].Value.ToString(), out int idValue);
+            if (flag && idValue - Convert.ToInt32(dataGrid.Rows[^3].Cells[0].Value) == 1)
+            {
+                string columns = string.Empty;
+                for (int i = 0; i < dataGrid.Columns.Count; i++)
+                {
+                    columns += $"{dataGrid.Columns[i].Name},";
+                }
+                columns = columns.TrimEnd(',');
+
+                string values = string.Empty;
+                foreach (DataGridViewCell item in dataGrid.Rows[^2].Cells)
+                {
+                    values += $"@{item.Value},";
+                }
+                values = values.TrimEnd(',');
+
+                string query = $"insert into {tablesList.SelectedItem}({columns}) values ({values});";
+
+                try
+                {
+                    using SqlCommand cmd = new(query, _connection);
+                    var vs = values.Split(",");
+
+                    cmd.Parameters.Clear();
+                    for (int i = 0; i < cs.Length; i++)
+                    {
+                        cmd.Parameters.AddWithValue($"{vs[i]}", vs[i].Remove(0, 1));
+                    }
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            Update(tablesList.SelectedItem.ToString());
         }
 
         private void ReadBtn_Click(object sender, EventArgs e)
