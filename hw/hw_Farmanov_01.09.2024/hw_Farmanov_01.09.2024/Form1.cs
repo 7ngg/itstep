@@ -67,7 +67,7 @@ namespace hw_Farmanov_01._09._2024
                     var vs = values.Split(",");
 
                     cmd.Parameters.Clear();
-                    for (int i = 0; i < cs.Length; i++)
+                    for (int i = 0; i < vs.Length; i++)
                     {
                         cmd.Parameters.AddWithValue($"{vs[i]}", vs[i].Remove(0, 1));
                     }
