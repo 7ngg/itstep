@@ -1,0 +1,13 @@
+﻿<Application x:Class="omdbApi.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ViewModels="clr-namespace:omdbApi.ViewModels"
+             xmlns:Views="clr-namespace:omdbApi.Views"
+             xmlns:local="clr-namespace:omdbApi"
+             StartupUri="Views/MainView.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type ViewModels:MainViewModel}">
+            <Views:MainView/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
