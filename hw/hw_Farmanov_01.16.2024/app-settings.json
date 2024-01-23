@@ -1,0 +1,5 @@
+{
+    "ConnectionStrings": {
+        "Home": "DataSource=localhost;InitialCatalog=Northwind;TrustServerSertificate=true;IntegratedSecurity=true;"
+    }
+}
