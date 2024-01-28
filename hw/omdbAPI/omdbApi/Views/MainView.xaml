@@ -44,7 +44,7 @@
 
             <StackPanel Grid.Column="1">
                 <Label Content="Title"/>
-                <Label Content="IMDB Ratiog"/>
+                <Label Content="IMDB Rating"/>
                 <Label Content="Year"/>
                 <Label Content="Country"/>
                 <Label Content="Genre"/>

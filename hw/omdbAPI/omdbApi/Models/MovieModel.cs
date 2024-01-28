@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace omdbApi.Models
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+    // MovieModel myDeserializedClass = JsonConvert.DeserializeObject<MovieModel>(myJsonResponse);
     public class Rating
     {
         public string Source { get; set; }
         public string Value { get; set; }
     }
 
-    public class Root
+    public class MovieModel
     {
         public string Title { get; set; }
         public string Year { get; set; }
