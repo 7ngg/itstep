@@ -1,9 +1,11 @@
-﻿using omdbApi.Models;
-using omdbApi.Services.Interfaces;
+﻿using omdbApi.Services.Interfaces;
 using Prism.Commands;
 using Prism.Mvvm;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using omdbApiDataLayer.Models;
+using Microsoft.Extensions.Configuration;
+using omdbApiDataLayer.Contexts;
+
+// tt0468569
 
 namespace omdbApi.ViewModels
 {
@@ -11,6 +13,9 @@ namespace omdbApi.ViewModels
     {
         private readonly IDownloadService _ds;
         private readonly ISerializationService _ss;
+        private readonly IDataConnectionService _dcs;
+
+        private MoviesContext _context;
 
         #region Title
         private string _title = string.Empty;
@@ -31,10 +36,14 @@ namespace omdbApi.ViewModels
         }
         #endregion
 
-        public MainViewModel(IDownloadService ds, ISerializationService ss)
+        public MainViewModel(IDownloadService ds, ISerializationService ss, IDataConnectionService dcs)
         {
             _ds = ds;
             _ss = ss;
+            _dcs = dcs;
+
+            var opts = _dcs.ConfigureOptions<MoviesContext>("Home");
+            _context = new MoviesContext(opts);
 
             SearchCommand = new(OnSearchCommandExecuted);
         }

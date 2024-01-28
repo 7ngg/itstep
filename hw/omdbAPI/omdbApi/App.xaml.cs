@@ -1,4 +1,5 @@
-﻿using omdbApi.Services.Classes;
+﻿using Microsoft.Extensions.Configuration;
+using omdbApi.Services.Classes;
 using omdbApi.Services.Interfaces;
 using omdbApi.ViewModels;
 using omdbApi.Views;
@@ -21,6 +22,11 @@ namespace omdbApi
         {
             container.RegisterSingleton<IDownloadService, DonwloadService>();
             container.RegisterSingleton<ISerializationService, SerializationService>();
+            container.RegisterSingleton<IDataConnectionService>(() =>
+            {
+                IConfigurationBuilder builder = new ConfigurationBuilder();
+                return new DataConnectionService(builder);
+            });
 
             container.RegisterSingleton<MainViewModel>();
 

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace omdbApi.Models
+namespace omdbApiDataLayer.Models
 {
-    // MovieModel myDeserializedClass = JsonConvert.DeserializeObject<MovieModel>(myJsonResponse);
     public class Rating
     {
         public string Source { get; set; }
@@ -33,6 +28,7 @@ namespace omdbApi.Models
         public string Metascore { get; set; }
         public string imdbRating { get; set; }
         public string imdbVotes { get; set; }
+        [Key]
         public string imdbID { get; set; }
         public string Type { get; set; }
         public string DVD { get; set; }
