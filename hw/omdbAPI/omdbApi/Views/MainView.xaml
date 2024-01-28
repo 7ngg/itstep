@@ -4,9 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:omdbApi.Views"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBox Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" 
+                     md:HintAssist.Hint="Movie title" 
+                     FontSize="18"
+                     Width="500"/>
+            <Button Content="Search" Margin="5 0 0 0" Command="{Binding}"/>
+        </StackPanel>
     </Grid>
 </Window>

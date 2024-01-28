@@ -1,4 +1,6 @@
-﻿using System;
+﻿using omdbApi.ViewModels;
+using omdbApi.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -8,10 +10,13 @@ using System.Windows;
 
 namespace omdbApi
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var model = new MainViewModel();
+            var window = new MainView { DataContext = model };
+            window.ShowDialog();
+        }
     }
 }
