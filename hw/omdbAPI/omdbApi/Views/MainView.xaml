@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:omdbApi.Views"
-        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:viewmodels="clr-namespace:omdbApi.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
     <Grid>
@@ -12,13 +14,57 @@
             <RowDefinition Height="0.1*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Horizontal" Margin="5">
-            <TextBox Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" 
-                     md:HintAssist.Hint="Movie title" 
-                     FontSize="18"
-                     Width="500"/>
-            <Button Content="Search" Margin="5 0 0 0" Command="{Binding}"/>
-        </StackPanel>
+
+        <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                 md:HintAssist.Hint="IMDB ID" 
+                 FontSize="18"
+                 Grid.Column="0" Grid.Row="0"
+                 Margin="5"/>
+        <Button Command="{Binding SearchCommand}"
+                Grid.Column="1" Grid.Row="0"
+                Content="Search"
+                Margin="5"/>
+
+
+        <Grid Grid.Row="1" Grid.Column="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0"
+                   VerticalAlignment="Top" 
+                   Source="{Binding Result.Poster, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <StackPanel Grid.Column="1">
+                <Label Content="Title"/>
+                <Label Content="IMDB Ratiog"/>
+                <Label Content="Year"/>
+                <Label Content="Country"/>
+                <Label Content="Genre"/>
+                <Label Content="Director"/>
+                <Label Content="Writer"/>
+                <Label Content="Production"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="2">
+                <Label Content="{Binding Result.Title}"/>
+                <Label Content="{Binding Result.imdbRating}"/>
+                <Label Content="{Binding Result.Year}"/>
+                <Label Content="{Binding Result.Country}"/>
+                <Label Content="{Binding Result.Genre}"/>
+                <Label Content="{Binding Result.Director}"/>
+                <Label Content="{Binding Result.Writer}"/>
+                <Label Content="{Binding Result.Production}"/>
+            </StackPanel>
+
+        </Grid>
+        
     </Grid>
 </Window>
