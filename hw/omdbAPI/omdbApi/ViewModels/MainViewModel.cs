@@ -2,7 +2,6 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using omdbApiDataLayer.Models;
-using Microsoft.Extensions.Configuration;
 using omdbApiDataLayer.Contexts;
 
 // tt0468569
@@ -36,16 +35,26 @@ namespace omdbApi.ViewModels
         }
         #endregion
 
+        #region AddCommand
+        private DelegateCommand _addCommand;
+        public DelegateCommand AddCommand
+        {
+            get => _addCommand;
+            private set => SetProperty(ref _addCommand, value);
+        }
+        #endregion
+
         public MainViewModel(IDownloadService ds, ISerializationService ss, IDataConnectionService dcs)
         {
             _ds = ds;
             _ss = ss;
             _dcs = dcs;
 
-            var opts = _dcs.ConfigureOptions<MoviesContext>("Home");
+            var opts = _dcs.Configure<MoviesContext>("Home");
             _context = new MoviesContext(opts);
 
             SearchCommand = new(OnSearchCommandExecuted);
+            AddCommand = new(OnAddCommandExecuted);
         }
 
         private void OnSearchCommandExecuted()
@@ -53,6 +62,12 @@ namespace omdbApi.ViewModels
             string url = $@"https://www.omdbapi.com/?apikey=82130204&i={Title}";
             string retrievedData = _ds.Download(url);
             Result = _ss.Deserialize<MovieModel>(retrievedData);
+        }
+
+        private void OnAddCommandExecuted()
+        {
+            _context.Add(Result);
+            _context.SaveChanges();
         }
     }
 }

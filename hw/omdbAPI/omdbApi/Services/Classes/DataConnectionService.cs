@@ -13,7 +13,7 @@ namespace omdbApi.Services.Classes
             _builder = builder;
         }
 
-        public DbContextOptions<T> ConfigureOptions<T>(string connectionName) where T : DbContext
+        public DbContextOptions<T> Configure<T>(string connectionName) where T : DbContext
         {
             _builder.AddJsonFile("app-settings.json");
             var config = _builder.Build();

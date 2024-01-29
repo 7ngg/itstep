@@ -65,6 +65,10 @@
             </StackPanel>
 
         </Grid>
-        
+
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="5">
+            <Button Content="Add To Database" Command="{Binding AddCommand}"/>
+        </StackPanel>
+
     </Grid>
 </Window>

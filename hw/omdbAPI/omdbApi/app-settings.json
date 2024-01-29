@@ -1,5 +1,0 @@
-{
-    "ConnectionStrings": {
-        "Home": "Data Source=localhost;Initial Catalog=Movies;Trust Server Certificate=true;Integrated Security=true;"
-    }
-}

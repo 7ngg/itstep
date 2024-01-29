@@ -4,6 +4,7 @@ namespace omdbApiDataLayer.Models
 {
     public class Rating
     {
+        [Key]
         public string Source { get; set; }
         public string Value { get; set; }
     }
