@@ -1,0 +1,15 @@
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\bin\Debug\net8.0\ResetEvents.exe
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\bin\Debug\net8.0\ResetEvents.deps.json
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\bin\Debug\net8.0\ResetEvents.runtimeconfig.json
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\bin\Debug\net8.0\ResetEvents.dll
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\bin\Debug\net8.0\ResetEvents.pdb
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.AssemblyInfoInputs.cache
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.AssemblyInfo.cs
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.csproj.CoreCompileInputs.cache
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.sourcelink.json
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.dll
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\refint\ResetEvents.dll
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.pdb
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ResetEvents.genruntimeconfig.cache
+C:\Users\tng\itstep\hw\hw_Farmanov_02.25.2024\ResetEvents\obj\Debug\net8.0\ref\ResetEvents.dll
