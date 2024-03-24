@@ -1,6 +1,7 @@
 #nullable disable
 
 using Newtonsoft.Json;
+using SearchApi.Models.Interfaces;
 
 namespace SearchApi.Models
 {
@@ -14,7 +15,7 @@ namespace SearchApi.Models
         public string Body { get; set; }
     }
 
-    public class GoogleResponse
+    public class GoogleResponse : ISearchResponse
     {
         [JsonProperty("result")]
         public List<Result> Result { get; set; }

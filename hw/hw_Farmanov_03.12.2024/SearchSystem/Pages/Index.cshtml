@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" src="~/css/site.css" />
+</head>
+
+<body>
+    <div class="search-bar">
+        <form method="post">
+            <ul class="search-bar-list">
+                <li>
+                    <input placeholder="Query" name="query" />
+                </li>
+                <li>
+                    <button type="submit">Google</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div class="response-container">
+        <ul>
+            @if (Model.Responses is not null)
+            {
+                @foreach (var item in Model.Responses.Result)
+                {
+                    <a href="@item.Href">
+                    <li>@item.Title</li>
+                    </a>
+                }
+            }
+        </ul>
+    </div>
+</body>
