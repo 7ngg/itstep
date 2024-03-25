@@ -18,11 +18,15 @@
                     <input placeholder="Query" name="query" />
                 </li>
                 <li>
-                    <button type="submit">Google</button>
+                    <button type="submit" asp-page-handler="Search">Google</button>
+                </li>
+                <li>
+                    <button type="submit" asp-page-handler="ImageSearch">Images</button>
                 </li>
             </ul>
         </form>
     </div>
+
     <div class="response-container">
         <ul>
             @if (Model.Responses is not null)
@@ -30,10 +34,19 @@
                 @foreach (var item in Model.Responses.Result)
                 {
                     <a href="@item.Href">
-                    <li>@item.Title</li>
+                        <li>@item.Title</li>
                     </a>
                 }
             }
         </ul>
+        <div class="grid">
+            @if (Model.ImageResponses is not null)
+            {
+                @foreach (var image in Model.ImageResponses.Result)
+                {
+                    <img src="@image.Image" />
+                }
+            }
+        </div>
     </div>
 </body>

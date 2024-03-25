@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using SearchApi.Models;
@@ -10,19 +9,27 @@ namespace SearchSystem.Pages
         private readonly HttpClient _client = new();
 
         public GoogleResponse Responses { get; set; }
+        public GoogleImageResponse ImageResponses { get; set; }
 
         public IndexModel()
         {
+            _client.BaseAddress = new("https://localhost:7029/");
         }
 
-        public async Task OnPost(string query)
+        public async Task OnPostSearch(string query)
         {
-            _client.BaseAddress = new("https://localhost:7029/");
-
             var response = await _client.GetAsync($"googlesearch?query={query}");
             var deserializedResponse = JsonConvert.DeserializeObject<GoogleResponse>(await response.Content.ReadAsStringAsync());
 
             Responses = deserializedResponse;
+        }
+
+        public async Task OnPostImageSearch(string query)
+        {
+            var response = await _client.GetAsync($"googleimagesearch?query={query}");
+            var dr = JsonConvert.DeserializeObject<GoogleImageResponse>(await response.Content.ReadAsStringAsync());
+
+            ImageResponses = dr;
         }
     }
 }

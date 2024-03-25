@@ -10,7 +10,7 @@ namespace SearchApi.Services
 
         public static async Task<GoogleResponse> GoogleSearch(string query)
         {
-            query = "{" + $"\r\n\"text\":\"{Uri.EscapeDataString(query)}\",\r\n\"safesearch\":\"off\",\r\n\"timelimit\":\"\",\r\n\"region\":\"ru-ru\",\r\n\"max_results\":20\r\n" + "}";
+            query = "{" + $"\r\n\"text\":\"{query}\",\r\n\"safesearch\":\"off\",\r\n\"timelimit\":\"\",\r\n\"region\":\"ru-ru\",\r\n\"max_results\":20\r\n" + "}";
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
@@ -39,7 +39,7 @@ namespace SearchApi.Services
 
         public static async Task<GoogleImageResponse> GoogleImageSearch(string query)
         {
-            query = "{" + $"\r\n\"text\":\"{Uri.EscapeDataString(query)}\",\r\n\"safesearch\":\"off\",\r\n\"region\":\"ru-ru\",\r\n\"color\":\"\",\r\n\"size\":\"\",\r\n\"type_image\":\"\",\r\n\"layout\":\"\",\r\n\"max_results\":20\r\n" + "}";
+            query = "{" + $"\r\n\"text\":\"{query}\",\r\n\"safesearch\":\"off\",\r\n\"region\":\"ru-ru\",\r\n\"color\":\"\",\r\n\"size\":\"\",\r\n\"type_image\":\"\",\r\n\"layout\":\"\",\r\n\"max_results\":20\r\n" + "}";
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,

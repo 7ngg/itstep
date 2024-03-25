@@ -15,7 +15,7 @@ namespace SearchApi.Models
         public string Body { get; set; }
     }
 
-    public class GoogleResponse : ISearchResponse
+    public class GoogleResponse
     {
         [JsonProperty("result")]
         public List<Result> Result { get; set; }
