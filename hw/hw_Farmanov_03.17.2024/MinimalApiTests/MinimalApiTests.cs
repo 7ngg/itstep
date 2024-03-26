@@ -1,21 +1,23 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MinimalApi.Data.Contexts;
 using MinimalApiTests.Services;
 using Newtonsoft.Json;
-using Xunit;
+using RestSharp;
 
 namespace MinimalApiTests;
 
-using TrimmedEmployee = (
-    int EmployeeId,
-    string LastName,
-    string FirstName,
-    string Address,
-    string City,
-    DateTime BirthDate,
-    DateTime HireDate
-);
+internal class TrimmedEmployee
+{
+    public int EmployeeId { get; set; }
+    public string LastName { get; set; }
+    public string FirstName { get; set; }
+    public string Address { get; set; }
+    public string City { get; set; }
+    public DateTime BirthDate { get; set; }
+    public DateTime HireDat { get; set; }
+}
 
 [TestClass]
 public class GetMethodTests
@@ -63,5 +65,23 @@ public class GetMethodTests
         // Assert
         result.Should().NotBeNull();
         result.Should().BeOfType<List<TrimmedEmployee>>();
+    }
+
+    [TestMethod]
+    public async Task MinimalApi_GetEmployeeById_ReturnsEmployee()
+    {
+        // Arrange
+        var id = 1;
+        var restClient = new RestClient(new RestClientOptions("https://localhost:7029/"));
+        var request = new RestRequest($"/getemployees/{id}");
+
+        // Act
+        var response = await restClient.GetAsync(request);
+        var result = JsonConvert.DeserializeObject<TrimmedEmployee>(response.Content);
+
+        // Assert
+        result.Should().NotBeNull();
+        result.Should().BeOfType<TrimmedEmployee>();
+        result.EmployeeId.Should().Be(id);
     }
 }
