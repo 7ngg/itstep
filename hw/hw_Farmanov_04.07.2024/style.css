@@ -1,0 +1,13 @@
+* {
+    font-family: sans-serif;
+}
+
+.heading {
+    color: darkblue;
+    text-align: center;
+}
+
+h3 {
+    font-weight: 700;
+    color: rgb(145, 145, 145);
+}
