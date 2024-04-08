@@ -1,0 +1,10 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cell {
+    background-color: lightgray;
+    font-size: 36px;
+    padding: 3px;
+}
+
