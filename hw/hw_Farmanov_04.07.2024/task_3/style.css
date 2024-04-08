@@ -1,0 +1,12 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.heading {
+    text-align: center;
+}
+
+.tag {
+    color: grey;
+    background-color: lightgrey;
+}
