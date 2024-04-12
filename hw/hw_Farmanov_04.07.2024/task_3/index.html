@@ -10,6 +10,10 @@
         <div class="heading">
             <h1>HTML Tutorial</h1> 
         </div>
+        <hr>
+        <div class="heading">
+            <h3>What is HTML?</h3>
+        </div>
         <p>
             <strong>Hypertext Markup Language (<u>HTML</u>)</strong> is the 
             standard markup language for creating web pages and web 
@@ -30,16 +34,12 @@
             denoting structural semantics for text such as headings, 
             paragraphs, lists, links, quotes and other items. <u>HTML</u> 
             elements are delineated by tags, written using angle 
-            brackets. Tags such as <img /> and <input /> directly introduce 
+            brackets. Tags such as <span class="code">&lt;img/&gt;</span> and <span class="code">&lt;input /&gt;</span> directly introduce 
             content into the page. Other tags such as <p> surround and provide 
             information about document text and may include other tags as 
             sub-elements. Browsers do not display the HTML tags, but use them 
             to interpret the content of the page.
         </p>
-        <hr>
-        <div class="heading">
-            <h3>What is HTML?</h3>
-        </div>
         <hr>
         <div class="heading">
             <h3>Markup</h3>
@@ -60,6 +60,18 @@
         <p>
             The following is an example of the classic "Hello, World!" program:
         </p>
+        <pre class="code">
+
+            &lt;!DOCTYPE html>
+            &lt;html>
+                &lt;head>
+                    &lt;title>This is a title&lt;/title>
+                &lt;/head>
+                &lt;body>
+                    &lt;p>Hello world!&lt;/p>
+                &lt;/body>
+            &lt;/html>
+        </pre>
         <hr>
         <table>
             <td><strong>Tags: </strong></td>
