@@ -30,11 +30,11 @@ body {
 }
 
 .item-position {
-    width: 8%;
+    width: 40px;
     display: flex;
     align-items: center;
     height: 100%;
-    padding-left: 5%;
+    padding-left: 20px;
 }
 
 .item-name {
