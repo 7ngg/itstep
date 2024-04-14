@@ -22,3 +22,20 @@
     align-items: center;
     padding-left: 20px;
 }
+
+.task-text {
+    margin-left: 10px;
+}
+
+.remove-btn {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.checkbox {
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+}
