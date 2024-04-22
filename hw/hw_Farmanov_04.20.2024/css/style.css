@@ -107,6 +107,9 @@ main .container .car-bg img {
 
 main .info {
   font-family: "Product Sans";
+  width: 80%;
+  position: absolute;
+  left: 10%;
 }
 
 main .info .info-container {
@@ -118,7 +121,6 @@ main .info .info-container {
 main .info .info-container .info-list {
   list-style-type: none;
   display: flex;
-  overflow: auto;
 }
 
 main .info .info-container .info-list .info-list-item {
@@ -131,4 +133,31 @@ main .info .info-container .info-list .info-list-item-icon {
   background-color: #C1C1C1;
   border-radius: 50%;
   padding: 10px;
+}
+
+main .info .info-container .info-list .car-bg {
+  display: flex;
+}
+
+main .info .info-container .info-list .car-bg img {
+  width: 700px;
+}
+
+main .info .info-container .info-list .adv-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+main .info .info-container .info-list .adv-list img {
+  width: 20px;
+  height: 20px;
+}
+
+main .info .info-container .info-list .adv-list .adv-list-item {
+  display: flex;
+  align-items: center;
+}
+
+main .info .info-container .info-list .adv-list .adv-list-item p {
+  margin-left: 5px;
 }

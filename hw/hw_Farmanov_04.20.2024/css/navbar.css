@@ -72,12 +72,16 @@
   height: 100%;
   color: black;
   text-decoration: none;
-  font-family: 'Product Sans';
+  font-family: "Product Sans";
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
+}
+
+.navbar .nav-main .nav-items .nav-item a:hover {
+  transform: scale(1.2);
 }
 
 .navbar .nav-auth {
