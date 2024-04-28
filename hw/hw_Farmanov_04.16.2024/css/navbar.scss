@@ -1,0 +1,30 @@
+@import "fonts";
+
+.navbar {
+  background-color: #262626;
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  .nav-logo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-left: 20px;
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      span {
+        color: #618338;
+
+        .logo-bolt-text {
+          font-family: "Inter Bold";
+          color: #ededed;
+        }
+      }
+    }
+  }
+}
