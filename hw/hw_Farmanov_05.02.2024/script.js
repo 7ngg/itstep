@@ -96,6 +96,12 @@ function PrintPerfectNumbers(minBound, maxBound) {
  * @param {number} seconds
  */
 function PrintTime(hours = 0, minutes = 0, seconds = 0) {
+    hours += Math.floor(minutes / 60);
+    minutes -= Math.floor(minutes / 60) * 60;
+
+    minutes += Math.floor(seconds / 60);
+    seconds -= Math.floor(seconds / 60) * 60;
+
     return `${hours === 0 ? '00' : hours}:${minutes === 0 ? '00' : minutes}:${seconds === 0 ? '00' : seconds}`; 
 }
 
@@ -148,7 +154,7 @@ console.log(`Task 5: ${IsPerfectNumber(7)}`);
 console.log('Task 6: ');
 PrintPerfectNumbers(1, 10);
 
-console.log(`Task 7: ${PrintTime(1, 0, 12)}`)
+console.log(`Task 7: ${PrintTime(1, 0, 72)}`)
 console.log(`Task 8: ${CalculateSeconds(1, 30, 15)}`);
 console.log(`Task 9: ${CalculateFromSeconds(5415)}`);
 console.log(`Task 10: ${CalculateDifference(1, 30, 15, 1, 30, 0)}`)
