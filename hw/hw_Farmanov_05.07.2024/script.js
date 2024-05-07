@@ -92,6 +92,22 @@ function getAvgPrice(bill) {
 
 //#region Task 3
 
+let styles = [
+    { key: "style-1", value: "color:red;font-size:20px;float:right;text-decoration:underline;" },
+    { key: "style-2", value: "color:green;font-size:30px;float:left;text-decoration:line-through;" },
+    { key: "style-3", value: "color:blue;font-size:40px;float:none;text-decoration:overline;" }
+];
+
+document.open();
+for (const style of styles) {
+    document.write(`<p style="${style.value}">${style.key}</p>`)
+}
+document.close();
+
+//#endregion
+
+//#region Task 4
+
 let rooms = [
     { name: "315", placesCount: 20, facultyName: "Math" },
     { name: "1008", placesCount: 40, facultyName: "History" },
@@ -153,8 +169,8 @@ let group = { name: "FBAS_3_22_11", studentsCount: 13, facultyName: "CompSci" };
 
 //getFacultyRooms(rooms, "CompSci");
 //findRoomsForGroup(rooms, group);
-print(rooms);
-sortByName(rooms)
-print(rooms);
+//print(rooms);
+//sortByName(rooms)
+//print(rooms);
 
 //#endregion
