@@ -159,7 +159,24 @@ main {
       }
     }
   }
+
+  .ad-banner {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+        .new-car {
+            background-color: $logo-light-green;
+            border-radius: 150px 0 0 150px;
+            padding: 60px;
+        }
+
+        .old-car {
+            background-color: $logo-dark-green;
+            border-radius: 0 150px 150px 0;
+            text-align: right;
+            padding: 60px;
+        }
+    }
 }
 
-footer {
-}
