@@ -5,9 +5,9 @@ class OmdbService {
         this.apiKey = key;
     }
 
-    async getDataAsync(title, type) {
+    async getDataAsync(title, type, page = 1) {
         try {
-            const response = await fetch(`${url}apikey=${this.apiKey}&s=${title}&type=${type}`);
+            const response = await fetch(`${url}apikey=${this.apiKey}&s=${title}&type=${type}&page=${page}`);
             return response.json();
         } catch (e) {
             throw e;
