@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie API</title>
     <link rel="stylesheet" href="../css/style.min.css" />
+    <script type="module" src="../js/app.js" defer></script>
   </head>
   <body>
     <div class="container">
       <div class="search-window">
-        <h3 class="header">Search</h3>
+        <h3 class="header">Search:</h3>
         <div class="search-form">
           <div class="title">
             <span>Title:</span>
-            <input type="text" name="" id="" />
+            <input type="text" id="query-title" />
           </div>
           <div class="type">
             <span>Type:</span>
-            <select name="movie-types" id="">
+            <select name="movie-types" id="query-type">
               <option value="movie">Movie</option>
               <option value="series">Series</option>
               <option value="episode">Episode</option>
             </select>
           </div>
-          <a href="#" class="btn">Search</a>
+          <a id="search-btn" href="#" class="btn">Search</a>
         </div>
+      </div>
+      <div class="movies-container" style="display:none;">
+        <h3 class="header">Films:</h3>
+        <div id="movies" class="movies-list"></div>
       </div>
     </div>
   </body>

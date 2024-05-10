@@ -18,20 +18,29 @@
   flex-direction: column;
   align-items: center;
 
+  .header {
+    font-family: "Inter-Bold";
+  }
+
+  .btn {
+    width: 80%;
+    text-decoration: none;
+    color: #000;
+    background-color: #e1e1e1;
+    border-radius: 5px;
+    text-align: center;
+    border: solid thin;
+  }
+
   .search-window {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .header {
-      font-family: "Inter-Bold";
-    }
 
     .search-form {
-      border-style: solid;
+      border: thin solid #d1cdc9;
       border-radius: 5px;
-      border-color: #d1cdc9;
-      border-width: thin;
       padding: 30px;
       width: 100%;
       display: flex;
@@ -69,8 +78,7 @@
           background-color: #fff;
           width: inherit;
           border-radius: 5px;
-          border: solid;
-          border-width: thin;
+          border: thin solid;
 
           option {
             background-color: #fff;
@@ -78,15 +86,36 @@
         }
       }
 
-      .btn {
-        width: 80%;
-        text-decoration: none;
-        color: #000;
-        background-color: #e1e1e1;
-        border-radius: 5px;
+    }
+  }
+  
+  .movies-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .movies-list {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-gap: 1rem;
+
+      .movie-card {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 5;
         text-align: center;
-        border: solid;
-        border-width: thin;
+        border: thin solid #d1cdc9;
+        border-radius: 5px;
+        width: 250px;
+        
+        .movie-poster {
+          display: block;
+          max-width: 90%;
+          margin-top: 10px;
+          border-radius: 5px;
+          justify-self: center;
+        }
       }
     }
   }
