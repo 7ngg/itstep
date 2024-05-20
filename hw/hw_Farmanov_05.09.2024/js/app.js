@@ -4,6 +4,7 @@ const omdbService = new OmdbService(82130204);
 
 const searchBtn = document.getElementById("search-btn");
 const moreBtn = document.getElementById("more-btn");
+const exitBtn = document.getElementById('exit-btn');
 
 const moviesList = document.getElementById("movies");
 
@@ -30,14 +31,29 @@ searchBtn.onclick = async () => {
     document
       .getElementById(`${movie.imdbID}`)
       .addEventListener("click", async () => {
+        document.querySelector('.popup-container').style.display = 'flex';
         const response = await omdbService.getDataByIdAsync(movie.imdbID);
-        console.log(response);
+
+        document.getElementById('popup-image').src = response.Poster;
+
+        document.getElementById('popup-data-title').textContent = response.Title;
+        document.getElementById('popup-data-released').textContent = response.Released;
+        document.getElementById('popup-data-genre').textContent = response.Genre;
+        document.getElementById('popup-data-country').textContent = response.Country;
+        document.getElementById('popup-data-director').textContent = response.Director;
+        document.getElementById('popup-data-writer').textContent = response.Writer;
+        document.getElementById('popup-data-actors').textContent = response.Actors;
+        document.getElementById('popup-data-awards').textContent = response.Awards;
       });
   });
 
   moreBtn.style.display = "block";
   moreBtnHandler = loadMore(title, type);
 };
+
+exitBtn.onclick = () => {
+  document.querySelector('.popup-container').style.display = 'none';
+}
 
 moreBtn.onclick = () => {
   moreBtnHandler();

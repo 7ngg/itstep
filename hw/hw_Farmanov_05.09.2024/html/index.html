@@ -1,39 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie API</title>
-    <link rel="stylesheet" href="../css/style.min.css" />
-    <script type="module" src="../js/app.js" defer></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="search-window">
-        <h3 class="header">Search:</h3>
-        <div class="search-form">
-          <div class="title">
-            <span>Title:</span>
-            <input type="text" id="query-title" />
-          </div>
-          <div class="type">
-            <span>Type:</span>
-            <select name="movie-types" id="query-type">
-              <option value="movie">Movie</option>
-              <option value="series">Series</option>
-              <option value="episode">Episode</option>
-            </select>
-          </div>
-          <a id="search-btn" href="#" class="btn">Search</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie API</title>
+  <link rel="stylesheet" href="../css/style.min.css" />
+  <script type="module" src="../js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="search-window">
+      <h3 class="header">Search:</h3>
+      <div class="search-form">
+        <div class="title">
+          <span>Title:</span>
+          <input type="text" id="query-title" />
         </div>
-      </div>
-      <div class="movies-container" style="display:none;">
-        <h3 class="header">Films:</h3>
-        <div id="movies" class="movies-list"></div>
-      </div>
-      <div class="more-btn-container">
-        <a href="javascript:void(0)" class="btn more" id="more-btn">More</a> 
+        <div class="type">
+          <span>Type:</span>
+          <select name="movie-types" id="query-type">
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+          </select>
+        </div>
+        <a id="search-btn" href="#" class="btn">Search</a>
       </div>
     </div>
-  </body>
-</html>
+    <div class="movies-container" style="display:none;">
+      <h3 class="header">Films:</h3>
+      <div id="movies" class="movies-list"></div>
+    </div>
+    <div class="popup-container">
+      <div id="popup">
+        <a id="exit-btn" href="javascript:void(0)">&times;</a>
+        <img id="popup-image" alt="">
+        <ul class="popup-data">
+          <li class="popup-data-item">
+            <h4>Title:</h4>
+            <p id="popup-data-title"></p>
+          </li>
+          <li class="popup-data-item">
+            <h4>Released:</h4>
+            <p id="popup-data-released"></p>
+          </li>
+          <li class="popup-data-item">
+            <h4>Genre:</h4>
+            <p id="popup-data-genre"></p>
+          </li>
+          <li class="popup-data-item">
+            <h4>Country:</h4>
+            <p id="popup-data-country"></p>
+          </li>
+          <li class="popup-data-item">
+            <h4>Director:</h4>
+            <p id="popup-data-director"></p>
+          </li>
+          <li class="popup-data-item">
+            <h4>Writer:</h4>
+            <p id="popup-data-writer"></p>
+          </li>
+          <li class="popup-data-item">
+            <h4>Actors:</h4>
+            <p id="popup-data-actors"></p>
+          </li>
+          <li class="popup-data-item">
+            <h4>Awards:</h4>
+            <p id="popup-data-awards"></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="more-btn-container">
+      <a href="javascript:void(0)" class="btn more" id="more-btn">More</a>
+    </div>
+  </div>
+</body>
