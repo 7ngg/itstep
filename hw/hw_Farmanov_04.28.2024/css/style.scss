@@ -179,7 +179,14 @@ main {
   .ad-banner {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 50px;
+    padding-top: 110px;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0px;
+    }
 
     .new-car {
       background-color: $logo-light-green;
