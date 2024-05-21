@@ -110,11 +110,14 @@ main {
       flex-direction: column;
       align-items: center;
       overflow: visible;
+      width: 100%;
 
       .vehicles {
         list-style-type: none;
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3, auto);
+        padding: 0;
+        margin: 0;
 
         .vehicle {
           margin: 10px;
@@ -125,16 +128,25 @@ main {
           }
 
           .vehicle-card {
+            position: relative;
+            width: 400px;
+
             .vehicle-image {
               width: 100%;
-            }
 
-            .status {
-              position: absolute;
-              color: #ededed;
-              background-color: #fa2837;
-              text-align: center;
-              padding: 5px;
+              img {
+                width: 100%;
+              }
+
+              .status {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #ededed;
+                background-color: #fa2837;
+                text-align: center;
+                padding: 5px;
+              }
             }
 
             .vehicle-specs {
@@ -142,6 +154,10 @@ main {
               margin: 0;
               list-style-type: none;
               display: flex;
+              
+              .separator {
+                border-right: thin solid;
+              }
 
               .spec {
                 margin-right: 10px;
@@ -161,22 +177,21 @@ main {
   }
 
   .ad-banner {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 
-        .new-car {
-            background-color: $logo-light-green;
-            border-radius: 150px 0 0 150px;
-            padding: 60px;
-        }
-
-        .old-car {
-            background-color: $logo-dark-green;
-            border-radius: 0 150px 150px 0;
-            text-align: right;
-            padding: 60px;
-        }
+    .new-car {
+      background-color: $logo-light-green;
+      border-radius: 150px 0 0 150px;
+      padding: 60px;
     }
-}
 
+    .old-car {
+      background-color: $logo-dark-green;
+      border-radius: 0 150px 150px 0;
+      text-align: right;
+      padding: 60px;
+    }
+  }
+}
