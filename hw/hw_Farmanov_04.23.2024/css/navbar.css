@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'Product Sans Bold Italic';
+  src: url(../assets/fonts/ProductSansBoldItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Product Sans Bold';
+  src: url(../assets/fonts/ProductSansBold.ttf);
+}
+
+@font-face {
+  font-family: 'Product Sans Italic';
+  src: url(../assets/fonts/ProductSansItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url(../assets/fonts/ProductSansRegular.ttf);
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+}
+
+@-webkit-keyframes rotate-scale-up-hor {
+  0% {
+    -webkit-transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateX(-180deg);
+    transform: scale(2) rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateX(-360deg);
+    transform: scale(1) rotateX(-360deg);
+  }
+}
+
+@keyframes rotate-scale-up-hor {
+  0% {
+    -webkit-transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateX(-180deg);
+    transform: scale(2) rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateX(-360deg);
+    transform: scale(1) rotateX(-360deg);
+  }
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.slide-right {
+  -webkit-animation: slide-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slide-left {
+  -webkit-animation: slide-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.rotate-scale-up-hor {
+  -webkit-animation: rotate-scale-up-hor 0.65s linear both;
+  animation: rotate-scale-up-hor 0.65s linear both;
+}
+
+.scale-up-center {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.navbar {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.navbar .nav-logo {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 15%;
+}
+
+.navbar .nav-logo a svg {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.navbar .nav-main {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.navbar .nav-main .nav-items {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar .nav-main .nav-items .nav-item {
+  height: 100%;
+}
+
+.navbar .nav-main .nav-items .nav-item a {
+  height: 100%;
+  color: black;
+  text-decoration: none;
+  font-family: "Product Sans";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.navbar .nav-main .nav-items .nav-item a:hover {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.navbar .nav-auth {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

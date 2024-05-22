@@ -1,0 +1,66 @@
+@import "global-style";
+@import "animations";
+
+* {
+  font-family: 'Product Sans';
+}
+
+#open-chat-btn {
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  width: 200px;
+  font-family: 'Product Sans Bold';
+  border: none;
+  padding: 10px 0 10px 0;
+  background-color: $logo-light-green;
+  border-radius: 5px 5px 0 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 2px solid #f1f1f1;
+  border-radius: 5px;
+  z-index: 5;
+
+  .form-container {
+    width: 200px;
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      min-height: 200px;
+      padding: 10px;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      border-radius: 5px;
+    }
+
+    #close-btn {
+      margin-bottom: 20px;
+      align-self: flex-end;
+      height: 20px;
+      cursor: pointer;
+      background: transparent;
+      font-size: 24px;
+    }
+
+    #send-btn {
+      border: none;
+      width: 50%;
+      align-self: center;
+      margin-top: 10px;
+      padding: 5px;
+      background: $logo-light-green;
+      border-radius: 5px;
+    }
+  }
+}

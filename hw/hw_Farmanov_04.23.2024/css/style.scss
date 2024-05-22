@@ -1,0 +1,204 @@
+@import "global-style";
+@import "animations";
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  height: 800px;
+
+  .greeting {
+    background-image: url("../assets/img/IntroBackground.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    .car-bg {
+      display: flex;
+      justify-content: flex-end;
+      height: 50%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 700px;
+      }
+    }
+  }
+
+  .info {
+    font-family: "Product Sans";
+    width: 80%;
+    position: absolute;
+    left: 10%;
+
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .info-list {
+        list-style-type: none;
+        display: flex;
+
+        .info-list-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .info-list-item-icon {
+          background-color: $logo-light-gray;
+          border-radius: 50%;
+          padding: 10px;
+        }
+
+        .car-bg {
+          display: flex;
+
+          img {
+            width: 700px;
+          }
+        }
+
+        .adv-list {
+          list-style-type: none;
+          padding: 0;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+
+          .adv-list-item {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .btn {
+          font-weight: 600;
+          background-color: $logo-light-gray;
+          color: black;
+          padding: 10px;
+          border-radius: 3px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .store-listing {
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    margin-top: 50px;
+
+    .listing-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: visible;
+      width: 100%;
+
+      .vehicles {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        padding: 0;
+        margin: 0;
+
+        .vehicle {
+          margin: 10px;
+
+          a {
+            text-decoration: none;
+            color: #000;
+          }
+
+          .vehicle-card {
+            position: relative;
+            width: 400px;
+
+            .vehicle-image {
+              width: 100%;
+
+              img {
+                width: 100%;
+              }
+
+              .status {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #ededed;
+                background-color: #fa2837;
+                text-align: center;
+                padding: 5px;
+              }
+            }
+
+            .vehicle-specs {
+              padding: 0;
+              margin: 0;
+              list-style-type: none;
+              display: flex;
+              
+              .separator {
+                border-right: thin solid;
+              }
+
+              .spec {
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+                font-size: 80%;
+
+                p {
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ad-banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-top: 110px;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0px;
+    }
+
+    .new-car {
+      background-color: $logo-light-green;
+      border-radius: 150px 0 0 150px;
+      padding: 60px;
+    }
+
+    .old-car {
+      background-color: $logo-dark-green;
+      border-radius: 0 150px 150px 0;
+      text-align: right;
+      padding: 60px;
+    }
+  }
+}
