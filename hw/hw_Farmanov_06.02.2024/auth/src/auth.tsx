@@ -1,13 +1,13 @@
 import React from "react";
 
-interface AuthProps {
+interface IAuthProps {
   isRegistered: boolean;
 }
 
-const LoginForm: React.FC<AuthProps> = ({ isRegistered }) => {
+const LoginForm: React.FC<IAuthProps> = (props: IAuthProps) => {
   return (
     <div className="container grid bg-green-200 text-black rounded-3xl w-[400px] h-[400px]">
-      {getForm(isRegistered)}
+      {getForm(props.isRegistered)}
     </div>
   );
 }
