@@ -6,6 +6,7 @@ import MainHeader from './MainHeader';
 function App() {
   return (
     <div className="App">
+      <LoginForm isRegistered={true}/>
       <MainHeader />
       <Main />
     </div>

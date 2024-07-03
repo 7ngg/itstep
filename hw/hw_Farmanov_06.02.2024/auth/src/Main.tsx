@@ -15,7 +15,10 @@ function Add() {
       <div className="p-3.5 flex flex-col gap-3 h-3/4">
         <div className="name">
           <h1 className="mb-1 text-sm font-bold">Name</h1>
-          <input type="text" className="w-full p-3 shadow-md justify-self-center rounded-3xl resize-none" />
+          <input
+            type="text"
+            className="w-full p-3 shadow-md justify-self-center rounded-3xl resize-none"
+          />
         </div>
         <div className="desc">
           <h1 className="mb-1 text-sm font-bold">Text</h1>
