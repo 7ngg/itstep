@@ -1,8 +1,19 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Button from "../Components/Button";
 import Input from "../Components/Input";
 import { Forecast } from "../Entities/forecast";
+
+function convertUnixTimestampToTime(unixTimestamp: number): string {
+  const milliseconds = unixTimestamp * 1000;
+
+  const dateObject = new Date(milliseconds);
+
+  const hours = dateObject.getHours().toString().padStart(2, "0"); // добавляем ведущий ноль, если часов меньше 10
+  const minutes = dateObject.getMinutes().toString().padStart(2, "0"); // добавляем ведущий ноль, если минут меньше 10
+
+  return `${hours}:${minutes}`;
+}
 
 const Home = () => {
   const cityRef = useRef<HTMLInputElement>(null);
@@ -47,9 +58,6 @@ const Home = () => {
     const city = cityRef.current.value;
 
     fetchData(city).then((r) => {
-      // TODO: deal with caching
-
-      localStorage.setItem("weatherData", JSON.stringify(r));
       setData(r);
     });
   };
@@ -59,15 +67,35 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <header className="flex items-center gap-4 justify-center h-14 shadow bg-stone-800">
+    <div className="flex flex-col items-center">
+      <header className="flex items-center gap-4 w-full justify-center h-14 shadow bg-stone-800">
         <Input refs={cityRef} placeholder="City" />
         <Input refs={countryRef} placeholder="Country (optional)" />
         <Button text="Search" onClick={searchHandler} />
       </header>
-      <main>
-        {data && <h1>{Math.floor(data.main.temp - 272)}</h1>}
-        <img src={getIcon(data!.weather[0].icon)}></img>
+      <main className="flex items-center">
+        {data && (
+          <div className="flex flex-col font-bold mt-5 border-solid border-2 rounded p-3">
+            <div className="flex gap-1 text-3xl float-left">
+              <h1>{data.name}, </h1>
+              <h1>{data.sys.country}</h1>
+            </div>
+            <div className="flex items-center">
+              <div className="flex flex-col font-bold">
+                <h1 className="text-3xl font-bold">
+                  {Math.floor(data.main.temp - 272)}
+                  <span>&deg;</span>
+                </h1>
+                <p>{data.weather[0].description}</p>
+              </div>
+              <img src={getIcon(data.weather[0].icon)} alt="weather-icon" />
+            </div>
+            <div>
+              <h1>Sunrise: {convertUnixTimestampToTime(data.sys.sunrise)}</h1>
+              <h1>Sunset: {convertUnixTimestampToTime(data.sys.sunset)}</h1>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
