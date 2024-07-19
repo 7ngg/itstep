@@ -19,8 +19,9 @@ const Navbar = (props: navbarProps) => {
       >
         Home
       </Link>
-      {props.items.map((i) => (
+      {props.items.map((i, index) => (
         <Link
+          key={index}
           to={i.link}
           className="py-1 px-5 hover:bg-stone-600 rounded duration-150"
         >

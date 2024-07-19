@@ -8,7 +8,7 @@ const links = [
   },
   {
     name: "Task 2",
-    link: "",
+    link: "task2",
   },
 ];
 

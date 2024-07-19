@@ -1,10 +1,11 @@
 const Attractions = () => {
   return (
-    <div className="w-10/12 h-screen shadow p-5 flex flex-col gap-5">
+    <div className="bg-gray-100 w-10/12 h-screen shadow p-5 flex flex-col gap-5">
       <div className="flex gap-5">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Baku_Maiden_Tower_004_7736.jpg/260px-Baku_Maiden_Tower_004_7736.jpg"
           alt=""
+          className="max-w-xs m-2 rounded-lg shadow-lg transition-transform transform"
         />
         <p>
           Девичья башня (азерб. Qız Qalası [Гыз галасы́]) — древняя крепостная
@@ -30,6 +31,7 @@ const Attractions = () => {
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/%C4%B0%C3%A7%C9%99ri%C5%9F%C9%99h%C9%99r_kollaj%C4%B1.jpg/320px-%C4%B0%C3%A7%C9%99ri%C5%9F%C9%99h%C9%99r_kollaj%C4%B1.jpg"
           alt=""
+          className="max-w-xs m-2 rounded-lg shadow-lg transition-transform transform"
         />
       </div>
     </div>

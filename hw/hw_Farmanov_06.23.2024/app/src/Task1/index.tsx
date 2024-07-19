@@ -9,7 +9,7 @@ const navItems = [
   },
   {
     name: "Pictures",
-    link: "",
+    link: "pictures",
   },
   {
     name: "Attractions",
