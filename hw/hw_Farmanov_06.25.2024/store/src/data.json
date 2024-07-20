@@ -1,0 +1,802 @@
+[
+    {
+        "name": "sapien",
+        "id": "7ABCC873-83B7-A294-1BB6-D6C72A6A6A99",
+        "description": "ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus.",
+        "price": 23,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "nunc,",
+        "id": "6E8E6CE7-CE1A-CF7A-44BB-653CCB6C02CB",
+        "description": "Nunc quis arcu vel quam dignissim pharetra. Nam",
+        "price": 4,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "urna.",
+        "id": "AC18F22B-B04C-7899-12D3-194693DB54ED",
+        "description": "vulputate, nisi sem semper erat, in consectetuer",
+        "price": 28,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "tellus.",
+        "id": "F3A252CA-3175-A863-6871-E451C83129DE",
+        "description": "erat, in consectetuer ipsum nunc id",
+        "price": 28,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "eu",
+        "id": "B4098339-2F24-23A7-41B2-85E186340141",
+        "description": "consectetuer euismod est arcu ac orci.",
+        "price": 28,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "sapien.",
+        "id": "D3DD4680-0848-6268-AA39-867B845D49E8",
+        "description": "tempus eu, ligula. Aenean euismod",
+        "price": 39,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "magna",
+        "id": "5E34D631-71C5-0A37-C4EA-E148962BB49D",
+        "description": "lectus pede, ultrices a, auctor non, feugiat nec, diam.",
+        "price": 12,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "tempor",
+        "id": "4EBEE1B5-52B6-BA32-77B7-5D27282EA79E",
+        "description": "leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod",
+        "price": 21,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "Mauris",
+        "id": "47E08EC5-040D-8127-F09E-1E4E30D1384B",
+        "description": "magna. Ut tincidunt orci quis lectus. Nullam suscipit,",
+        "price": 18,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "augue",
+        "id": "5FF8843E-5CC3-3C93-3276-283D55B8D531",
+        "description": "imperdiet nec, leo. Morbi neque",
+        "price": 77,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "lorem",
+        "id": "48240A7E-C5E6-83A4-D7A6-C953783DDAB5",
+        "description": "nonummy ut, molestie in, tempus eu, ligula.",
+        "price": 79,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "Aliquam",
+        "id": "62D9CFE0-E655-92A0-859F-9886D5C37295",
+        "description": "ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt",
+        "price": 96,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "auctor,",
+        "id": "AA1561C8-1E3F-4B3D-15C9-AAF4A682C593",
+        "description": "nec tempus scelerisque, lorem ipsum sodales purus, in molestie",
+        "price": 57,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "tempor,",
+        "id": "E5155AC6-F7BD-5973-2B6A-43CF1369E53B",
+        "description": "fames ac turpis egestas. Fusce aliquet magna",
+        "price": 44,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "magna.",
+        "id": "CA4AC504-2C6D-E9AC-B100-0ADB5E16762E",
+        "description": "Nullam feugiat placerat velit. Quisque varius. Nam porttitor",
+        "price": 71,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "vitae",
+        "id": "60A61FBC-258B-1C38-A29A-2E9792538BDA",
+        "description": "risus. Nulla eget metus eu erat semper rutrum. Fusce",
+        "price": 10,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "egestas.",
+        "id": "1AABF84F-1534-EE92-C9F1-2B3685B791E1",
+        "description": "Integer vitae nibh. Donec est mauris,",
+        "price": 45,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "libero.",
+        "id": "97A41FA1-398A-6B85-7951-FDD90ACE1950",
+        "description": "magna a neque. Nullam ut nisi a odio semper",
+        "price": 19,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "Vestibulum",
+        "id": "15415E6A-328A-5964-B9C2-CBD413BFF589",
+        "description": "dictum placerat, augue. Sed molestie. Sed id risus",
+        "price": 23,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "orci",
+        "id": "365CA7F8-08BA-64A4-B7C5-D8657753BC8E",
+        "description": "ipsum. Suspendisse sagittis. Nullam vitae diam.",
+        "price": 46,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "Aliquam",
+        "id": "C34ED4A1-C341-C943-473B-CC9344376F23",
+        "description": "ac facilisis facilisis, magna tellus faucibus",
+        "price": 20,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "iaculis,",
+        "id": "93CD3B9B-63DA-DF56-CC89-49D517876644",
+        "description": "Duis dignissim tempor arcu. Vestibulum ut",
+        "price": 89,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "ornare",
+        "id": "B3C196CD-D958-9AA3-AE89-327987456C38",
+        "description": "dictum placerat, augue. Sed molestie. Sed id risus",
+        "price": 14,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "dui",
+        "id": "CA848497-6941-26E0-9C52-4D47C28232D9",
+        "description": "neque sed dictum eleifend, nunc risus varius orci,",
+        "price": 76,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "nascetur",
+        "id": "BDC04F5B-3922-323C-B8C8-B78604588898",
+        "description": "ante dictum mi, ac mattis velit",
+        "price": 91,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "mauris",
+        "id": "9AE7AA0D-9D45-C4E9-9BB6-48E74E67C3E2",
+        "description": "ultrices posuere cubilia Curae Donec tincidunt. Donec vitae erat",
+        "price": 7,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "ligula",
+        "id": "802AC268-06D5-4A53-294D-C981EB2ACA31",
+        "description": "semper rutrum. Fusce dolor quam, elementum at,",
+        "price": 91,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "gravida",
+        "id": "90775658-062A-A596-6DCC-F117BD8E87D1",
+        "description": "elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",
+        "price": 100,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "Fusce",
+        "id": "D445DB2B-4778-156B-3176-C9CDC544951A",
+        "description": "aliquet, sem ut cursus luctus, ipsum leo",
+        "price": 12,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "libero",
+        "id": "70713E8C-AC76-8DB5-5E6B-8176B4264901",
+        "description": "gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum",
+        "price": 86,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "cursus",
+        "id": "827023D6-013D-E8CF-3759-44BFDFA6D227",
+        "description": "Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada",
+        "price": 79,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "Cras",
+        "id": "1ED92B7E-1685-58B6-3743-E6B9E2E53CEC",
+        "description": "placerat. Cras dictum ultricies ligula. Nullam enim.",
+        "price": 55,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "Aliquam",
+        "id": "5FB2D446-96E2-BDB6-E6A1-49C32DBBAB57",
+        "description": "Etiam vestibulum massa rutrum magna. Cras convallis convallis",
+        "price": 64,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "a",
+        "id": "45BD6F29-3422-4E75-4F9D-AB2E7773E721",
+        "description": "magna. Duis dignissim tempor arcu. Vestibulum",
+        "price": 99,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "tincidunt",
+        "id": "93727D93-48F6-8622-EE81-BA81AE5AF109",
+        "description": "Phasellus nulla. Integer vulputate, risus a",
+        "price": 9,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "et",
+        "id": "3059B09C-9B28-B195-3256-783545ADBAE6",
+        "description": "nunc. In at pede. Cras vulputate velit eu sem.",
+        "price": 49,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "malesuada",
+        "id": "00AE233C-1468-12C1-B52B-2ECB93F1DE2E",
+        "description": "euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas",
+        "price": 79,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "metus.",
+        "id": "238D91C7-FBC4-1BE8-C845-2DADB5684C88",
+        "description": "pede. Cum sociis natoque penatibus et magnis dis parturient montes,",
+        "price": 75,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "et,",
+        "id": "A5379714-A8FC-9DD4-91BF-CCEB74EC19C5",
+        "description": "ac arcu. Nunc mauris. Morbi non sapien",
+        "price": 97,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "quam.",
+        "id": "AD2C6EE2-4B39-72C2-0A24-44316394F472",
+        "description": "Maecenas iaculis aliquet diam. Sed diam lorem, auctor quis,",
+        "price": 67,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "odio.",
+        "id": "781D6BE1-ACDA-CE71-2A2B-51037A396E6B",
+        "description": "vehicula et, rutrum eu, ultrices",
+        "price": 69,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "ligula",
+        "id": "320125BA-0A3A-41B2-2F6B-B02932D59655",
+        "description": "orci. Phasellus dapibus quam quis diam. Pellentesque",
+        "price": 34,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "bibendum",
+        "id": "AA3ACC43-8BBF-5531-9363-F2AD77A63421",
+        "description": "ut aliquam iaculis, lacus pede",
+        "price": 29,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "Phasellus",
+        "id": "CA3F6698-2879-24B2-D398-85D1491FB317",
+        "description": "amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt",
+        "price": 83,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "enim,",
+        "id": "7D7D07D1-DA09-EE17-C089-7C95BCF77790",
+        "description": "fermentum metus. Aenean sed pede nec ante blandit viverra.",
+        "price": 44,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "lectus",
+        "id": "F12126DB-E2D3-CB6B-2CA7-6670CD1D89AC",
+        "description": "adipiscing, enim mi tempor lorem, eget",
+        "price": 4,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "ipsum",
+        "id": "AC5C218F-E4EC-2CA2-6F42-3F3019E27147",
+        "description": "turpis nec mauris blandit mattis. Cras eget",
+        "price": 47,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "tempor",
+        "id": "626DAA4E-CEB9-475B-DB00-E58D39217BE2",
+        "description": "posuere cubilia Curae Phasellus ornare. Fusce mollis. Duis",
+        "price": 33,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "risus.",
+        "id": "77EBFADE-5A4A-DDA1-D89D-4178CBAB8242",
+        "description": "amet, dapibus id, blandit at, nisi. Cum sociis natoque",
+        "price": 98,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "montes,",
+        "id": "FDA8B193-D439-B4EE-9B0C-FC2227C81B65",
+        "description": "sociosqu ad litora torquent per conubia nostra, per inceptos",
+        "price": 77,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "nec",
+        "id": "436CB299-8BE2-B475-4E7E-05E19C36E4D9",
+        "description": "Nunc ac sem ut dolor dapibus gravida. Aliquam",
+        "price": 49,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "vel",
+        "id": "4B56E60C-DD3E-3885-329E-B005FF9B815B",
+        "description": "Maecenas malesuada fringilla est. Mauris",
+        "price": 54,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "amet,",
+        "id": "B768473A-ABD5-A3C1-D6A1-FE45A17D5893",
+        "description": "eget odio. Aliquam vulputate ullamcorper magna.",
+        "price": 83,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "Nam",
+        "id": "AA2BC2BA-E7B8-9BE3-26D6-71ED0DE39E9F",
+        "description": "auctor, nunc nulla vulputate dui, nec",
+        "price": 45,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "tincidunt",
+        "id": "C761E739-620F-75ED-BEA5-942C92951A86",
+        "description": "mollis. Integer tincidunt aliquam arcu. Aliquam ultrices",
+        "price": 72,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "fermentum",
+        "id": "56F87D6E-ACDF-4019-4AA5-F9E7AD5272B8",
+        "description": "pede. Cras vulputate velit eu sem.",
+        "price": 89,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "condimentum",
+        "id": "1346D2F4-5978-6ED5-A445-853BDB9EA67D",
+        "description": "erat vitae risus. Duis a mi fringilla",
+        "price": 67,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "Curabitur",
+        "id": "3045F2E5-A1BA-7371-CB1C-B987E87B26BB",
+        "description": "orci lobortis augue scelerisque mollis. Phasellus",
+        "price": 63,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "pharetra.",
+        "id": "403C0E3B-320E-D695-3BD8-87A7D1309B5A",
+        "description": "dis parturient montes, nascetur ridiculus mus. Aenean eget magna.",
+        "price": 88,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "facilisis",
+        "id": "E36B4E2D-CCB8-2E10-2EAC-1AF168F7553E",
+        "description": "purus ac tellus. Suspendisse sed dolor.",
+        "price": 23,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "facilisis",
+        "id": "8588A4D3-983A-B127-8AE2-492E91D44593",
+        "description": "penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "price": 76,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "luctus",
+        "id": "7EDCE154-7C37-B549-ED1D-9738666ABEC4",
+        "description": "et ipsum cursus vestibulum. Mauris magna. Duis dignissim tempor",
+        "price": 86,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "lorem,",
+        "id": "6495C5C7-3CC8-155A-68B0-5867466B3998",
+        "description": "cursus. Integer mollis. Integer tincidunt aliquam",
+        "price": 15,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "eget",
+        "id": "21EF84AA-6EFE-71CF-86C8-4DBACB2974AC",
+        "description": "erat vel pede blandit congue. In scelerisque scelerisque dui.",
+        "price": 36,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "magna.",
+        "id": "AD9C522B-72B7-DDCA-E33B-E29DE4F8D1BD",
+        "description": "enim diam vel arcu. Curabitur ut odio vel est",
+        "price": 37,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "purus.",
+        "id": "68A2B94F-4793-6DC9-C6FC-D506453FA391",
+        "description": "eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in",
+        "price": 35,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "ac",
+        "id": "6A2B8512-D5E8-3348-0754-B5645684D16C",
+        "description": "commodo at, libero. Morbi accumsan laoreet",
+        "price": 88,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "a",
+        "id": "1E905084-C7E5-B146-D6EC-27310FEC9FEC",
+        "description": "eu, euismod ac, fermentum vel, mauris. Integer sem elit,",
+        "price": 68,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "sodales",
+        "id": "52A8A85A-70FC-9802-A58B-29D792A52471",
+        "description": "velit eu sem. Pellentesque ut ipsum",
+        "price": 96,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "venenatis",
+        "id": "A05C8722-11BD-38AB-DFD3-87168C741C35",
+        "description": "sagittis augue, eu tempor erat neque non",
+        "price": 56,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "orci,",
+        "id": "8AA8766E-5F46-771A-FCE7-447CBF89E199",
+        "description": "et ipsum cursus vestibulum. Mauris magna.",
+        "price": 30,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "feugiat",
+        "id": "C51B95AD-A2A5-818A-EBD6-D3DDA28126FE",
+        "description": "facilisis, magna tellus faucibus leo, in lobortis tellus justo",
+        "price": 12,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "sit",
+        "id": "725C9385-5430-D7B6-9CF2-50DB7E5B9344",
+        "description": "Vivamus molestie dapibus ligula. Aliquam erat volutpat.",
+        "price": 56,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "a",
+        "id": "3FF79C97-CB8D-79C0-D2D8-1DE2C37E9631",
+        "description": "Donec porttitor tellus non magna. Nam ligula elit,",
+        "price": 34,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "nec,",
+        "id": "E037554D-251F-F5E9-A91D-5DB88C8B261C",
+        "description": "sem egestas blandit. Nam nulla",
+        "price": 30,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "Nulla",
+        "id": "4D401CDE-DB64-AAA7-8E80-8EBDD0C678E0",
+        "description": "Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus.",
+        "price": 7,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "ipsum.",
+        "id": "477A3424-1BD3-AE45-4B52-88D7242B0DE0",
+        "description": "in aliquet lobortis, nisi nibh lacinia orci,",
+        "price": 6,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "urna,",
+        "id": "8EF82C2B-3CAB-1CA0-3CC9-73C7876B4C92",
+        "description": "magna. Ut tincidunt orci quis lectus. Nullam suscipit,",
+        "price": 44,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "eu,",
+        "id": "F32C2423-9A31-5705-9E7E-AE593AE8AC78",
+        "description": "tempor diam dictum sapien. Aenean massa.",
+        "price": 62,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "sit",
+        "id": "D499A55A-B137-7E85-437E-3AE7CB925409",
+        "description": "scelerisque sed, sapien. Nunc pulvinar arcu et pede.",
+        "price": 93,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "eleifend.",
+        "id": "62271722-2E41-EBE1-8302-EB822D08150E",
+        "description": "Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie",
+        "price": 25,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "commodo",
+        "id": "3EE681ED-E86A-B6E2-4353-A3C5496A4298",
+        "description": "odio. Nam interdum enim non",
+        "price": 14,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "risus.",
+        "id": "5BC986E3-23E8-77BD-E3FB-9C5455332D4D",
+        "description": "rhoncus id, mollis nec, cursus a,",
+        "price": 64,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "Cum",
+        "id": "2E3A4A7C-6D52-7285-7DCC-6B22D527E9C4",
+        "description": "Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh.",
+        "price": 54,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "tincidunt",
+        "id": "A8387438-91E9-AA86-885B-D97B4CB54E98",
+        "description": "Mauris blandit enim consequat purus. Maecenas libero est, congue",
+        "price": 27,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "mollis",
+        "id": "79823C92-192C-B3C9-DAD9-9E8FD6B5DAF3",
+        "description": "magna a tortor. Nunc commodo auctor velit.",
+        "price": 87,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "odio",
+        "id": "9BB27EF5-9034-E0B8-3E48-E53D06F700C9",
+        "description": "iaculis nec, eleifend non, dapibus rutrum,",
+        "price": 21,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "pede,",
+        "id": "1311FBFB-2F1A-BACB-2413-DD2049CC071E",
+        "description": "convallis erat, eget tincidunt dui augue eu",
+        "price": 68,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "Etiam",
+        "id": "53F75189-8198-0BEB-D741-73ED3AC45693",
+        "description": "Nam interdum enim non nisi. Aenean eget metus. In nec",
+        "price": 61,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "ullamcorper",
+        "id": "99E098E1-E44A-34C2-4514-D5972625A54D",
+        "description": "Duis at lacus. Quisque purus",
+        "price": 13,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    },
+    {
+        "name": "aliquet.",
+        "id": "B4A4B778-4532-D3A3-CE3F-34BC1CA23E14",
+        "description": "purus ac tellus. Suspendisse sed dolor.",
+        "price": 77,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Electronics"
+    },
+    {
+        "name": "tristique",
+        "id": "C04BC809-1AA7-ADCE-5A88-BF065DAABA4A",
+        "description": "eget, ipsum. Donec sollicitudin adipiscing ligula.",
+        "price": 11,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Books"
+    },
+    {
+        "name": "sem",
+        "id": "2BDC30AD-6DD8-A564-CBCE-12153E4ED101",
+        "description": "mus. Proin vel nisl. Quisque fringilla euismod",
+        "price": 72,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Furniture"
+    },
+    {
+        "name": "Aliquam",
+        "id": "44F38E14-4758-BB27-2C13-7AA6BB6D557A",
+        "description": "eu odio tristique pharetra. Quisque ac libero",
+        "price": 4,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Clothing"
+    },
+    {
+        "name": "elit",
+        "id": "051AE865-DE2E-DF9D-AA5A-26A88EB68191",
+        "description": "elit. Nulla facilisi. Sed neque. Sed eget",
+        "price": 65,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Toys"
+    },
+    {
+        "name": "sit",
+        "id": "644AA868-EB7C-7643-1B32-7D863B6726DB",
+        "description": "egestas lacinia. Sed congue, elit sed",
+        "price": 4,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Garden"
+    },
+    {
+        "name": "et,",
+        "id": "54A6C8B5-BA5E-3B74-BFA4-4388CF3EF624",
+        "description": "imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum",
+        "price": 3,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Health"
+    },
+    {
+        "name": "vitae",
+        "id": "85A56EED-4E27-3D5F-AEB1-7B57AAB963A5",
+        "description": "et ipsum cursus vestibulum. Mauris magna.",
+        "price": 75,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Sports"
+    },
+    {
+        "name": "Quisque",
+        "id": "A2BF3FEF-C305-3B7C-7D74-E888B210DE26",
+        "description": "purus gravida sagittis. Duis gravida. Praesent eu nulla",
+        "price": 17,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Automotive"
+    },
+    {
+        "name": "Fusce",
+        "id": "81723477-3383-71E1-EADE-8373AC879B06",
+        "description": "nulla. Donec non justo. Proin non massa non",
+        "price": 71,
+        "imgUrl": "https://www.shutterstock.com/image-vector/food-grocery-store-shopping-vector-260nw-2315995187.jpg",
+        "category": "Beauty"
+    }
+]
