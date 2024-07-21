@@ -15,6 +15,10 @@ const navItems = [
     name: "Attractions",
     link: "attractions",
   },
+  {
+    name: "Params",
+    link: `/params/task1/${Math.random() + 100000}`,
+  },
 ];
 
 const Task1 = () => {

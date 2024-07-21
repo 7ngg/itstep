@@ -14,6 +14,10 @@ const navItems = [
     name: "Shakespeare's Globe",
     link: "globe",
   },
+  {
+    name: "Params",
+    link: `params/task2/${(Math.random() + 1).toString(36).substring(2)}`,
+  },
 ];
 
 const Task2 = () => {

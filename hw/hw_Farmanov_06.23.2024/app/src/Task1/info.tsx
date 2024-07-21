@@ -9,7 +9,9 @@ const Info = () => {
     setData(summary);
   };
 
-  fetchSummary();
+  useEffect(() => {
+    fetchSummary();
+  }, []);
 
   return (
     <div className="w-10/12 shadow p-5 flex flex-col gap-5 bg-gray-100">

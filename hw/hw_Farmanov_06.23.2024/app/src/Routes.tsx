@@ -7,6 +7,7 @@ import Pictures from "./Task1/pictures";
 import Task2 from "./Task2";
 import Globe from "./Task2/globe";
 import Plays from "./Task2/plays";
+import Params from "./params";
 
 const routes = [
   {
@@ -29,6 +30,10 @@ const routes = [
         path: "Pictures",
         element: <Pictures />,
       },
+      {
+        path: "params/:from/:parameter",
+        element: <Params />,
+      },
     ],
   },
   {
@@ -46,6 +51,10 @@ const routes = [
       {
         path: "Plays",
         element: <Plays />,
+      },
+      {
+        path: "params/:from/:parameter",
+        element: <Params />,
       },
     ],
   },
