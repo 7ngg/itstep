@@ -16,15 +16,22 @@ const StoreItem = () => {
             <div>
               <h1>Name:</h1>
               <h2>Price:</h2>
+              <h3>Category:</h3>
               <p>Description:</p>
             </div>
             <div>
               <h1>{item.name}</h1>
               <h2>{item.price}</h2>
+              <h3>{item.category}</h3>
               <p>{item.description}</p>
             </div>
           </div>
-          <Link to="/" className="self-center bg-sky-400 w-32 py-2 rounded text-center absolute bottom-5 text-white">Back to store</Link>
+          <Link
+            to="/"
+            className="self-center bg-sky-400 w-32 py-2 rounded text-center absolute bottom-5 text-white"
+          >
+            Back to store
+          </Link>
         </div>
       </div>
     </div>

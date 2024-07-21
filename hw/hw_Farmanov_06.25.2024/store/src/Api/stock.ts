@@ -2,7 +2,7 @@ import { cardProps } from "../Components/ItemCard";
 import data from "../data.json";
 
 export function getData(): cardProps[] {
-  console.log("fetched data")
+  console.log("fetched data");
   return data as cardProps[];
 }
 
