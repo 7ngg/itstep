@@ -1,11 +1,28 @@
 import { cardProps } from "../Components/ItemCard";
 import data from "../data.json";
 
-export function getData(): cardProps[] {
-  console.log("fetched data");
-  return data as cardProps[];
+export enum Categories {
+  All = 0,
+  Electronics,
+  Books,
+  Furniture,
+  Clothing,
+  Toys,
+  Garden,
+  Health,
+  Sports,
+  Automotive,
+  Beauty,
 }
 
-export function filterGet(category: string) {
-  return getData().filter((i) => i.category === category);
+export function getData(category: Categories = Categories.All): cardProps[] {
+  console.log("fetched data");
+
+  const storeItems = data as cardProps[];
+
+  if (category !== Categories.All) {
+    return storeItems.filter((i) => i.category == category);
+  }
+
+  return storeItems;
 }

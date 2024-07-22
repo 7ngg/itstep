@@ -1,9 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
-import { filterGet, getData } from "../Api/stock";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { getData } from "../Api/stock";
 import ItemCard, { cardProps } from "../Components/ItemCard";
+import { Categories } from "../Api/stock";
 
 const categories = [
+  "All",
   "Electronics",
   "Books",
   "Furniture",
@@ -19,18 +22,14 @@ const categories = [
 const Store = () => {
   const queryClient = useQueryClient();
 
-  const { data: items, isLoading } = useQuery({
-    queryFn: () => getData(),
-    queryKey: ["store-items"],
-  });
+  const [currerntCategory, setCurrentCategory] = useState<Categories>(
+    Categories.All,
+  );
 
-  // TODO: Mutations
-  // const { mutate: selectCategory } = useMutation({
-  //   mutationFn: filterGet,
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries({ queryKey: ["store-items"] });
-  //   },
-  // });
+  const { data: items, isLoading, refetch } = useQuery({
+    queryFn: () => getData(currerntCategory),
+    queryKey: ["items", { currerntCategory }],
+  });
 
   if (isLoading) {
     return (
@@ -40,11 +39,20 @@ const Store = () => {
     );
   }
 
+  const categoryHandler = (c: number) => {
+    setCurrentCategory(c);
+    refetch();
+  }
+
   return (
     <div className="w-full flex flex-col gap-5 mt-5 justify-evenly">
-      <div className="flex items-center justify-evenly bg-gray-50 h-16">
-        {categories.map((c) => (
-          <button className="w-40 py-2 hover:bg-gray-200 text-center rounded">
+      <div className="flex items-center justify-evenly bg-gray-50 h-16 px-2">
+        {categories.map((c, index) => (
+          <button
+            key={index}
+            onClick={() => categoryHandler(index)}
+            className={`${c === Categories[currerntCategory] ? "bg-gray-200" : ""} w-36 py-2 hover:bg-gray-200 text-center rounded`}
+          >
             {c}
           </button>
         ))}

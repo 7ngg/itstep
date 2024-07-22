@@ -1,7 +1,9 @@
+import { Categories } from "../Api/stock";
+
 export interface cardProps {
   id: string;
   name: string;
-  category: string;
+  category: Categories;
   description: string;
   imgUrl: string;
   price: number;
