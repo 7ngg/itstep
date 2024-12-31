@@ -1,0 +1,27 @@
+networks: 
+  appnetwork:
+    driver: bridge
+
+services:
+  frontend:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_BACKEND: http://backend:8080
+    image: hwimages.azurecr.io/front
+    ports:
+      - "80:80"
+    networks:
+      - appnetwork
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: hwimages.azurecr.io/back
+    ports:
+      - "8080:8080"
+    networks:
+      - appnetwork
+
