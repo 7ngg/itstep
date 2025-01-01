@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+service Forecast {
+  rpc Get (google.protobuf.Empty) returns (stream ForecastReply);
+}
+
+message  ForecastReply {
+  string date = 1;
+  int32 temperatureC = 2;
+  int32 temperatureF = 3;
+  string summary = 4;
+}
