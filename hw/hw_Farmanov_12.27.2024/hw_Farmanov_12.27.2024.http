@@ -1,0 +1,6 @@
+@hw_Farmanov_12._27._2024_HostAddress = http://localhost:5012
+
+GET {{hw_Farmanov_12._27._2024_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
