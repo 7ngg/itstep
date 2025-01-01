@@ -4,7 +4,7 @@ using Server.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(opts => opts.AddDefaultPolicy(policyBuilder => 
+builder.Services.AddCors(opts => opts.AddDefaultPolicy(policyBuilder =>
 {
     policyBuilder
         .AllowAnyOrigin()
@@ -15,12 +15,16 @@ builder.Services.AddCors(opts => opts.AddDefaultPolicy(policyBuilder =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<AppDbContext>(opts => 
-    opts.UseNpgsql(builder.Configuration.GetConnectionString("local")));
+builder.Services.AddDbContext<AppDbContext>(opts =>
+{
+    opts.UseNpgsql(builder.Configuration.GetConnectionString("local"));
+});
 
 var app = builder.Build();
 
 app.UseCors();
+
+Migrate();
 
 app.MapGet("/users", async (AppDbContext context) => await context.Users.ToArrayAsync());
 app.MapGet("/users/{id:guid}", async (AppDbContext context, Guid id) =>
@@ -52,4 +56,17 @@ app.UseHttpsRedirection();
 
 app.Run();
 
+void Migrate()
+{
+    using var scope = app.Services.CreateScope();
+
+    var ctx = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    if (!ctx.Database.EnsureCreated())
+    {
+        ctx.Database.Migrate();
+    }
+}
+
 record UserCreateRequest(string Email, string Firstname, string Lastname, int Age);
+

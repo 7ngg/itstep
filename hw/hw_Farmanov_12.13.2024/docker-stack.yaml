@@ -1,0 +1,44 @@
+services:
+  backend:
+    image: tng1/1213-server:latest
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "5000:8080"
+    networks:
+      - app-net
+    depends_on:
+      - postgres
+
+  frontend:
+    image: tng1/1213-client:latest
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - app-net
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=swarmDb
+    networks:
+      - app-net
+
+volumes:
+  db-data:
+
+networks:
+  app-net:
+
