@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-hw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-hw
+  template:
+    metadata:
+      labels:
+        app: kube-hw
+    spec:
+      containers:
+        - name: kube-hw
+          image: tng1/kube-hw
+          ports:
+            - containerPort: 5002
