@@ -1,0 +1,16 @@
+[
+  {
+    "id": "891132fc-e323-425e-86cb-8a644a2bec45",
+    "name": "book_2",
+    "author": "author_2",
+    "genre": "genre_2",
+    "dop": "2025-01-25T12:44:14.916Z"
+  },
+  {
+    "name": "postman_name",
+    "author": "postman_author",
+    "genre": "postman_genre",
+    "dop": "postman_dop",
+    "id": "34470110-8b3b-4a3a-8213-110781a0d684"
+  }
+]
