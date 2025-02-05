@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "required": [
+        "username",
+        "password",
+        "firstName",
+        "lastName",
+        "age"
+    ],
+    "properties": {
+        "username": {
+            "type": "string",
+            "example": "higan"
+        },
+        "password": {
+            "type": "string"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "age": {
+            "type": "number",
+            "format": "uint8"
+        }
+    }
+}

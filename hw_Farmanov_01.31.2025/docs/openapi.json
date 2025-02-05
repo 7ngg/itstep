@@ -1,0 +1,38 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "hw_Farmanov_01.31.2025",
+        "version": "1.0.0",
+        "description": "mongo & openapi"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080",
+            "description": "localhost"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "users": {
+                "$ref": "./schemas/user.json"
+            },
+            "profile": {
+                "$ref": "./schemas/profile.json"
+            },
+            "loginDto": {
+                "$ref": "./schemas/loginDto.json"
+            },
+            "registerDto": {
+                "$ref": "./schemas/registerDto.json"
+            },
+            "userDto": {
+                "$ref": "./schemas/userDto.json"
+            }
+        }
+    },
+    "paths": {
+        "api/users": {
+            "$ref": "./paths/users.json"
+        }
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "/users": {
+        "get": {
+            "summary": "Get all users",
+            "responses": {
+                "200": {
+                    "description": "success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "../schemas/user.json"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "post": {
+            "summary": "Create new user",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../schemas/userDto.json"
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": {
+                    "description": "user created successfully",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "../schemas/user.json"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request. Missing required data"
+                }
+            }
+        }
+    },
+    "users/{id}": {
+        "get": {
+            "summary": "returns the specified user",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": "true",
+                    "schema": {
+                        "type": "integer",
+                        "desciption": "User ID"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "../schemas/user.json"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad request. Invalid user ID"
+                },
+                "404": {
+                    "description": "User not found"
+                }
+            }
+        },
+        "delete": {
+            "summary": "Deletes the specified user",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": "true",
+                    "schema": {
+                        "type": "integer",
+                        "desciption": "User ID"
+                    }
+                }
+            ],
+            "responses": {
+                "204": {
+                    "description": "User deleted successfully or does not exist"
+                },
+                "400": {
+                    "description": "Bad request. Invalid user ID"
+                }
+            }
+        }
+    }
+}
