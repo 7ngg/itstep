@@ -13,7 +13,7 @@
             "type": "string"
         },
         "profile": {
-            "type": "profile"
+            "$ref": "../index.json#/components/schemas/profile"
         }
     }
 }

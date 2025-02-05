@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@apidevtools/swagger-cli": "^4.0.4",
     "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/mongoose": "^5.11.96",

@@ -1,0 +1,30 @@
+{
+    "post": {
+        "summary": "Register a new user",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../schemas/registerDto.json"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Registration successfull",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "../schemas/user.json"
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Missing required fields"
+            }
+        }
+    }
+}

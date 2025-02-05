@@ -31,6 +31,7 @@ export async function login(req: Request, res: Response) {
 
   if (!body.username || !body.password) {
     res.status(400).send("Missing required fields");
+    return
   }
 
   const user = await userModel.findOne({ username: body.username });

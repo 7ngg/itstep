@@ -1,5 +1,5 @@
 {
-    "openapi": "3.0.0",
+    "openapi": "3.1.0",
     "info": {
         "title": "hw_Farmanov_01.31.2025",
         "version": "1.0.0",
@@ -13,7 +13,7 @@
     ],
     "components": {
         "schemas": {
-            "users": {
+            "user": {
                 "$ref": "./schemas/user.json"
             },
             "profile": {
@@ -31,8 +31,18 @@
         }
     },
     "paths": {
-        "api/users": {
+        "/api/users": {
             "$ref": "./paths/users.json"
+        },
+        "/api/users/{id}": {
+            "$ref": "./paths/users-id.json"
+        },
+        "/api/auth/login": {
+            "$ref": "./paths/login.json"
+        },
+
+        "/api/auth/register": {
+            "$ref": "./paths/register.json"
         }
     }
 }
