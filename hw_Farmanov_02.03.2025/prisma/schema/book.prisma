@@ -1,0 +1,6 @@
+model book {
+    id String @id @default(uuid())
+    name String @unique
+    authorId Int
+    author author @relation(fields: [authorId], references: [id])
+}

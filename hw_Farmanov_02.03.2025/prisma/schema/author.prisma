@@ -1,0 +1,5 @@
+model author {
+    id Int @id @default(autoincrement())
+    name String @unique
+    books book[]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "main": "dist/server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf ./dist && tsc",
+    "start": "npm run build && node ./dist/server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "prisma": "^6.3.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "@types/express": "^5.0.0",
+    "express": "^4.21.2"
+  }
+}
