@@ -60,7 +60,9 @@ func (cfg *ApiConfig) handlerSignIn(w http.ResponseWriter, r *http.Request) {
 	}
 
 	http.SetCookie(w, &cookie)
-	respondWithJson(w, http.StatusOK, UserToResponse(user))
+	respondWithJson(w, http.StatusOK, singInResponse{
+		AccessToken: token,
+	})
 }
 
 func (cfg *ApiConfig) handlerSignUp(w http.ResponseWriter, r *http.Request) {

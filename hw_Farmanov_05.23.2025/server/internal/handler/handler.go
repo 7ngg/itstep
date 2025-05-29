@@ -20,6 +20,7 @@ func (cfg *ApiConfig) NewServeMux() *http.ServeMux {
 	mux.HandleFunc("POST /auth/sign-in", cfg.handlerSignIn)
 
 	mux.HandleFunc("GET /users", cfg.GetAllUsers)
+	mux.HandleFunc("GET /account", cfg.GetSelf)
 
 	return mux
 }

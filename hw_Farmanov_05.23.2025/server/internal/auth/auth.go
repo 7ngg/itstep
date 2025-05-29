@@ -51,7 +51,7 @@ func RetrieveJWT(h http.Header) string {
 	return parts[1]
 }
 
-func ValidateJWT(token, secret string) error {
+func ValidateJWT(token, secret string) (string, error) {
 	t, err := jwt.Parse(token, func(t *jwt.Token) (any, error) {
 		if _, ok := t.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("unexpected signing method: %v", t.Header["alg"])
@@ -61,12 +61,17 @@ func ValidateJWT(token, secret string) error {
 	})
 
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	if !t.Valid {
-		return errors.New("token expired")
+		return "", errors.New("token expired")
 	}
+    
+    userId, err := t.Claims.GetSubject()
+    if err != nil {
+        return "", err
+    }
 
-	return nil
+	return userId, nil
 }

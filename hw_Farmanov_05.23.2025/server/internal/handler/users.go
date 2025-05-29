@@ -1,28 +1,42 @@
 package handler
 
 import (
+	"database/sql"
 	"errors"
 	"log"
 	"net/http"
 	"sampleapp/internal/auth"
 )
 
-func (cfg *ApiConfig) GetAllUsers(w http.ResponseWriter, r *http.Request) {
-	token, err := r.Cookie("accessToken")
-	if err != nil {
-		switch {
-		case errors.Is(err, http.ErrNoCookie):
-			respondWithError(w, http.StatusUnauthorized,
-				"authorization cookie not found", err)
-		default:
-			respondWithError(w, http.StatusInternalServerError, "server error",
-				err)
-		}
+func (cfg *ApiConfig) GetSelf(w http.ResponseWriter, r *http.Request) {
+	token := auth.RetrieveJWT(r.Header)
 
+	userId, err := auth.ValidateJWT(token, cfg.JWT.Secret)
+	if err != nil {
+		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
 
-	err = auth.ValidateJWT(token.Value, cfg.JWT.Secret)
+	user, err := cfg.DB.GetById(r.Context(), userId)
+	if err != nil {
+		switch {
+		case errors.Is(err, sql.ErrNoRows):
+			respondWithError(w, http.StatusNotFound, "user does not exist", err)
+			return
+		default:
+			respondWithError(w, http.StatusInternalServerError,
+				"unexpected server error", err)
+			return
+		}
+	}
+
+    respondWithJson(w, http.StatusOK, UserToResponse(user))
+}
+
+func (cfg *ApiConfig) GetAllUsers(w http.ResponseWriter, r *http.Request) {
+	token := auth.RetrieveJWT(r.Header)
+
+	_, err := auth.ValidateJWT(token, cfg.JWT.Secret)
 	if err != nil {
 		w.WriteHeader(http.StatusUnauthorized)
 		return

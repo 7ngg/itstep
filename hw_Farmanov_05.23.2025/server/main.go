@@ -50,7 +50,7 @@ func main() {
 
 	mux := cfg.NewServeMux()
 	srv := http.Server{
-		Addr:    fmt.Sprintf(":%s", port),
+        Addr:    fmt.Sprintf("0.0.0.0:%s", port),
 		Handler: mux,
 	}
 
