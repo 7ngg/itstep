@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
+	"github.com/rs/cors"
 	_ "modernc.org/sqlite"
 )
 
@@ -51,7 +52,7 @@ func main() {
 	mux := cfg.NewServeMux()
 	srv := http.Server{
         Addr:    fmt.Sprintf("0.0.0.0:%s", port),
-		Handler: mux,
+		Handler: cors.Default().Handler(mux),
 	}
 
 	log.Printf("starting server on :%s", port)
